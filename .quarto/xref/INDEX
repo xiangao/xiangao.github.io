@@ -13,5 +13,8 @@
   },
   "index.qmd": {
     "index.html": "d07f36b5"
+  },
+  "posts/causal_simulation/index.qmd": {
+    "index.html": "3f665cef"
   }
 }

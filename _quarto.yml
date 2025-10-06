@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "quarto_blog"
+  title: "applied econometrics blos"
   navbar:
     right:
       - about.qmd
