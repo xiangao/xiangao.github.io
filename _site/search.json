@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto_blog",
+    "section": "",
+    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 1, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nCausal simulation\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 1, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 28, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/test1/index.html#load-the-data",
+    "href": "posts/test1/index.html#load-the-data",
+    "title": "Post With Code",
+    "section": "Load the data",
+    "text": "Load the data\nLoad the data from the #TidyTuesday repository:\n\nlemurs &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv')"
+  },
+  {
+    "objectID": "posts/test1/index.html#data-wrangling",
+    "href": "posts/test1/index.html#data-wrangling",
+    "title": "Post With Code",
+    "section": "Data wrangling",
+    "text": "Data wrangling\nFilter the data to only look at adult male Collared Brown Lemurs, and extract only the age and weight columns:\n\nlibrary(dplyr)\nlibrary(knitr)\nlemur_data &lt;- lemurs %&gt;% \n  filter(taxon == \"ECOL\",\n         sex == \"M\",\n         age_category == \"adult\") %&gt;% \n  select(c(age_at_wt_mo, weight_g)) %&gt;% \n  rename(Age = age_at_wt_mo, \n         Weight = weight_g)\nkable(head(lemur_data))"
+  },
+  {
+    "objectID": "posts/test1/index.html#data-wrangling-output",
+    "href": "posts/test1/index.html#data-wrangling-output",
+    "title": "Post With Code",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\n\n\n\nAge\nWeight\n\n\n\n\n129.90\n2805\n\n\n132.10\n3001\n\n\n140.32\n2429\n\n\n157.94\n2597\n\n\n164.58\n2497\n\n\n184.18\n2225"
+  },
+  {
+    "objectID": "posts/test1/index.html#modelling",
+    "href": "posts/test1/index.html#modelling",
+    "title": "Post With Code",
+    "section": "Modelling",
+    "text": "Modelling\nFit a linear model using Python:\n\nlemur_data_py = r.lemur_data\n\nimport statsmodels.api as sm\ny = lemur_data_py[[\"Weight\"]]\nx = lemur_data_py[[\"Age\"]]\nx = sm.add_constant(x)\nmod = sm.OLS(y, x).fit()\nlemur_data_py[\"Predicted\"] = mod.predict(x)\nlemur_data_py[\"Residuals\"] = mod.resid"
+  },
+  {
+    "objectID": "posts/test1/index.html#plot-the-residuals",
+    "href": "posts/test1/index.html#plot-the-residuals",
+    "title": "Post With Code",
+    "section": "Plot the residuals",
+    "text": "Plot the residuals\n#| label: plotting #| echo: true #| output-location: slide #| message: false #| fig-align: center #| fig-alt: “Scatter plot of predicted and residual values for the fitted linear model.” library(reticulate) library(ggplot2) lemur_residuals &lt;- py$lemur_data_py ggplot(data = lemur_residuals, mapping = aes(x = Predicted, y = Residuals)) + geom_point(colour = “#2F4F4F”) + geom_hline(yintercept = 0, colour = “red”) + theme(panel.background = element_rect(fill = “#eaf2f2”, colour = “#eaf2f2”), plot.background = element_rect(fill = “#eaf2f2”, colour = “#eaf2f2”))"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/test1/index.html#example-1",
+    "href": "posts/test1/index.html#example-1",
+    "title": "Causal simulation",
+    "section": "example 1",
+    "text": "example 1\nSuppose we have a causal graph like this:\n\nWe need to specify \\(P(y|do(a)) = \\sum_x P(x) P(y|x,a)\\), where \\(P(x)\\) is the marginal distribution of \\(x\\), and \\(P(y|x,a)\\) is the conditional distribution of \\(y\\) given \\(x\\) and \\(a\\). This is the “marginal structural model” (Robins, 2000). Also the “g-formula”.\nWe also need to specify \\(P(x,a)\\), the “past”.\nFinally we need to specify the copula \\(c(x,y|a)\\), which captures the dependence between \\(x\\) and \\(y\\) given \\(a\\). Depending on different situations, different copula can be used.\nIn the “causl” package example, we specify: \\[ X \\sim N(0,1) \\] \\[ A | X=x  \\sim N(x/2, 1) \\] \\[ Y | do(A=a) \\sim N({(a-1)/2}, 1) \\] and Gaussian copula with correlation \\(\\rho = 2 expit(1)-1\\).\n\nlibrary(causl)\n# formulae corresponding to covariates, treatments, outcomes and the dependence\nforms &lt;- list(X ~ 1, A ~ X, Y ~ A, ~ 1)\n# vector of model families (3=gamma/exponential, 1=normal/Gaussian)\nfam &lt;- c(1, 1, 1, 1)\n# list of parameters, including 'beta' (regression params) and 'phi' dispersion\npars &lt;- list(X = list(beta=0, phi=1),   \n             A = list(beta=c(0,0.5), phi=1),\n             Y = list(beta=c(-0.5,0.5), phi=1),\n             cop = list(beta=1))\n\n## now create a `causl_model` object\ncm &lt;- causl_model(formulas=forms, family=fam, pars=pars,method=\"inversion\")\n\n# now simulate 1000 observations\nset.seed(123456)\ndata &lt;- rfrugal(n=1000, causl_model=cm)\nhead(data)\n\n            X           A          Y\n1  0.83373317  1.10709111  1.1416713\n2 -0.27604777 -0.27218853 -1.0495996\n3 -0.35500184  0.77575209  1.3179678\n4  0.08748742 -0.05959823 -0.6106023\n5  2.25225573  0.61909216  2.0789188\n6  0.83446013  0.52019822  0.3229069\n\n\nIn this example, first we specify the structure of the model using a list of formulas. The first formula is for the covariates, the second for the treatments, the third for the outcomes, and the fourth for the dependence structure (copula). Note that outcome \\(Y\\) only depends on \\(A\\) in this interventional distribution.\nThen we specify the families of the random variables. Here we use exponential distribution for \\(X\\), normal distribution for \\(A\\) and \\(Y\\), and Gaussian copula for the dependence structure.\nFinally we specify the parameters of the model, including regression coefficients and dispersion parameters. For example, \\(Y \\sim A\\) has two coefficients, intercept -.5 and slope .5.\nThe causl_model object is then created using these components.\nIn this simple example, if we run a regression with \\(A\\), \\(X\\) in the model, on the simulated data, we would get the correct effect back:\n\nlm1 &lt;- lm(Y ~ A*X, data=data)\nsummary(lm1)\n\n\nCall:\nlm(formula = Y ~ A * X, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.6326 -0.6212 -0.0105  0.6051  3.3132 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -0.491922   0.030413 -16.175   &lt;2e-16 ***\nA            0.493471   0.027820  17.738   &lt;2e-16 ***\nX            0.468038   0.031878  14.682   &lt;2e-16 ***\nA:X         -0.009247   0.022360  -0.414    0.679    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8953 on 996 degrees of freedom\nMultiple R-squared:  0.4875,    Adjusted R-squared:  0.4859 \nF-statistic: 315.8 on 3 and 996 DF,  p-value: &lt; 2.2e-16\n\n\nWe can also use MLE:\n\nout &lt;- fit_causl(data, formulas = list(X ~ 1, Y ~ A, ~ 1), family = c(1, 1, 1))\nout\n\nlog-likelihood:  -2716.696 \nX ~ 1\n              est.   s.e. sandwich\n(intercept) 0.0108 0.0314   0.0314\n  residual s.e.:  0.983 0.044 0.0447 \n\nY ~ A\n              est.   s.e. sandwich\n(intercept) -0.491 0.0319   0.0319\nA            0.494 0.0278   0.0295\n  residual s.e.:  1.01 0.0472 0.0475 \n\ncopula parameters:\ncop ~ 1\n             est.  s.e. sandwich\n(intercept) 0.998 0.069   0.0734"
+  },
+  {
+    "objectID": "posts/test1/index.html#plasmode-simulation",
+    "href": "posts/test1/index.html#plasmode-simulation",
+    "title": "Causal simulation",
+    "section": "Plasmode simulation",
+    "text": "Plasmode simulation\nIn reality, we have a data set and we have a causal model. We want to simulate data from the causal model, but we want the simulated data to have the same distribution as the original data. This is called “plasmode simulation”. For example, we don’t want to use the real outcome variable. In stead, we simulate X’s from the original data, Then simulate Y and A from the causal model. We can then test which method works better in estimating the causal effect of \\(A\\) on \\(Y\\).\n\n\n# A tibble: 4,802 × 58\n     x_1 x_2     x_3   x_4   x_5   x_6   x_7   x_8   x_9  x_10  x_11  x_12  x_13\n   &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n 1    29 C         1     7    60    85     0     0     1     0     0     1     0\n 2    27 C         0     0    64   178     0     0     0     0     0     2     1\n 3    27 C         0     0    60   102     0     0     0     0     0     1     0\n 4    37 C         0     0    65   174     0     0     0     0     0     1     0\n 5    24 C        20    14    63   129     0     0     0     0     0     1     0\n 6    27 C        40    15    63   135     0     0     0     0     0     1     1\n 7    26 C        20     8    69   140     0     0     0     1     0     0     0\n 8    33 C         0     0    60   110     0     0     0     1     0     0     1\n 9    28 C         3     5    61   160     0     0     0     0     0     3     1\n10    31 C         0     0    63   114     0     1     0     0     0     0     0\n# ℹ 4,792 more rows\n# ℹ 45 more variables: x_14 &lt;int&gt;, x_15 &lt;int&gt;, x_16 &lt;int&gt;, x_17 &lt;int&gt;,\n#   x_18 &lt;int&gt;, x_19 &lt;int&gt;, x_20 &lt;int&gt;, x_21 &lt;fct&gt;, x_22 &lt;int&gt;, x_23 &lt;int&gt;,\n#   x_24 &lt;fct&gt;, x_25 &lt;int&gt;, x_26 &lt;int&gt;, x_27 &lt;int&gt;, x_28 &lt;int&gt;, x_29 &lt;int&gt;,\n#   x_30 &lt;int&gt;, x_31 &lt;int&gt;, x_32 &lt;int&gt;, x_33 &lt;int&gt;, x_34 &lt;int&gt;, x_35 &lt;int&gt;,\n#   x_36 &lt;int&gt;, x_37 &lt;int&gt;, x_38 &lt;int&gt;, x_39 &lt;int&gt;, x_40 &lt;int&gt;, x_41 &lt;int&gt;,\n#   x_42 &lt;int&gt;, x_43 &lt;int&gt;, x_44 &lt;int&gt;, x_45 &lt;int&gt;, x_46 &lt;int&gt;, x_47 &lt;int&gt;, …\n\n\n\n# Model for the causal effect of smoking on birthweight\nforms &lt;- list(list(),\n              list(A ~ x_1 + x_3 + x_4),\n              list(Y ~ A),\n              list(~ 1))\n# fams &lt;- list(integer(0), 5, 1, 1)\nfams &lt;- list(integer(0), \"binomial\", \"gaussian\", 1)\npars &lt;- list(A = list(beta=c(-1.5,0.03,0.02,0.05)),\n             Y = list(beta=c(3200, -500), phi=400^2),\n             cop = list(beta=-1))\n\ncm2 &lt;- causl_model(formulas=forms, family=fams, pars=pars, dat = dat)\n \nset.seed(123456)\ndata2 &lt;- rfrugal(causl_model=cm2)\nhead(data2)\n\n  x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8 x_9 x_10 x_11 x_12 x_13 x_14 x_15 x_16 x_17\n1  29   C   1   7  60  85   0   0   1    0    0    1    0    0    2    0    0\n2  27   C   0   0  64 178   0   0   0    0    0    2    1    0    2    0    0\n3  27   C   0   0  60 102   0   0   0    0    0    1    0    0    0    0    0\n4  37   C   0   0  65 174   0   0   0    0    0    1    0    0    1    0    0\n5  24   C  20  14  63 129   0   0   0    0    0    1    0    0    0    0    0\n6  27   C  40  15  63 135   0   0   0    0    0    1    1    2    2    0    0\n  x_18 x_19 x_20 x_21 x_22 x_23 x_24 x_25 x_26 x_27 x_28 x_29 x_30 x_31 x_32\n1   12   35   10    J    1   43    B   17   64  105   30   11    0    0    0\n2   12   75   12    J    1   50    E   12   90  183   40    8    0    0    0\n3   12   35   10    J    1   57    E   14   70  121   27   12    0    0    0\n4   11   35   12    J    1   43    E   10   80  185   39   10    0    0    0\n5    9   35   15    J    1   33    E   14   70  160   28    7    0    0    0\n6    9   45   10    J    1   40    E   15   64  160   31    9    0    0    0\n  x_33 x_34 x_35 x_36 x_37 x_38 x_39 x_40 x_41 x_42 x_43 x_44 x_45 x_46 x_47\n1    0   79   28  340   48    1    9    9    3    0    3   54   16    0    0\n2    0   69   30  430   73    0    9    9    3    0    5   51   16    0    0\n3    0   84   29  450   76    0    3    6    2    0    4   41   13    0    0\n4    0   82   30  440   78    1    8    9    2    0    8   70   16    0    0\n5    1   85   35  360   71    1    5    8    0    2    3   65   18    0    0\n6    1   81   28  515   56    1    7    9    2    0    1   63   20    0    0\n  x_48 x_49 x_50 x_51 x_52 x_53 x_54 x_55 x_56 x_57 x_58 A        Y\n1    0    0    0    0    0    0    0    0    0   45   39 1 2125.677\n2    0    0    0    0    0    0    0    0    0   46   42 1 2688.990\n3    0    1    0    0    0    0    0    0    0   45   40 0 3442.924\n4    0    0    0    0    0    0    0    0    0   47   40 0 3212.584\n5    0    2    0    0    0    0    0    0    0   47   43 0 2992.775\n6    0    0    0    0    0    0    0    0    0   45   44 0 2738.893\n\n# we can also use rfrugalParam(), which is older version of rfrugal().\n#datAY &lt;- rfrugalParam(formulas=forms, family=fams, pars=pars, dat=dat)\n\nIn this specification, we have a binary treatment \\(A\\) and a continuous outcome \\(Y\\). The covariates are \\(x_1\\), \\(x_3\\) and \\(x_4\\). The copula is a Gaussian copula with correlation -1. We can then simulate the data."
+  }
+]
