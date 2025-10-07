@@ -3,9 +3,7 @@ title: "Causal simulation"
 author: "Xiang Ao"
 date: "2025-10-01"
 categories: [news, code, analysis]
-format:
-  revealjs:
-    embed-resources: true
+
 ---
 
 

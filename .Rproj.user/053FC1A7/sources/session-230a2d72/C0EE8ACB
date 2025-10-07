@@ -3,7 +3,7 @@
     "path": "~/projects/myprojects/quarto_blog/posts/causal_simulation/index.qmd",
     "project_path": "posts/causal_simulation/index.qmd",
     "type": "quarto_markdown",
-    "hash": "2384069582",
+    "hash": "2342386015",
     "contents": "",
     "dirty": false,
     "created": 1759793170963.0,
@@ -17,15 +17,15 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0",
-        "cursorPosition": "248,13",
-        "scrollLine": "236"
+        "cursorPosition": "4,20",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1759793183,
+    "lastKnownWriteTime": 1759793634,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1759793183480,
+    "last_content_update": 1759793634285,
     "read_only": false,
     "read_only_alternatives": []
 }
