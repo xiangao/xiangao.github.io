@@ -225,7 +225,7 @@ So the ATE is 2.5.
 
 Let's use "lmtp" package to estimate the treatment effect of $A_2$ on $Y$.
 ```{r lmtp, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
-
+#| output: asis
 library(lmtp)
 
 d1 <- function(data, trt) {
