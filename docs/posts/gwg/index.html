@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Xiang Ao">
+<meta name="dcterms.date" content="2025-11-17">
+
+<title>Gender wage gap analysis using US current population survey data – applied econometrics blogs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-ca3053f7569e1057b4e424b6705d5996.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">applied econometrics blogs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Gender wage gap analysis using US current population survey data</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Xiang Ao </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 17, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Traditionally Oaxaca-Blinder decomposition is used to decompose the wage gap into explained and unexplained parts. The explained part is due to differences in observable characteristics, such as education, experience, occupation, etc. The unexplained part is due to discrimination or other unobserved factors.</p>
+<p>It has a problem that when decomposing, using female as reference group or male as reference group will give different results.</p>
+<p>Słoczyński (2015) and Słoczyński (2013) have shown that a regression adjustment type of analysis is equivalent to Oaxaca-Blinder decomposition in a nonstandard way.</p>
+<section id="oaxaca-blinder-decomposition" class="level1">
+<h1>Oaxaca-Blinder decomposition</h1>
+<p>Assume the regression model is different for male and female: <span class="math display">\[ y_i = X_i \beta_a + \epsilon_a \]</span></p>
+<p>where <span class="math inline">\(a\)</span> is gender (female is 1), <span class="math inline">\(X\)</span>’s are person characteristics.</p>
+<p><span class="math display">\[ E[y_i | a_i = 1] - E[y_i | a_i = 0] = E[X_i | a_i=1]  (\beta_1 - \beta_0) + (E[X_i | a_i =1 ] - E[X_i | a_i = 0]) \beta_0 \]</span></p>
+<p>or</p>
+<p><span class="math display">\[ E[y_i | a_i = 1] - E[y_i | a_i = 0] = E[X_i | a_i=0]  (\beta_1 - \beta_0) + (E[X_i | a_i =1 ] - E[X_i | a_i = 0]) \beta_1 \]</span> These two equations are different forms of the Oaxaca-Blinder decomposition. The first element is the “unexplained component”, which is the difference in the coefficients, and the second element is the “explained component”, which is the difference in the means of the covariates.</p>
+<p>These two equations can give different results for the two components, one has a baseline of male, and other one female.</p>
+<p>We can further shows that</p>
+<p><span class="math display">\[
+\begin{align}
+E[y_i | a_i =1] - E[y_i | a_i=0] &amp;= E[X_i | a_i=1]  (\beta_1 - \beta_0) + (E[X_i | a_i =1 ] - E[X_i | a_i = 0]) \beta_0  \\         
+&amp;= E[y_i(1) - y_i(0) | a_i=1] + (E[y_i(0) | a_i=1] - E[y_i(0) | a_i = 0]) \\         
+&amp;= \tau_{PATT} + (E[y_i(0) | a_i=1] - E[y_i(0) | a_i=0])
+\end{align}
+\]</span></p>
+<p>That is, the observed difference is the sum of <span class="math inline">\(\tau_{PATT}\)</span> and selection bias. It is also know in the OB decomposition literature as unexplained component and explained component. The former as “discrimination”.</p>
+<p>We can simply use Regression Adjustment for <span class="math inline">\(\tau_{PATT}\)</span>. The easiest would be an OLS of <span class="math inline">\(y_i\)</span> on demeaned <span class="math inline">\(X_i\)</span> and <span class="math inline">\(a_i\)</span> and interaction, then the coefficient on <span class="math inline">\(a_i\)</span> is <span class="math inline">\(\tau_{PATT}\)</span>.</p>
+<p>He aslo advocates the “population average gender effect” (PAGE):</p>
+<p><span class="math display">\[ \tau_{PAGE} = E[\tau(X_i)] \]</span></p>
+<p>which is basically ATE, or conditional average effect (CATE), then average over the <span class="math inline">\(X\)</span>’s.</p>
+<p>In this version, the two forms of OB decomposition can be <span class="math inline">\(\tau_{PAGM}\)</span> and <span class="math inline">\(\tau_{PAGW}\)</span>, for men and women.</p>
+<p>The nice thing about this estimator <span class="math inline">\(\tau_{PAGE}\)</span> is that first, it is consistent with the treatment effect (causal inference) literature, and it is invariant to the choice of reference group.</p>
+<p>The second advantage is that we also do not need to assume homogeneity of treatment effect, which is a strong assumption in the Oaxaca-Blinder decomposition.</p>
+<p>The third advantage is that we can use nonparametric methods to estimate the treatment effect. Traditional OB decomposition is based on linear regression, which assumes a linear relationship between the covariates and the outcome.</p>
+</section>
+<section id="example" class="level1">
+<h1>Example</h1>
+<p>I am using the data from https://github.com/d2cml-ai/CausalAI-Course/tree/main/data.</p>
+<p>“The data set we consider is from the 2015 March Supplement of the U.S. Current Population Survey. We select white non-hispanic individuals, aged 25 to 64 years, and working more than 35 hours per week for at least 50 weeks of the year. We exclude self-employed workers; individuals living in group quarters; individuals in the military, agricultural or private household sectors; individuals with inconsistent reports on earnings and employment status; individuals with allocated or missing information in any of the variables used in the analysis; and individuals with hourly wage below 3.”</p>
+<p>I am using this data to study gender wage gap (GWP).</p>
+<p>We can model GWP using potential outcome framework. Here treatment is gender discrimination, and outcome is logged wage. Treatment is 1 if female, 0 if male.</p>
+<p>The ATE would be</p>
+<p><span class="math display">\[ \delta_{ATE} = E[Y(1) - Y(0)] \]</span></p>
+<p>where <span class="math inline">\(Y(1)\)</span> is the potential outcome if treated, and <span class="math inline">\(Y(0)\)</span> is the potential outcome if not treated.</p>
+<section id="regression-adjustment" class="level2">
+<h2 class="anchored" data-anchor-id="regression-adjustment">Regression adjustment</h2>
+<p>Since this is to estimate ATE, we can use regression adjustment to estimate the ATE. First let’s use de-meaned <span class="math inline">\(X\)</span>’s. Then the coefficient on gender is the ATE.</p>
+<p>We use These variables as <span class="math inline">\(X\)</span>’s:</p>
+<p>“shs”,“hsg”,“scl”,“clg”,“ad”,“ne”,“mw”,“so”,“we”,“exp1”, “occ”, “occ2”, “ind”, and “ind2”.</p>
+<p>They are:</p>
+<p>“Less then High School”,“High School Graduate”,“Some College”,“College Graduate”,“Advanced Degree”, “Northeast”,“Midwest”,“South”,“West”,“Experience”, “occupation”, “occupation 2”, “industry”, and “industry 2”.</p>
+<p>I decide to use “occ2” and “ind2” as they are broader categories of occupation and industry. We don’t have enough data for finer categories “occ” and “ind”.</p>
+<p>“exp1” seems to be the only variable that is continuous, let’s demean it first. Let’s also input “occ2” and “ind2” as factors.</p>
+<p>Let’s include demeaned “exp1”, sohs”, “hsg”, “socl”, “clg”, “mw”, “sout”, and “we” first. I leave out “occ2” and “ind2” since there are too many levels to demean.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/Downloads/wage2015_subsample_inference.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">socl =</span> scl, <span class="at">sohs =</span> shs, <span class="at">sout =</span> so) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">exp_dm =</span> exp1 <span class="sc">-</span> <span class="fu">mean</span>(exp1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">female=</span>sex, <span class="at">occ2 =</span> <span class="fu">factor</span>(occ2), <span class="at">ind2 =</span> <span class="fu">factor</span>(ind2)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sohs_dm =</span> sohs <span class="sc">-</span> <span class="fu">mean</span>(sohs, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">hsg_dm =</span> hsg <span class="sc">-</span> <span class="fu">mean</span>(hsg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">socl_dm =</span> socl <span class="sc">-</span> <span class="fu">mean</span>(socl, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">clg_dm =</span> clg <span class="sc">-</span> <span class="fu">mean</span>(clg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">mw_dm =</span> mw <span class="sc">-</span> <span class="fu">mean</span>(mw, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">sout_dm =</span> sout <span class="sc">-</span> <span class="fu">mean</span>(sout, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">we_dm =</span> we <span class="sc">-</span> <span class="fu">mean</span>(we, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,150
+Columns: 30
+$ rownames &lt;dbl&gt; 10, 12, 15, 18, 19, 30, 43, 44, 47, 71, 73, 77, 84, 89, 96, 1…
+$ wage     &lt;dbl&gt; 9.615385, 48.076923, 11.057692, 13.942308, 28.846154, 11.7307…
+$ lwage    &lt;dbl&gt; 2.263364, 3.872802, 2.403126, 2.634928, 3.361977, 2.462215, 2…
+$ sex      &lt;dbl&gt; 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1…
+$ sohs     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ hsg      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0…
+$ socl     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1…
+$ clg      &lt;dbl&gt; 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0…
+$ ad       &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ mw       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ sout     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ we       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ ne       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ exp1     &lt;dbl&gt; 7.0, 31.0, 18.0, 25.0, 22.0, 1.0, 42.0, 37.0, 31.0, 4.0, 7.0,…
+$ exp2     &lt;dbl&gt; 0.4900, 9.6100, 3.2400, 6.2500, 4.8400, 0.0100, 17.6400, 13.6…
+$ exp3     &lt;dbl&gt; 0.343000, 29.791000, 5.832000, 15.625000, 10.648000, 0.001000…
+$ exp4     &lt;dbl&gt; 0.24010000, 92.35210000, 10.49760000, 39.06250000, 23.4256000…
+$ occ      &lt;dbl&gt; 3600, 3050, 6260, 420, 2015, 1650, 5120, 5240, 4040, 3255, 40…
+$ occ2     &lt;fct&gt; 11, 10, 19, 1, 6, 5, 17, 17, 13, 10, 13, 14, 11, 11, 1, 19, 1…
+$ ind      &lt;dbl&gt; 8370, 5070, 770, 6990, 9470, 7460, 7280, 5680, 8590, 8190, 82…
+$ ind2     &lt;fct&gt; 18, 9, 4, 12, 22, 14, 14, 9, 19, 18, 18, 18, 18, 18, 17, 4, 4…
+$ exp_dm   &lt;dbl&gt; -6.760583, 17.239417, 4.239417, 11.239417, 8.239417, -12.7605…
+$ female   &lt;dbl&gt; 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1…
+$ sohs_dm  &lt;dbl&gt; -0.02330097, -0.02330097, -0.02330097, -0.02330097, -0.023300…
+$ hsg_dm   &lt;dbl&gt; -0.2438835, -0.2438835, 0.7561165, -0.2438835, -0.2438835, -0…
+$ socl_dm  &lt;dbl&gt; -0.2780583, -0.2780583, -0.2780583, -0.2780583, -0.2780583, -…
+$ clg_dm   &lt;dbl&gt; 0.6823301, 0.6823301, -0.3176699, -0.3176699, 0.6823301, 0.68…
+$ mw_dm    &lt;dbl&gt; -0.2596117, -0.2596117, -0.2596117, -0.2596117, -0.2596117, -…
+$ sout_dm  &lt;dbl&gt; -0.2965049, -0.2965049, -0.2965049, -0.2965049, -0.2965049, -…
+$ we_dm    &lt;dbl&gt; -0.2161165, -0.2161165, -0.2161165, -0.2161165, -0.2161165, -…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># construct matrices for estimation from the data </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. basic model</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lwage <span class="sc">~</span> female, <span class="at">data=</span>data)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(reg1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)   2.99      0.0107    280.    0     
+2 female       -0.0383    0.0160     -2.40  0.0165</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>reg2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lwage <span class="sc">~</span> female<span class="sc">*</span>(exp_dm <span class="sc">+</span> sohs_dm <span class="sc">+</span> hsg_dm <span class="sc">+</span> socl_dm <span class="sc">+</span> clg_dm <span class="sc">+</span> mw_dm <span class="sc">+</span> sout_dm <span class="sc">+</span> we_dm), <span class="at">data=</span>data)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(reg2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 5
+   term           estimate std.error statistic  p.value
+   &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+ 1 (Intercept)     3.02     0.00974    310.    0       
+ 2 female         -0.115    0.0147      -7.80  7.39e-15
+ 3 exp_dm          0.00801  0.000957     8.37  7.31e-17
+ 4 sohs_dm        -0.811    0.0620     -13.1   1.63e-38
+ 5 hsg_dm         -0.706    0.0350     -20.1   6.09e-87
+ 6 socl_dm        -0.553    0.0351     -15.7   1.45e-54
+ 7 clg_dm         -0.256    0.0345      -7.41  1.42e-13
+ 8 mw_dm           0.0337   0.0280       1.20  2.29e- 1
+ 9 sout_dm         0.0148   0.0271       0.548 5.84e- 1
+10 we_dm           0.0555   0.0290       1.91  5.59e- 2
+11 female:exp_dm   0.00212  0.00140      1.51  1.30e- 1
+12 female:sohs_dm -0.0180   0.117       -0.154 8.78e- 1
+13 female:hsg_dm   0.0398   0.0507       0.786 4.32e- 1
+14 female:socl_dm  0.0466   0.0482       0.968 3.33e- 1
+15 female:clg_dm   0.0992   0.0468       2.12  3.41e- 2
+16 female:mw_dm   -0.124    0.0417      -2.98  2.93e- 3
+17 female:sout_dm -0.0530   0.0403      -1.31  1.89e- 1
+18 female:we_dm   -0.0655   0.0435      -1.51  1.32e- 1</code></pre>
+</div>
+</div>
+<p>We see the raw gap is 3.8%. Adjusting for some covariates we have 11% gap.</p>
+<p>Or, we can use “marginaleffects” instead of demeaning.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reg3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lwage <span class="sc">~</span> female<span class="sc">*</span>(exp1 <span class="sc">+</span> sohs <span class="sc">+</span> hsg<span class="sc">+</span> socl <span class="sc">+</span> clg <span class="sc">+</span> mw <span class="sc">+</span> sout <span class="sc">+</span> we ), <span class="at">data=</span>data)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(marginaleffects)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">avg_comparisons</span>(reg3,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">variables =</span> <span class="st">"female"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">vcov =</span> <span class="sc">~</span>subclass,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">newdata =</span> <span class="fu">subset</span>(female <span class="sc">==</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Estimate Std. Error     z Pr(&gt;|z|)    S  2.5 %  97.5 %
+   -0.113     0.0148 -7.65   &lt;0.001 45.5 -0.142 -0.0844
+
+Term: female
+Type: response
+Comparison: 1 - 0</code></pre>
+</div>
+</div>
+<p>We get the same result as the demeaned regression.</p>
+<p>Next, we adjust for occupation and industry. We can use “occ2” and “ind2” as factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>reg4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lwage <span class="sc">~</span> female<span class="sc">*</span>(exp1 <span class="sc">+</span> sohs <span class="sc">+</span> hsg<span class="sc">+</span> socl <span class="sc">+</span> clg <span class="sc">+</span> mw <span class="sc">+</span> sout <span class="sc">+</span> we <span class="sc">+</span> occ2 <span class="sc">+</span> ind2), <span class="at">data=</span>data)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">avg_comparisons</span>(reg4,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">variables =</span> <span class="st">"female"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">vcov =</span> <span class="sc">~</span>subclass,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">newdata =</span> <span class="fu">subset</span>(female <span class="sc">==</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Estimate Std. Error     z Pr(&gt;|z|)    S  2.5 %  97.5 %
+   -0.075     0.0162 -4.62   &lt;0.001 18.0 -0.107 -0.0432
+
+Term: female
+Type: response
+Comparison: 1 - 0</code></pre>
+</div>
+</div>
+<p>So in the model with full interaction, we have a gap of 7.5%.</p>
+<p>Now let’s try nonparametric estimation.</p>
+</section>
+<section id="nonparametric-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="nonparametric-estimation">Nonparametric estimation</h2>
+<p>If we’d like to go for nonparametric, relaxing linearity assumption, then we can use “npcausal”. Note this may take a while, depending on which machine learning packages you decide to include. We can also use other nonparametric estimators, such as TMLE or doubleML.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(npcausal)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SL.library &lt;- c("SL.earth","SL.glmnet","SL.glm.interaction", "SL.mean","SL.ranger", "SL.xgboost")</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>SL.library <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SL.earth"</span>,<span class="st">"SL.glmnet"</span>,<span class="st">"SL.mean"</span>,<span class="st">"SL.ranger"</span>, <span class="st">"SL.xgboost"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># construct W from model matrix of reg3 </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>reg3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lwage <span class="sc">~</span> exp_dm <span class="sc">+</span> sohs <span class="sc">+</span> hsg<span class="sc">+</span> socl <span class="sc">+</span> clg <span class="sc">+</span> mw <span class="sc">+</span> sout <span class="sc">+</span> we <span class="sc">+</span> occ2 <span class="sc">+</span> ind2, <span class="at">data=</span>data)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">model.matrix</span>(reg3)[, <span class="sc">-</span><span class="dv">1</span>]) <span class="co"># remove intercept</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> data<span class="sc">$</span>lwage</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> data<span class="sc">$</span>female</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>aipw_ate <span class="ot">&lt;-</span> <span class="fu">ate</span>(<span class="at">y=</span>Y, <span class="at">a=</span>A, <span class="at">x=</span>W, <span class="at">nsplits=</span><span class="dv">5</span>, <span class="at">sl.lib=</span>SL.library)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |==========                                                            |  15%
+  |                                                                            
+  |==============                                                        |  20%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |=====================                                                 |  30%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |========================                                              |  35%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |================================                                      |  45%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |======================================                                |  55%
+  |                                                                            
+  |==========================================                            |  60%
+  |                                                                            
+  |==============================================                        |  65%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |====================================================                  |  75%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |============================================================          |  85%
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |==================================================================    |  95%
+  |                                                                            
+  |======================================================================| 100%
+     parameter         est         se       ci.ll       ci.ul pval
+1      E{Y(0)}  2.99614039 0.01093002  2.97471755  3.01756324    0
+2      E{Y(1)}  2.93954753 0.01328396  2.91351096  2.96558410    0
+3 E{Y(1)-Y(0)} -0.05659286 0.01598082 -0.08791527 -0.02527045    0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>aipw_att <span class="ot">&lt;-</span> <span class="fu">att</span>(<span class="at">y=</span>Y, <span class="at">a=</span>A, <span class="at">x=</span>W, <span class="at">nsplits=</span><span class="dv">5</span>, <span class="at">sl.lib=</span>SL.library)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |==============                                                        |  20%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |==========================================                            |  60%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |========================================================              |  80%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |======================================================================| 100%
+      parameter         est         se       ci.ll       ci.ul pval
+1      E(Y|A=1)  2.94948490 0.01160804  2.92673314  2.97223666    0
+2   E{Y(0)|A=1}  3.01543445 0.01199017  2.99193371  3.03893519    0
+3 E{Y-Y(0)|A=1} -0.06594955 0.01392369 -0.09323998 -0.03865913    0</code></pre>
+</div>
+</div>
+<p>We can see this effect is about -6.6%, similar to the regression adjustment result.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

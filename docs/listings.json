@@ -2,6 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/gwg/index.html",
+      "/posts/more_cre/index.html",
+      "/posts/numpyro/index.html",
+      "/posts/uplift/index.html",
       "/posts/causal_simulation/index.html",
       "/posts/lmtp/index.html"
     ]
