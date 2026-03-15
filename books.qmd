@@ -2,7 +2,7 @@
 title: "Online Books"
 ---
 
-Free online textbooks and guides on econometrics and causal inference.
+My summaries on what I have learned on econometrics and causal inference.
 
 ### [Econometrics Guide](https://xiangao.github.io/econometrics-guide/)
 

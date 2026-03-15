@@ -19,5 +19,29 @@
   },
   "posts/lmtp/index.qmd": {
     "index.html": "4d9ef6aa"
+  },
+  "books.qmd": {
+    "books.html": "5e60c6bf"
+  },
+  "blogs.qmd": {
+    "blogs.html": "6bce7e14"
+  },
+  "software.qmd": {
+    "software.html": "50de57d2"
+  },
+  "other-blogs.qmd": {
+    "other-blogs.html": "11cb1bd4"
+  },
+  "posts/uplift/index.qmd": {
+    "index.html": "baaa0d6f"
+  },
+  "posts/more_cre/index.qmd": {
+    "index.html": "c6a31db7"
+  },
+  "posts/numpyro/index.qmd": {
+    "index.html": "4bba17a7"
+  },
+  "posts/gwg/index.qmd": {
+    "index.html": "44df7ea9"
   }
 }
