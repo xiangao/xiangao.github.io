@@ -1,0 +1,17 @@
+---
+title: "Online Books"
+---
+
+Free online textbooks and guides on econometrics and causal inference.
+
+### [Econometrics Guide](https://xiangao.github.io/econometrics-guide/)
+
+A practical guide to applied econometrics with examples in R and Stata.
+
+### [Blog Book](https://xiangao.github.io/blog_book/)
+
+Collected blog posts on applied econometrics, compiled into book format.
+
+### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
+
+A guide to modern causal inference methods for applied researchers.

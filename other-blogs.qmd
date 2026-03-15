@@ -1,0 +1,5 @@
+---
+title: "Other Blogs"
+---
+
+- [Applied Econometrics Blog](https://xiangao.netlify.app) — earlier blog posts built with R blogdown and Hugo.
