@@ -14,6 +14,10 @@ R implementation of the Lee & Wooldridge (2025) panel difference-in-differences 
 
 R port of Bryan Graham's [ipt](https://github.com/bryangraham/ipt) and [netrics](https://github.com/bryangraham/netrics) Python packages. Implements dyadic regression with bias-corrected dyadic-robust standard errors following Graham (forthcoming, *Handbook of Econometrics*).
 
+### [Rfrengression](https://github.com/xiangao/Rfrengression)
+
+Native R package for frengression — causal data simulation via deep generative models. Learns joint distributions of treatments, outcomes, and confounders from observational data, enabling interventional sampling and custom causal margin specification. Implements cross-sectional, longitudinal, and survival model classes. Based on Shen & Meinshausen (2025, [arXiv:2508.01018](https://arxiv.org/abs/2508.01018)).
+
 ### [dyadfast](https://github.com/xiangao/dyadfast)
 
 Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.
