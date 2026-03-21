@@ -18,6 +18,10 @@ R port of Bryan Graham's [ipt](https://github.com/bryangraham/ipt) and [netrics]
 
 Native R package for frengression — causal data simulation via deep generative models. Learns joint distributions of treatments, outcomes, and confounders from observational data, enabling interventional sampling and custom causal margin specification. Implements cross-sectional, longitudinal, and survival model classes. Based on Shen & Meinshausen (2025, [arXiv:2508.01018](https://arxiv.org/abs/2508.01018)).
 
+### [RCausalModel](https://github.com/xiangao/RCausalModel)
+
+R package for causal inference in observational studies, randomized experiments, and network interference settings. Implements OLS, IPW, AIPW, matching, DML, difference-in-means, stratified, ANCOVA, Fisher exact test, and clustered IPW/AIPW estimators. Based on Qu, Xiong, Liu & Imbens (2021).
+
 ### [dyadfast](https://github.com/xiangao/dyadfast)
 
 Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.
