@@ -22,6 +22,10 @@ Native R package for frengression — causal data simulation via deep generative
 
 R package for causal inference in observational studies, randomized experiments, and network interference settings. Implements OLS, IPW, AIPW, matching, DML, difference-in-means, stratified, ANCOVA, Fisher exact test, and clustered IPW/AIPW estimators. Based on Qu, Xiong, Liu & Imbens (2021).
 
+### [enmediation](https://github.com/xiangao/enmediation)
+
+Causal mediation analysis using energy regression (engression). Implements the semiparametric mediation framework of Liu, Williams, Rudolph & Díaz (2024) — supporting natural, organic, randomized interventional, and recanting twins effect decompositions — with engression (Shen & Meinshausen, 2024) replacing traditional ML ensembles for outcome regressions and Riesz representer estimation.
+
 ### [dyadfast](https://github.com/xiangao/dyadfast)
 
 Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.
