@@ -26,6 +26,10 @@ R package for causal inference in observational studies, randomized experiments,
 
 Causal mediation analysis using energy regression (engression). Implements the semiparametric mediation framework of Liu, Williams, Rudolph & Díaz (2024) — supporting natural, organic, randomized interventional, and recanting twins effect decompositions — with engression (Shen & Meinshausen, 2024) replacing traditional ML ensembles for outcome regressions and Riesz representer estimation.
 
+### [divR](https://github.com/xiangao/divR)
+
+Distributional Instrumental Variable regression in R. Implements the DIV method of Holovchak, Saengkyongam, Meinshausen & Shen (2025, [arXiv:2502.07641](https://arxiv.org/abs/2502.07641)), using energy score-based generative modelling to estimate the full interventional distribution P(Y|do(X)) in the presence of unmeasured confounding. Yields interventional means, quantiles, and samples. Includes vignettes reproducing all simulation studies and real-data applications from the paper.
+
 ### [dyadfast](https://github.com/xiangao/dyadfast)
 
 Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.
