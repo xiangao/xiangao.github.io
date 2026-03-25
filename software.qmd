@@ -24,11 +24,7 @@ R package for causal inference in observational studies, randomized experiments,
 
 ### [dma](https://github.com/xiangao/dma)
 
-Distributional Mediation Analysis using energy regression. Extends enmediation with full observation weight propagation through all nuisance estimation stages (outcome regressions and Riesz representer cascade), richer result objects storing trained models for post-hoc diagnostics, and counterfactual density visualization. Supports natural, organic, randomized interventional, and recanting twins effect decompositions following Liu, Williams, Rudolph & Díaz (2024).
-
-### [enmediation](https://github.com/xiangao/enmediation)
-
-Causal mediation analysis using energy regression (engression). Implements the semiparametric mediation framework of Liu, Williams, Rudolph & Díaz (2024) — supporting natural, organic, randomized interventional, and recanting twins effect decompositions — with engression (Shen & Meinshausen, 2024) replacing traditional ML ensembles for outcome regressions and Riesz representer estimation.
+Distributional Mediation Analysis using energy regression. Implements the semiparametric mediation framework of Liu, Williams, Rudolph & Díaz (2024) with engression replacing traditional ML ensembles for outcome regressions and Riesz representer estimation. Supports natural, organic, randomized interventional, and recanting twins effect decompositions with full observation weight propagation, counterfactual density visualization via Riesz representer importance weighting, and richer result objects storing trained models for post-hoc diagnostics.
 
 ### [divR](https://github.com/xiangao/divR)
 
