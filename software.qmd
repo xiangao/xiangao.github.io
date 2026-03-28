@@ -10,6 +10,10 @@ Software packages for applied econometrics and data analysis.
 
 R implementation of the Lee & Wooldridge (2025) panel difference-in-differences estimator via unit-specific pre-treatment transformations.
 
+### [endid](https://github.com/xiangao/endid)
+
+Engression-based distributional difference-in-differences. Combines Lee & Wooldridge (2025) panel DiD transformations with engression distributional regression to estimate quantile treatment effects (QTE) and counterfactual distributions. Supports both common-timing and staggered adoption designs with parallel bootstrap inference.
+
 ### [Rnetrics](https://github.com/xiangao/Rnetrics)
 
 R port of Bryan Graham's [ipt](https://github.com/bryangraham/ipt) and [netrics](https://github.com/bryangraham/netrics) Python packages. Implements dyadic regression with bias-corrected dyadic-robust standard errors following Graham (forthcoming, *Handbook of Econometrics*).
