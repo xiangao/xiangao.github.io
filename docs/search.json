@@ -165,7 +165,7 @@
     "href": "software.html#python-packages",
     "title": "Software",
     "section": "Python Packages",
-    "text": "Python Packages\n\nnetrics-fast\nMemory-efficient dyadic regression with bias-corrected dyadic-robust standard errors, following Graham (forthcoming, Handbook of Econometrics). Fast reimplementation of netrics.dyadic_regression using chunked O(nK) scatter-add Hajek projection."
+    "text": "Python Packages\n\ntorch-engression\nGPU-accelerated distributional regression via energy scores. A PyTorch-native reimplementation of engression (Shen & Meinshausen, 2024) with automatic GPU acceleration, mixed precision training, and torch.compile support.\n\n\ntorch-endid\nGPU-accelerated distributional difference-in-differences via engression. Combines lwdid panel transformations (Lee & Wooldridge, 2025) with torch-engression GPU-accelerated distributional regression to produce ATT, quantile treatment effects (QTE), and counterfactual distributions from panel data.\n\n\nnetrics-fast\nMemory-efficient dyadic regression with bias-corrected dyadic-robust standard errors, following Graham (forthcoming, Handbook of Econometrics). Fast reimplementation of netrics.dyadic_regression using chunked O(nK) scatter-add Hajek projection."
   },
   {
     "objectID": "posts/uplift/index.html",
@@ -222,5 +222,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "software.html#julia-packages",
+    "href": "software.html#julia-packages",
+    "title": "Software",
+    "section": "Julia Packages",
+    "text": "Julia Packages\n\nEngression.jl\nJulia implementation of Engression — distributional regression via energy scores (Shen & Meinshausen, 2024). Estimates the entire conditional distribution P(Y|X) by training a stochastic neural network, particularly useful for non-Gaussian, multi-modal, or heteroskedastic conditional distributions.\n\n\nEndid.jl\nJulia implementation of distributional difference-in-differences using Engression. Follows Lee & Wooldridge (2025), leveraging stochastic neural networks to estimate entire treatment effect distributions including quantile treatment effects (QTE). Supports both common-timing and staggered adoption designs."
   }
 ]
