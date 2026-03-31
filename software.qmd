@@ -40,6 +40,24 @@ Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Ass
 
 ## Python Packages
 
+### [torch-engression](https://github.com/xiangao/torch-engression)
+
+GPU-accelerated distributional regression via energy scores. A PyTorch-native reimplementation of [engression](https://github.com/xwshen51/engression) (Shen & Meinshausen, 2024) with automatic GPU acceleration, mixed precision training, and `torch.compile` support.
+
+### [torch-endid](https://github.com/xiangao/torch-endid)
+
+GPU-accelerated distributional difference-in-differences via engression. Combines [lwdid](https://github.com/xwshen51/lwdid) panel transformations (Lee & Wooldridge, 2025) with torch-engression GPU-accelerated distributional regression to produce ATT, quantile treatment effects (QTE), and counterfactual distributions from panel data.
+
 ### [netrics-fast](https://github.com/xiangao/netrics-fast)
 
 Memory-efficient dyadic regression with bias-corrected dyadic-robust standard errors, following Graham (forthcoming, *Handbook of Econometrics*). Fast reimplementation of `netrics.dyadic_regression` using chunked O(nK) scatter-add Hajek projection.
+
+## Julia Packages
+
+### [Engression.jl](https://github.com/xiangao/Engression.jl)
+
+Julia implementation of Engression — distributional regression via energy scores (Shen & Meinshausen, 2024). Estimates the entire conditional distribution P(Y|X) by training a stochastic neural network, particularly useful for non-Gaussian, multi-modal, or heteroskedastic conditional distributions.
+
+### [Endid.jl](https://github.com/xiangao/Endid.jl)
+
+Julia implementation of distributional difference-in-differences using Engression. Follows Lee & Wooldridge (2025), leveraging stochastic neural networks to estimate entire treatment effect distributions including quantile treatment effects (QTE). Supports both common-timing and staggered adoption designs.
