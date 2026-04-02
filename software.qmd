@@ -62,6 +62,10 @@ Julia implementation of Engression — distributional regression via energy scor
 
 Julia implementation of distributional difference-in-differences using Engression. Follows Lee & Wooldridge (2025), leveraging stochastic neural networks to estimate entire treatment effect distributions including quantile treatment effects (QTE). Supports both common-timing and staggered adoption designs.
 
+### [NPCausal.jl](https://github.com/xiangao/NPCausal.jl)
+
+Julia port of R's `npcausal` package for nonparametric causal inference via influence functions and cross-fitting. Implements doubly robust ATE, ATT, IV-LATE with sharpness, IV bounds, continuous treatment dose-response curves, and incremental propensity score interventions for longitudinal data, using EvoTrees/MLJ with multi-threaded cross-fitting.
+
 ### [Panelest.jl](https://github.com/xiangao/Panelest.jl)
 
 High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain's conditional logit, and Wooldridge's correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R's fixest API. Includes a DuckDB extension for out-of-core estimation on datasets larger than RAM.
