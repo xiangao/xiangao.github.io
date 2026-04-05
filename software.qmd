@@ -54,6 +54,10 @@ Memory-efficient dyadic regression with bias-corrected dyadic-robust standard er
 
 ## Julia Packages
 
+### [SynthDiD.jl](https://github.com/xiangao/SynthDiD.jl)
+
+Julia implementation of Synthetic Difference-in-Differences (Arkhangelsky, Athey, Hirshberg, Imbens & Wager, 2021, *AER*). Provides all three estimators (SDiD, SC, DiD), bootstrap/jackknife/placebo standard errors, per-period effect curves, and Plots.jl recipes — translated from the R `synthdid` package.
+
 ### [Engression.jl](https://github.com/xiangao/Engression.jl)
 
 Julia implementation of Engression — distributional regression via energy scores (Shen & Meinshausen, 2024). Estimates the entire conditional distribution P(Y|X) by training a stochastic neural network, particularly useful for non-Gaussian, multi-modal, or heteroskedastic conditional distributions.
