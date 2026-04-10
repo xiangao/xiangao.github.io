@@ -73,3 +73,15 @@ Julia port of R's `npcausal` package for nonparametric causal inference via infl
 ### [Panelest.jl](https://github.com/xiangao/Panelest.jl)
 
 High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain's conditional logit, and Wooldridge's correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R's fixest API. Includes a DuckDB extension for out-of-core estimation on datasets larger than RAM.
+
+### [Lavaan.jl](https://github.com/xiangao/Lavaan.jl)
+
+Julia port of the R [lavaan](https://lavaan.ugent.be) package for Structural Equation Modeling, using the same model syntax for easy migration. Supports CFA, SEM, latent growth curves, generalized SEM with Poisson/mixed indicators, Structural After Measurement (SAM), ordinal DWLS/WLSMV estimation, multilevel and crossed-effects models, labeled paths, and defined parameters — with 326 tests and 7 Quarto vignettes.
+
+### [Crumble.jl](https://github.com/xiangao/Crumble.jl)
+
+Julia implementation of causal mediation analysis via cross-fitted nuisance estimation and linear optimal transport permutation for instrument construction. Estimates natural direct and indirect effects with support for continuous treatments, multiple mediators, instrumental variables (with one-hot encoding for categorical instruments), and clustered cross-fitting.
+
+### [RDRobust.jl](https://github.com/xiangao/RDRobust.jl)
+
+Julia port of the `rdrobust` package for Regression Discontinuity designs (Calonico, Cattaneo, Farrell & Titiunik). Provides local polynomial point estimators with robust bias-corrected confidence intervals (`rdrobust`), data-driven MSE/CER-optimal bandwidth selection (`rdbwselect`), and RD plot construction (`rdplot`), with support for fuzzy RD, covariate adjustment, and cluster-robust inference.
