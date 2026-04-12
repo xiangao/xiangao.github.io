@@ -15,3 +15,7 @@ Collected blog posts on applied econometrics, compiled into book format.
 ### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
 
 A guide to modern causal inference methods for applied researchers.
+
+### [Causal Econometrics in Julia](https://xiangao.github.io/causal_econometrics_julia/)
+
+A hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables, regression discontinuity, and mediation analysis.
