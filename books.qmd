@@ -8,9 +8,9 @@ My summaries on what I have learned on econometrics and causal inference.
 
 A practical guide to applied econometrics with examples in R and Stata.
 
-### [Blog Book](https://xiangao.github.io/blog_book/)
+### [Topics on econometrics and causal inference](https://xiangao.github.io/blog_book/)
 
-Collected blog posts on applied econometrics, compiled into book format.
+Collected notes and posts on applied econometrics and causal inference, compiled into book format.
 
 ### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
 

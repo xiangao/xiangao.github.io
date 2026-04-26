@@ -137,7 +137,7 @@
     "href": "books.html",
     "title": "Online Books",
     "section": "",
-    "text": "My summaries on what I have learned on econometrics and causal inference.\n\nEconometrics Guide\nA practical guide to applied econometrics with examples in R and Stata.\n\n\nBlog Book\nCollected blog posts on applied econometrics, compiled into book format.\n\n\nCausal Econometrics Guide\nA guide to modern causal inference methods for applied researchers.\n\n\nCausal Econometrics in Julia\nA hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables, regression discontinuity, and mediation analysis."
+    "text": "My summaries on what I have learned on econometrics and causal inference.\n\nEconometrics Guide\nA practical guide to applied econometrics with examples in R and Stata.\n\n\nTopics on econometrics and causal inference\nCollected notes and posts on applied econometrics and causal inference, compiled into book format.\n\n\nCausal Econometrics Guide\nA guide to modern causal inference methods for applied researchers.\n\n\nCausal Econometrics in Julia\nA hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables, regression discontinuity, and mediation analysis."
   },
   {
     "objectID": "blogs.html",
