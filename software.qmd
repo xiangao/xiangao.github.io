@@ -85,3 +85,11 @@ Julia implementation of causal mediation analysis via cross-fitted nuisance esti
 ### [RDRobust.jl](https://github.com/xiangao/RDRobust.jl)
 
 Julia port of the `rdrobust` package for Regression Discontinuity designs (Calonico, Cattaneo, Farrell & Titiunik). Provides local polynomial point estimators with robust bias-corrected confidence intervals (`rdrobust`), data-driven MSE/CER-optimal bandwidth selection (`rdbwselect`), and RD plot construction (`rdplot`), with support for fuzzy RD, covariate adjustment, and cluster-robust inference.
+
+### [FlexCausal.jl](https://github.com/xiangao/FlexCausalJL)
+
+Julia port of Anna Guo's `flexCausal` R package for causal effect estimation in acyclic directed mixed graphs (ADMGs) with unmeasured variables. Implements ADMG graph utilities (fixability, primal fixability, reachable closure, NPS checks), backdoor TMLE/one-step/IPW/G-computation for fixable treatments, and sequential-regression TMLE for primal-fixable treatments. Supports SuperLearner nuisance estimation via MLJ stacked ensembles (GLM, random forest, gradient boosting) with optional K-fold cross-fitting.
+
+### [FlexMissing.jl](https://github.com/xiangao/FlexMissing.jl)
+
+Julia port of Anna Guo's `flexMissing` R package for identification and estimation under missing data using missingness DAGs (mDAGs). Implements the full identification algorithm for target and full laws, d-separation, propensity score estimation with IPW clique construction, and a sandwich-variance M-estimation solver for user-defined estimating equations. Supports SuperLearner propensity estimation via MLJ stacked ensembles.
