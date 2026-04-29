@@ -243,6 +243,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="flexmissing.jl" class="level3">
 <h3 class="anchored" data-anchor-id="flexmissing.jl"><a href="https://github.com/xiangao/FlexMissing.jl">FlexMissing.jl</a></h3>
 <p>Julia port of Anna Guo’s <code>flexMissing</code> R package for identification and estimation under missing data using missingness DAGs (mDAGs). Implements the full identification algorithm for target and full laws, d-separation, propensity score estimation with IPW clique construction, and a sandwich-variance M-estimation solver for user-defined estimating equations. Supports SuperLearner propensity estimation via MLJ stacked ensembles.</p>
+</section>
+<section id="causalgraphs.jl" class="level3">
+<h3 class="anchored" data-anchor-id="causalgraphs.jl"><a href="https://github.com/xiangao/CausalGraphs.jl">CausalGraphs.jl</a></h3>
+<p>Unified Julia package for semiparametric causal inference in acyclic directed mixed graphs (ADMGs) with hidden variables. Combines the graph theory of anankeR (intrinsic sets, One-Line ID), the TMLE estimation machinery of FlexCausal.jl, and the missing-data pipeline of FlexMissing.jl into a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy: backdoor TMLE for a-fixable treatments, NPS-TMLE for p-fixable treatments, and augmented nested IPW (Bhattacharya, Nabi &amp; Shpitser, 2022) for the most general nested-fixable case. Supports SuperLearner nuisance estimation with K-fold cross-fitting throughout.</p>
 
 
 </section>
