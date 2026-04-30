@@ -236,17 +236,9 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="rdrobust.jl"><a href="https://github.com/xiangao/RDRobust.jl">RDRobust.jl</a></h3>
 <p>Julia port of the <code>rdrobust</code> package for Regression Discontinuity designs (Calonico, Cattaneo, Farrell &amp; Titiunik). Provides local polynomial point estimators with robust bias-corrected confidence intervals (<code>rdrobust</code>), data-driven MSE/CER-optimal bandwidth selection (<code>rdbwselect</code>), and RD plot construction (<code>rdplot</code>), with support for fuzzy RD, covariate adjustment, and cluster-robust inference.</p>
 </section>
-<section id="flexcausal.jl" class="level3">
-<h3 class="anchored" data-anchor-id="flexcausal.jl"><a href="https://github.com/xiangao/FlexCausalJL">FlexCausal.jl</a></h3>
-<p>Julia port of Anna Guo’s <code>flexCausal</code> R package for causal effect estimation in acyclic directed mixed graphs (ADMGs) with unmeasured variables. Implements ADMG graph utilities (fixability, primal fixability, reachable closure, NPS checks), backdoor TMLE/one-step/IPW/G-computation for fixable treatments, and sequential-regression TMLE for primal-fixable treatments. Supports SuperLearner nuisance estimation via MLJ stacked ensembles (GLM, random forest, gradient boosting) with optional K-fold cross-fitting.</p>
-</section>
-<section id="flexmissing.jl" class="level3">
-<h3 class="anchored" data-anchor-id="flexmissing.jl"><a href="https://github.com/xiangao/FlexMissing.jl">FlexMissing.jl</a></h3>
-<p>Julia port of Anna Guo’s <code>flexMissing</code> R package for identification and estimation under missing data using missingness DAGs (mDAGs). Implements the full identification algorithm for target and full laws, d-separation, propensity score estimation with IPW clique construction, and a sandwich-variance M-estimation solver for user-defined estimating equations. Supports SuperLearner propensity estimation via MLJ stacked ensembles.</p>
-</section>
 <section id="causalgraphs.jl" class="level3">
 <h3 class="anchored" data-anchor-id="causalgraphs.jl"><a href="https://github.com/xiangao/CausalGraphs.jl">CausalGraphs.jl</a></h3>
-<p>Unified Julia package for semiparametric causal inference in acyclic directed mixed graphs (ADMGs) with hidden variables. Combines the graph theory of anankeR (intrinsic sets, One-Line ID), the TMLE estimation machinery of FlexCausal.jl, and the missing-data pipeline of FlexMissing.jl into a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy: backdoor TMLE for a-fixable treatments, NPS-TMLE for p-fixable treatments, and augmented nested IPW (Bhattacharya, Nabi &amp; Shpitser, 2022) for the most general nested-fixable case. Supports SuperLearner nuisance estimation with K-fold cross-fitting throughout.</p>
+<p>Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy.</p>
 
 
 </section>
