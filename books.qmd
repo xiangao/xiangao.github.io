@@ -18,4 +18,4 @@ A guide to modern causal inference methods for applied researchers.
 
 ### [Causal Econometrics in Julia](https://xiangao.github.io/causal_econometrics_julia/)
 
-A hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables (including IV in Poisson models with fixed effects), regression discontinuity, and mediation analysis.
+A hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables, regression discontinuity, and mediation analysis.
