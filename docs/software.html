@@ -220,6 +220,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="npcausal.jl"><a href="https://github.com/xiangao/NPCausal.jl">NPCausal.jl</a></h3>
 <p>Julia port of R’s <code>npcausal</code> package for nonparametric causal inference via influence functions and cross-fitting. Implements doubly robust ATE, ATT, IV-LATE with sharpness, IV bounds, continuous treatment dose-response curves, and incremental propensity score interventions for longitudinal data, using EvoTrees/MLJ with multi-threaded cross-fitting.</p>
 </section>
+<section id="causalestimate.jl" class="level3">
+<h3 class="anchored" data-anchor-id="causalestimate.jl"><a href="https://github.com/xiangao/CausalEstimate.jl">CausalEstimate.jl</a></h3>
+<p>Unified Julia front-end for causal effect estimation. Provides a single <code>estimate(...)</code> interface for typed estimands such as ATE and ATT, with TMLE and AIPW backends plus graph-implied backdoor adjustment through <code>CausalGraphs.jl</code>. Intended to consolidate and extend the roles of <code>NPCausal.jl</code> and <code>TMLE.jl</code>.</p>
+</section>
 <section id="panelest.jl" class="level3">
 <h3 class="anchored" data-anchor-id="panelest.jl"><a href="https://github.com/xiangao/Panelest.jl">Panelest.jl</a></h3>
 <p>High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain’s conditional logit, and Wooldridge’s correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R’s fixest API. Includes a DuckDB extension for out-of-core estimation on datasets larger than RAM.</p>
