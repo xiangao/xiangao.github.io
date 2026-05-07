@@ -66,10 +66,6 @@ Julia implementation of Engression — distributional regression via energy scor
 
 Julia implementation of distributional difference-in-differences using Engression. Follows Lee & Wooldridge (2025), leveraging stochastic neural networks to estimate entire treatment effect distributions including quantile treatment effects (QTE). Supports both common-timing and staggered adoption designs.
 
-### [NPCausal.jl](https://github.com/xiangao/NPCausal.jl)
-
-Julia port of R's `npcausal` package for nonparametric causal inference via influence functions and cross-fitting. Implements doubly robust ATE, ATT, IV-LATE with sharpness, IV bounds, continuous treatment dose-response curves, and incremental propensity score interventions for longitudinal data, using EvoTrees/MLJ with multi-threaded cross-fitting.
-
 ### [CausalEstimate.jl](https://github.com/xiangao/CausalEstimate.jl)
 
 Unified Julia front-end for causal effect estimation. Provides a single `estimate(...)` interface for typed estimands such as ATE and ATT, with TMLE and AIPW backends plus graph-implied backdoor adjustment through `CausalGraphs.jl`. Intended to consolidate and extend the roles of `NPCausal.jl` and `TMLE.jl`.
