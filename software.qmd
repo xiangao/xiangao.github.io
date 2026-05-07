@@ -68,7 +68,7 @@ Julia implementation of distributional difference-in-differences using Engressio
 
 ### [CausalEstimate.jl](https://github.com/xiangao/CausalEstimate.jl)
 
-Unified Julia front-end for causal effect estimation. Provides a single `estimate(...)` interface for typed estimands such as ATE and ATT, with TMLE and AIPW backends plus graph-implied backdoor adjustment through `CausalGraphs.jl`. Intended to consolidate and extend the roles of `NPCausal.jl` and `TMLE.jl`.
+Unified Julia front-end for causal effect estimation. Provides a single `estimate(...)` interface for typed estimands such as ATE and ATT, with TMLE and AIPW backends, cross-fitting, doubly robust inference, and graph-implied backdoor adjustment through `CausalGraphs.jl`.
 
 ### [Panelest.jl](https://github.com/xiangao/Panelest.jl)
 
