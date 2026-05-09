@@ -72,7 +72,7 @@ Unified Julia front-end for causal effect estimation. Provides a single `estimat
 
 ### [Panelest.jl](https://github.com/xiangao/Panelest.jl)
 
-High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain's conditional logit, and Wooldridge's correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R's fixest API. Includes a DuckDB extension for out-of-core estimation on datasets larger than RAM.
+High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain's conditional logit, and Wooldridge's correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R's fixest API. Also includes `emfx()` for ETWFE post-processing — aggregating cohort×time interaction coefficients into overall ATT, event-study, and calendar-time effects (Wooldridge 2021).
 
 ### [Lavaan.jl](https://github.com/xiangao/Lavaan.jl)
 
