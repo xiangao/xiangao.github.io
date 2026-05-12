@@ -54,6 +54,10 @@ Memory-efficient dyadic regression with bias-corrected dyadic-robust standard er
 
 ## Julia Packages
 
+### [TASC.jl](https://github.com/xiangao/TASC.jl)
+
+Julia implementation of Time-Aware Synthetic Control (Rho, Illick, Narasipura, Abadie, Hsu & Misra, 2026, [arXiv:2601.03099](https://arxiv.org/abs/2601.03099)). Fits low-rank state-space models with Kalman filtering, RTS smoothing, EM learning, model-based confidence bands, multiple treated units, classical synthetic-control baselines, simulation utilities, and plotting recipes.
+
 ### [SynthDiD.jl](https://github.com/xiangao/SynthDiD.jl)
 
 Julia implementation of Synthetic Difference-in-Differences (Arkhangelsky, Athey, Hirshberg, Imbens & Wager, 2021, *AER*). Provides all three estimators (SDiD, SC, DiD), bootstrap/jackknife/placebo standard errors, per-period effect curves, and Plots.jl recipes — translated from the R `synthdid` package.
