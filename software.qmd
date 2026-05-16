@@ -97,3 +97,7 @@ Julia port of the `rdrobust` package for Regression Discontinuity designs (Calon
 ### [CausalGraphs.jl](https://github.com/xiangao/CausalGraphs.jl)
 
 Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single `estimate_causal()` entry point that auto-routes by identification strategy.
+
+### [ShiftShareIV.jl](https://github.com/xiangao/ShiftShareIV.jl)
+
+Julia toolkit for shift-share (Bartik) instrumental variables. Implements `bartik_iv` for constructing the instrument $B_\ell = \sum_k s_{\ell k} g_k$, `rotemberg_weights` for the GPSS (2020) decomposition that expresses the 2SLS estimate as a weighted average of industry-specific IV estimates, and `bhj_collapse` for the BHJ (2022) shock-level data aggregation used for inference robust to cross-location correlation from shared shocks.

@@ -14,8 +14,8 @@ Collected notes and posts on applied econometrics and causal inference, compiled
 
 ### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
 
-A guide to modern causal inference methods for applied researchers.
+A guide to modern causal inference methods for applied researchers, with R implementations. Covers identification and potential outcomes (ATE, ATT, LATE, CATE, and QTE on a single DGP), DAG-based identification and estimation, nonparametric methods (TMLE, DoubleML), difference-in-differences, IV and regression discontinuity, shift-share (Bartik) IV, Poisson IV, causal mediation, causal discovery (PC and GES for observed variables, FCI and RFCI for latent variables), and a graph-to-estimate pipeline using `causaleffect` and `dagitty`.
 
 ### [Causal Econometrics in Julia](https://xiangao.github.io/causal_econometrics_julia/)
 
-A hands-on guide to causal inference and econometrics using Julia, covering identification, estimation, difference-in-differences, instrumental variables (including IV in Poisson models with fixed effects), regression discontinuity, mediation analysis, and causal discovery (PC, RSL-D, FCI, and L-MARVEL algorithms for both observed and latent-variable settings).
+A hands-on guide to causal inference and econometrics using Julia, covering identification, potential outcomes, five estimands on one DGP, estimation (RA, IPW, AIPW, TMLE, DoubleML), distributional treatment effects, difference-in-differences (ETWFE, synthetic control, synthetic DiD, TASC), shift-share (Bartik) IV with Rotemberg weights and BHJ shock-level inference, IV and regression discontinuity, Poisson IV, mediation analysis, and causal discovery (PC, RSL-D, FCI, L-MARVEL) with a graph-to-estimate pipeline via `CausalGraphs.jl`.

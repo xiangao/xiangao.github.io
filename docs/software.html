@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -247,6 +276,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="causalgraphs.jl" class="level3">
 <h3 class="anchored" data-anchor-id="causalgraphs.jl"><a href="https://github.com/xiangao/CausalGraphs.jl">CausalGraphs.jl</a></h3>
 <p>Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy.</p>
+</section>
+<section id="shiftshareiv.jl" class="level3">
+<h3 class="anchored" data-anchor-id="shiftshareiv.jl"><a href="https://github.com/xiangao/ShiftShareIV.jl">ShiftShareIV.jl</a></h3>
+<p>Julia toolkit for shift-share (Bartik) instrumental variables. Implements <code>bartik_iv</code> for constructing the instrument <span class="math inline">\(B_\ell = \sum_k s_{\ell k} g_k\)</span>, <code>rotemberg_weights</code> for the GPSS (2020) decomposition that expresses the 2SLS estimate as a weighted average of industry-specific IV estimates, and <code>bhj_collapse</code> for the BHJ (2022) shock-level data aggregation used for inference robust to cross-location correlation from shared shocks.</p>
 
 
 </section>
