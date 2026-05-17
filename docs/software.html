@@ -259,7 +259,7 @@ window.Quarto = {
 </section>
 <section id="panelest.jl" class="level3">
 <h3 class="anchored" data-anchor-id="panelest.jl"><a href="https://github.com/xiangao/Panelest.jl">Panelest.jl</a></h3>
-<p>High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain’s conditional logit, and Wooldridge’s correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R’s fixest API. Also includes <code>emfx()</code> for ETWFE post-processing — aggregating cohort×time interaction coefficients into overall ATT, event-study, and calendar-time effects (Wooldridge 2021).</p>
+<p>High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain’s conditional logit, and Wooldridge’s correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R’s fixest API. v0.1.3 adds <code>etwfe()</code> — a one-call Wooldridge ETWFE estimator that defaults to cohort FE + year FE (the correct specification, avoiding the contamination bias from unit FE), supports <code>family="poisson"</code> for count outcomes, and returns an <code>ETWFEResult</code> with a dedicated <code>emfx()</code> method for ATT, event-study, and calendar-time aggregation.</p>
 </section>
 <section id="lavaan.jl" class="level3">
 <h3 class="anchored" data-anchor-id="lavaan.jl"><a href="https://github.com/xiangao/Lavaan.jl">Lavaan.jl</a></h3>
