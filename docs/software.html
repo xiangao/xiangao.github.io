@@ -215,6 +215,10 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="dyadfast"><a href="https://github.com/xiangao/dyadfast">dyadfast</a></h3>
 <p>Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii &amp; Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.</p>
 </section>
+<section id="didint" class="level3">
+<h3 class="anchored" data-anchor-id="didint"><a href="https://github.com/xiangao/didint">didint</a></h3>
+<p>Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, <a href="https://arxiv.org/abs/2306.12003">arXiv:2306.12003</a>) and the dynamic / staggered-adoption extensions of Xu (2026, <em>AEA P&amp;P</em> 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon <em>Lista de Municípios Prioritários</em> application.</p>
+</section>
 </section>
 <section id="python-packages" class="level2">
 <h2 class="anchored" data-anchor-id="python-packages">Python Packages</h2>
@@ -276,6 +280,10 @@ window.Quarto = {
 <section id="causalgraphs.jl" class="level3">
 <h3 class="anchored" data-anchor-id="causalgraphs.jl"><a href="https://github.com/xiangao/CausalGraphs.jl">CausalGraphs.jl</a></h3>
 <p>Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy.</p>
+</section>
+<section id="didinterference.jl" class="level3">
+<h3 class="anchored" data-anchor-id="didinterference.jl"><a href="https://github.com/xiangao/DidInterference.jl">DidInterference.jl</a></h3>
+<p>Julia port of <code>didint</code>. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion.</p>
 </section>
 <section id="shiftshareiv.jl" class="level3">
 <h3 class="anchored" data-anchor-id="shiftshareiv.jl"><a href="https://github.com/xiangao/ShiftShareIV.jl">ShiftShareIV.jl</a></h3>

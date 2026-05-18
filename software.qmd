@@ -38,6 +38,10 @@ Distributional Instrumental Variable regression in R. Implements the DIV method 
 
 Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.
 
+### [didint](https://github.com/xiangao/didint)
+
+Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, [arXiv:2306.12003](https://arxiv.org/abs/2306.12003)) and the dynamic / staggered-adoption extensions of Xu (2026, *AEA P&P* 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon *Lista de Municípios Prioritários* application.
+
 ## Python Packages
 
 ### [torch-engression](https://github.com/xiangao/torch-engression)
@@ -97,6 +101,10 @@ Julia port of the `rdrobust` package for Regression Discontinuity designs (Calon
 ### [CausalGraphs.jl](https://github.com/xiangao/CausalGraphs.jl)
 
 Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single `estimate_causal()` entry point that auto-routes by identification strategy.
+
+### [DidInterference.jl](https://github.com/xiangao/DidInterference.jl)
+
+Julia port of `didint`. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion.
 
 ### [ShiftShareIV.jl](https://github.com/xiangao/ShiftShareIV.jl)
 
