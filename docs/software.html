@@ -217,7 +217,11 @@ window.Quarto = {
 </section>
 <section id="didint" class="level3">
 <h3 class="anchored" data-anchor-id="didint"><a href="https://github.com/xiangao/didint">didint</a></h3>
-<p>Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, <a href="https://arxiv.org/abs/2306.12003">arXiv:2306.12003</a>) and the dynamic / staggered-adoption extensions of Xu (2026, <em>AEA P&amp;P</em> 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon <em>Lista de Municípios Prioritários</em> application.</p>
+<p>Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, <a href="https://arxiv.org/abs/2306.12003">arXiv:2306.12003</a>) and the dynamic / staggered-adoption extensions of Xu (2026, <em>AEA P&amp;P</em> 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon <em>Lista de Municípios Prioritários</em> application. <a href="https://xiangao.github.io/didint/">Docs site</a>.</p>
+</section>
+<section id="tvhte" class="level3">
+<h3 class="anchored" data-anchor-id="tvhte"><a href="https://github.com/xiangao/tvhte">tvhte</a></h3>
+<p>Time-varying heterogeneous treatment effects in event studies. Implements Botosaru &amp; Liu (2025, <a href="https://arxiv.org/abs/2509.13698">arXiv:2509.13698</a>) — a dynamic panel with correlated random coefficients on <span class="math inline">\((\alpha_i, \delta_{i0})\)</span> and AR(1) event-time effects, two-step QMLE + Tweedie/Gaussian empirical Bayes for unit-level posterior trajectories. Also Botosaru &amp; Liu (2026, <em>AEA P&amp;P</em> 116: 70-74) — homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. Handles staggered cohorts (including never-treated). <a href="https://xiangao.github.io/tvhte/">Docs site</a>.</p>
 </section>
 </section>
 <section id="python-packages" class="level2">
@@ -283,7 +287,11 @@ window.Quarto = {
 </section>
 <section id="didinterference.jl" class="level3">
 <h3 class="anchored" data-anchor-id="didinterference.jl"><a href="https://github.com/xiangao/DidInterference.jl">DidInterference.jl</a></h3>
-<p>Julia port of <code>didint</code>. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion.</p>
+<p>Julia port of <code>didint</code>. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion. <a href="https://xiangao.github.io/DidInterference.jl/">Docs site</a>.</p>
+</section>
+<section id="tvhte.jl" class="level3">
+<h3 class="anchored" data-anchor-id="tvhte.jl"><a href="https://github.com/xiangao/TVHTE.jl">TVHTE.jl</a></h3>
+<p>Julia port of <code>tvhte</code>. Time-varying heterogeneous treatment effects in event studies (Botosaru &amp; Liu 2025, 2026): dynamic panel with correlated random coefficients on <span class="math inline">\((\alpha_i, \delta_{i0})\)</span>, AR(1) event-time effects, QMLE + Gaussian-conjugate empirical Bayes, plus homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. <a href="https://xiangao.github.io/TVHTE.jl/">Docs site</a>.</p>
 </section>
 <section id="shiftshareiv.jl" class="level3">
 <h3 class="anchored" data-anchor-id="shiftshareiv.jl"><a href="https://github.com/xiangao/ShiftShareIV.jl">ShiftShareIV.jl</a></h3>

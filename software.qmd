@@ -40,7 +40,11 @@ Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii & Ass
 
 ### [didint](https://github.com/xiangao/didint)
 
-Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, [arXiv:2306.12003](https://arxiv.org/abs/2306.12003)) and the dynamic / staggered-adoption extensions of Xu (2026, *AEA P&P* 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon *Lista de Municípios Prioritários* application.
+Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, [arXiv:2306.12003](https://arxiv.org/abs/2306.12003)) and the dynamic / staggered-adoption extensions of Xu (2026, *AEA P&P* 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon *Lista de Municípios Prioritários* application. [Docs site](https://xiangao.github.io/didint/).
+
+### [tvhte](https://github.com/xiangao/tvhte)
+
+Time-varying heterogeneous treatment effects in event studies. Implements Botosaru & Liu (2025, [arXiv:2509.13698](https://arxiv.org/abs/2509.13698)) — a dynamic panel with correlated random coefficients on $(\alpha_i, \delta_{i0})$ and AR(1) event-time effects, two-step QMLE + Tweedie/Gaussian empirical Bayes for unit-level posterior trajectories. Also Botosaru & Liu (2026, *AEA P&P* 116: 70-74) — homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. Handles staggered cohorts (including never-treated). [Docs site](https://xiangao.github.io/tvhte/).
 
 ## Python Packages
 
@@ -104,7 +108,11 @@ Unified Julia package for graph-based causal inference in acyclic directed mixed
 
 ### [DidInterference.jl](https://github.com/xiangao/DidInterference.jl)
 
-Julia port of `didint`. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion.
+Julia port of `didint`. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion. [Docs site](https://xiangao.github.io/DidInterference.jl/).
+
+### [TVHTE.jl](https://github.com/xiangao/TVHTE.jl)
+
+Julia port of `tvhte`. Time-varying heterogeneous treatment effects in event studies (Botosaru & Liu 2025, 2026): dynamic panel with correlated random coefficients on $(\alpha_i, \delta_{i0})$, AR(1) event-time effects, QMLE + Gaussian-conjugate empirical Bayes, plus homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. [Docs site](https://xiangao.github.io/TVHTE.jl/).
 
 ### [ShiftShareIV.jl](https://github.com/xiangao/ShiftShareIV.jl)
 
