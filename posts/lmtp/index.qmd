@@ -204,8 +204,6 @@ The authors advocate two estimators, TMLE and SDR (sequentially doubly robust es
 # Using lmtp package
 
 ```{r sim3, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
-#| output: asis
-
 library(tidyverse)
 library(lmtp)
 d1 <- function(data, trt) {
@@ -233,8 +231,6 @@ print(treat)
 ```
 
 ```{r sim4, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
-#| output: asis
-
 d2 <- function(data, trt) {
   rep(0, nrow(data))
 }
@@ -306,8 +302,6 @@ Suppose we are interested in comparing the dynamic treatment regime to a static 
 
 
 ```{r sim6, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
-#| output: asis
-
 fit_MR <- lmtp_sdr(
   data = bmi, 
   trt = c("A1", "A2"), 
@@ -326,8 +320,6 @@ fit_MR
 Let’s also estimate the effect of an intervention where all patients receive a calorie deficit diet at both time points.
 
 ```{r sim7, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
-#| output: asis
-
 fit_CD <- lmtp_sdr(
   data = bmi, 
   trt = c("A1", "A2"), 

@@ -4,6 +4,11 @@ project:
 
 website:
   title: "Xiang Ao"
+  site-url: https://xiangao.github.io
+  description: "Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software."
+  open-graph: true
+  twitter-card: true
+  repo-url: https://github.com/xiangao/xiangao.github.io
   navbar:
     left:
       - href: index.qmd

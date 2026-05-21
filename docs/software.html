@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.">
 
 <title>Software – Xiang Ao</title>
 <style>
@@ -69,37 +70,14 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Software – Xiang Ao">
+<meta property="og:description" content="Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.">
+<meta property="og:site_name" content="Xiang Ao">
+<meta name="twitter:title" content="Software – Xiang Ao">
+<meta name="twitter:description" content="Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -166,6 +144,11 @@ window.Quarto = {
 <h1 class="title">Software</h1>
 </div>
 
+<div>
+  <div class="description">
+    Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -183,122 +166,212 @@ window.Quarto = {
 <p>Software packages for applied econometrics and data analysis.</p>
 <section id="r-packages" class="level2">
 <h2 class="anchored" data-anchor-id="r-packages">R Packages</h2>
-<section id="lwdidr" class="level3">
-<h3 class="anchored" data-anchor-id="lwdidr"><a href="https://github.com/xiangao/lwdidR">lwdidR</a></h3>
-<p>R implementation of the Lee &amp; Wooldridge (2025) panel difference-in-differences estimator via unit-specific pre-treatment transformations.</p>
-</section>
-<section id="endid" class="level3">
-<h3 class="anchored" data-anchor-id="endid"><a href="https://github.com/xiangao/endid">endid</a></h3>
-<p>Engression-based distributional difference-in-differences. Combines Lee &amp; Wooldridge (2025) panel DiD transformations with engression distributional regression to estimate quantile treatment effects (QTE) and counterfactual distributions. Supports both common-timing and staggered adoption designs with parallel bootstrap inference.</p>
-</section>
-<section id="rnetrics" class="level3">
-<h3 class="anchored" data-anchor-id="rnetrics"><a href="https://github.com/xiangao/Rnetrics">Rnetrics</a></h3>
-<p>R port of Bryan Graham’s <a href="https://github.com/bryangraham/ipt">ipt</a> and <a href="https://github.com/bryangraham/netrics">netrics</a> Python packages. Implements dyadic regression with bias-corrected dyadic-robust standard errors following Graham (forthcoming, <em>Handbook of Econometrics</em>).</p>
-</section>
-<section id="rfrengression" class="level3">
-<h3 class="anchored" data-anchor-id="rfrengression"><a href="https://github.com/xiangao/Rfrengression">Rfrengression</a></h3>
-<p>Native R package for frengression — causal data simulation via deep generative models. Learns joint distributions of treatments, outcomes, and confounders from observational data, enabling interventional sampling and custom causal margin specification. Implements cross-sectional, longitudinal, and survival model classes. Based on Shen &amp; Meinshausen (2025, <a href="https://arxiv.org/abs/2508.01018">arXiv:2508.01018</a>).</p>
-</section>
-<section id="rcausalmodel" class="level3">
-<h3 class="anchored" data-anchor-id="rcausalmodel"><a href="https://github.com/xiangao/RCausalModel">RCausalModel</a></h3>
-<p>R package for causal inference in observational studies, randomized experiments, and network interference settings. Implements OLS, IPW, AIPW, matching, DML, difference-in-means, stratified, ANCOVA, Fisher exact test, and clustered IPW/AIPW estimators. Based on Qu, Xiong, Liu &amp; Imbens (2021).</p>
-</section>
-<section id="dma" class="level3">
-<h3 class="anchored" data-anchor-id="dma"><a href="https://github.com/xiangao/dma">dma</a></h3>
-<p>Distributional Mediation Analysis using energy regression. Implements the semiparametric mediation framework of Liu, Williams, Rudolph &amp; Díaz (2024) with engression replacing traditional ML ensembles for outcome regressions and Riesz representer estimation. Supports natural, organic, randomized interventional, and recanting twins effect decompositions with full observation weight propagation, counterfactual density visualization via Riesz representer importance weighting, and richer result objects storing trained models for post-hoc diagnostics.</p>
-</section>
-<section id="divr" class="level3">
-<h3 class="anchored" data-anchor-id="divr"><a href="https://github.com/xiangao/divR">divR</a></h3>
-<p>Distributional Instrumental Variable regression in R. Implements the DIV method of Holovchak, Saengkyongam, Meinshausen &amp; Shen (2025, <a href="https://arxiv.org/abs/2502.07641">arXiv:2502.07641</a>), using energy score-based generative modelling to estimate the full interventional distribution P(Y|do(X)) in the presence of unmeasured confounding. Yields interventional means, quantiles, and samples. Includes vignettes reproducing all simulation studies and real-data applications from the paper.</p>
-</section>
-<section id="dyadfast" class="level3">
-<h3 class="anchored" data-anchor-id="dyadfast"><a href="https://github.com/xiangao/dyadfast">dyadfast</a></h3>
-<p>Fast dyadic-robust variance estimation for R. Implements the Aronow, Samii &amp; Assenova (2015) cluster-robust variance estimator for dyadic data via a single O(nK) scatter-add pass.</p>
-</section>
-<section id="didint" class="level3">
-<h3 class="anchored" data-anchor-id="didint"><a href="https://github.com/xiangao/didint">didint</a></h3>
-<p>Doubly robust difference-in-differences with spatial interference. Implements the 2x2 estimator of Xu (2023, <a href="https://arxiv.org/abs/2306.12003">arXiv:2306.12003</a>) and the dynamic / staggered-adoption extensions of Xu (2026, <em>AEA P&amp;P</em> 116: 58-63). Three propensity models plus two outcome regressions, joint-IF aggregation across cohort-time cells, optional propensity-score trim and Conley spatial-HAC SEs. Vignette replicates the Brazil Amazon <em>Lista de Municípios Prioritários</em> application. <a href="https://xiangao.github.io/didint/">Docs site</a>.</p>
-</section>
-<section id="tvhte" class="level3">
-<h3 class="anchored" data-anchor-id="tvhte"><a href="https://github.com/xiangao/tvhte">tvhte</a></h3>
-<p>Time-varying heterogeneous treatment effects in event studies. Implements Botosaru &amp; Liu (2025, <a href="https://arxiv.org/abs/2509.13698">arXiv:2509.13698</a>) — a dynamic panel with correlated random coefficients on <span class="math inline">\((\alpha_i, \delta_{i0})\)</span> and AR(1) event-time effects, two-step QMLE + Tweedie/Gaussian empirical Bayes for unit-level posterior trajectories. Also Botosaru &amp; Liu (2026, <em>AEA P&amp;P</em> 116: 70-74) — homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. Handles staggered cohorts (including never-treated). <a href="https://xiangao.github.io/tvhte/">Docs site</a>.</p>
-</section>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Focus</th>
+<th>GitHub</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>lwdidR</code></td>
+<td>Panel difference-in-differences estimator using Lee-Wooldridge unit-specific pre-treatment transformations.</td>
+<td><a href="https://github.com/xiangao/lwdidR">GitHub</a></td>
+<td><a href="https://xiangao.github.io/lwdidR/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>endid</code></td>
+<td>Distributional difference-in-differences with engression for ATT, QTE, and counterfactual distributions.</td>
+<td><a href="https://github.com/xiangao/endid">GitHub</a></td>
+<td><a href="https://xiangao.github.io/endid/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>Rnetrics</code></td>
+<td>R port of Bryan Graham’s dyadic regression tools with bias-corrected dyadic-robust standard errors.</td>
+<td><a href="https://github.com/xiangao/Rnetrics">GitHub</a></td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><code>Rfrengression</code></td>
+<td>Causal data simulation with deep generative models and interventional sampling.</td>
+<td><a href="https://github.com/xiangao/Rfrengression">GitHub</a></td>
+<td><a href="https://xiangao.github.io/Rfrengression/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>RCausalModel</code></td>
+<td>Causal estimators for experiments, observational studies, and network interference settings.</td>
+<td><a href="https://github.com/xiangao/RCausalModel">GitHub</a></td>
+<td><a href="https://xiangao.github.io/RCausalModel/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>dma</code></td>
+<td>Distributional mediation analysis with energy regression and Riesz-representer weighting.</td>
+<td><a href="https://github.com/xiangao/dma">GitHub</a></td>
+<td><a href="https://xiangao.github.io/dma/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>divR</code></td>
+<td>Distributional instrumental-variable regression for interventional distributions under unmeasured confounding.</td>
+<td><a href="https://github.com/xiangao/divR">GitHub</a></td>
+<td><a href="https://xiangao.github.io/divR/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>dyadfast</code></td>
+<td>Fast dyadic-robust variance estimation using a single scatter-add pass.</td>
+<td><a href="https://github.com/xiangao/dyadfast">GitHub</a></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><code>didint</code></td>
+<td>Doubly robust difference-in-differences with spatial interference and Conley-style inference options.</td>
+<td><a href="https://github.com/xiangao/didint">GitHub</a></td>
+<td><a href="https://xiangao.github.io/didint/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>tvhte</code></td>
+<td>Time-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories.</td>
+<td><a href="https://github.com/xiangao/tvhte">GitHub</a></td>
+<td><a href="https://xiangao.github.io/tvhte/">Docs</a></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="python-packages" class="level2">
 <h2 class="anchored" data-anchor-id="python-packages">Python Packages</h2>
-<section id="torch-engression" class="level3">
-<h3 class="anchored" data-anchor-id="torch-engression"><a href="https://github.com/xiangao/torch-engression">torch-engression</a></h3>
-<p>GPU-accelerated distributional regression via energy scores. A PyTorch-native reimplementation of <a href="https://github.com/xwshen51/engression">engression</a> (Shen &amp; Meinshausen, 2024) with automatic GPU acceleration, mixed precision training, and <code>torch.compile</code> support.</p>
-</section>
-<section id="torch-endid" class="level3">
-<h3 class="anchored" data-anchor-id="torch-endid"><a href="https://github.com/xiangao/torch-endid">torch-endid</a></h3>
-<p>GPU-accelerated distributional difference-in-differences via engression. Combines <a href="https://github.com/xwshen51/lwdid">lwdid</a> panel transformations (Lee &amp; Wooldridge, 2025) with torch-engression GPU-accelerated distributional regression to produce ATT, quantile treatment effects (QTE), and counterfactual distributions from panel data.</p>
-</section>
-<section id="netrics-fast" class="level3">
-<h3 class="anchored" data-anchor-id="netrics-fast"><a href="https://github.com/xiangao/netrics-fast">netrics-fast</a></h3>
-<p>Memory-efficient dyadic regression with bias-corrected dyadic-robust standard errors, following Graham (forthcoming, <em>Handbook of Econometrics</em>). Fast reimplementation of <code>netrics.dyadic_regression</code> using chunked O(nK) scatter-add Hajek projection.</p>
-</section>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Focus</th>
+<th>GitHub</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>torch-engression</code></td>
+<td>GPU-accelerated distributional regression with energy scores in PyTorch.</td>
+<td><a href="https://github.com/xiangao/torch-engression">GitHub</a></td>
+<td><a href="https://xiangao.github.io/torch-engression/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>torch-endid</code></td>
+<td>GPU-accelerated distributional difference-in-differences built on <code>torch-engression</code>.</td>
+<td><a href="https://github.com/xiangao/torch-endid">GitHub</a></td>
+<td><a href="https://xiangao.github.io/torch-endid/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>netrics-fast</code></td>
+<td>Memory-efficient dyadic regression with chunked Hajek-projection variance estimation.</td>
+<td><a href="https://github.com/xiangao/netrics-fast">GitHub</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="julia-packages" class="level2">
 <h2 class="anchored" data-anchor-id="julia-packages">Julia Packages</h2>
-<section id="tasc.jl" class="level3">
-<h3 class="anchored" data-anchor-id="tasc.jl"><a href="https://github.com/xiangao/TASC.jl">TASC.jl</a></h3>
-<p>Julia implementation of Time-Aware Synthetic Control (Rho, Illick, Narasipura, Abadie, Hsu &amp; Misra, 2026, <a href="https://arxiv.org/abs/2601.03099">arXiv:2601.03099</a>). Fits low-rank state-space models with Kalman filtering, RTS smoothing, EM learning, model-based confidence bands, multiple treated units, classical synthetic-control baselines, simulation utilities, and plotting recipes.</p>
-</section>
-<section id="msc.jl" class="level3">
-<h3 class="anchored" data-anchor-id="msc.jl"><a href="https://github.com/xiangao/MSC.jl">MSC.jl</a></h3>
-<p>Julia implementation of multivariate synthetic control for high-dimensional disaggregated panels, inspired by Shen, Song &amp; Abadie (2025). Estimates sparse treated-unit counterfactuals for many treated units at once using a multivariate square-root Lasso objective, with matrix and DataFrame APIs, cross-validation, diagnostics, placebo routines, plotting recipes, and a runnable county-unemployment application that matches the paper’s reported sample counts.</p>
-</section>
-<section id="synthdid.jl" class="level3">
-<h3 class="anchored" data-anchor-id="synthdid.jl"><a href="https://github.com/xiangao/SynthDiD.jl">SynthDiD.jl</a></h3>
-<p>Julia implementation of Synthetic Difference-in-Differences (Arkhangelsky, Athey, Hirshberg, Imbens &amp; Wager, 2021, <em>AER</em>). Provides all three estimators (SDiD, SC, DiD), bootstrap/jackknife/placebo standard errors, per-period effect curves, and Plots.jl recipes — translated from the R <code>synthdid</code> package.</p>
-</section>
-<section id="engression.jl" class="level3">
-<h3 class="anchored" data-anchor-id="engression.jl"><a href="https://github.com/xiangao/Engression.jl">Engression.jl</a></h3>
-<p>Julia implementation of Engression — distributional regression via energy scores (Shen &amp; Meinshausen, 2024). Estimates the entire conditional distribution P(Y|X) by training a stochastic neural network, particularly useful for non-Gaussian, multi-modal, or heteroskedastic conditional distributions.</p>
-</section>
-<section id="endid.jl" class="level3">
-<h3 class="anchored" data-anchor-id="endid.jl"><a href="https://github.com/xiangao/Endid.jl">Endid.jl</a></h3>
-<p>Julia implementation of distributional difference-in-differences using Engression. Follows Lee &amp; Wooldridge (2025), leveraging stochastic neural networks to estimate entire treatment effect distributions including quantile treatment effects (QTE). Supports both common-timing and staggered adoption designs.</p>
-</section>
-<section id="causalestimate.jl" class="level3">
-<h3 class="anchored" data-anchor-id="causalestimate.jl"><a href="https://github.com/xiangao/CausalEstimate.jl">CausalEstimate.jl</a></h3>
-<p>Unified Julia front-end for causal effect estimation. Provides a single <code>estimate(...)</code> interface for typed estimands such as ATE and ATT, with TMLE and AIPW backends, cross-fitting, doubly robust inference, and graph-implied backdoor adjustment through <code>CausalGraphs.jl</code>.</p>
-</section>
-<section id="panelest.jl" class="level3">
-<h3 class="anchored" data-anchor-id="panelest.jl"><a href="https://github.com/xiangao/Panelest.jl">Panelest.jl</a></h3>
-<p>High-performance panel data estimation with high-dimensional fixed effects. Implements OLS, Poisson, Logit, Probit, Chamberlain’s conditional logit, and Wooldridge’s correlated random effects (CRE) via IRLS with FixedEffects.jl absorption, mirroring R’s fixest API. v0.1.3 adds <code>etwfe()</code> — a one-call Wooldridge ETWFE estimator that defaults to cohort FE + year FE (the correct specification, avoiding the contamination bias from unit FE), supports <code>family="poisson"</code> for count outcomes, and returns an <code>ETWFEResult</code> with a dedicated <code>emfx()</code> method for ATT, event-study, and calendar-time aggregation.</p>
-</section>
-<section id="lavaan.jl" class="level3">
-<h3 class="anchored" data-anchor-id="lavaan.jl"><a href="https://github.com/xiangao/Lavaan.jl">Lavaan.jl</a></h3>
-<p>Julia port of the R <a href="https://lavaan.ugent.be">lavaan</a> package for Structural Equation Modeling, using the same model syntax for easy migration. Supports CFA, SEM, latent growth curves, generalized SEM with Poisson/mixed indicators, Structural After Measurement (SAM), ordinal DWLS/WLSMV estimation, multilevel and crossed-effects models, labeled paths, and defined parameters — with 326 tests and 7 Quarto vignettes.</p>
-</section>
-<section id="crumble.jl" class="level3">
-<h3 class="anchored" data-anchor-id="crumble.jl"><a href="https://github.com/xiangao/Crumble.jl">Crumble.jl</a></h3>
-<p>Julia implementation of causal mediation analysis via cross-fitted nuisance estimation and linear optimal transport permutation for instrument construction. Estimates natural direct and indirect effects with support for continuous treatments, multiple mediators, instrumental variables (with one-hot encoding for categorical instruments), and clustered cross-fitting.</p>
-</section>
-<section id="rdrobust.jl" class="level3">
-<h3 class="anchored" data-anchor-id="rdrobust.jl"><a href="https://github.com/xiangao/RDRobust.jl">RDRobust.jl</a></h3>
-<p>Julia port of the <code>rdrobust</code> package for Regression Discontinuity designs (Calonico, Cattaneo, Farrell &amp; Titiunik). Provides local polynomial point estimators with robust bias-corrected confidence intervals (<code>rdrobust</code>), data-driven MSE/CER-optimal bandwidth selection (<code>rdbwselect</code>), and RD plot construction (<code>rdplot</code>), with support for fuzzy RD, covariate adjustment, and cluster-robust inference.</p>
-</section>
-<section id="causalgraphs.jl" class="level3">
-<h3 class="anchored" data-anchor-id="causalgraphs.jl"><a href="https://github.com/xiangao/CausalGraphs.jl">CausalGraphs.jl</a></h3>
-<p>Unified Julia package for graph-based causal inference in acyclic directed mixed graphs (ADMGs) and missingness DAGs (mDAGs). Provides graph construction and visualization, identification routines, backdoor/front-door/nested-fixable estimation, TMLE/one-step/IPW/G-computation estimators, missing-data identification and weighting, and a single <code>estimate_causal()</code> entry point that auto-routes by identification strategy.</p>
-</section>
-<section id="didinterference.jl" class="level3">
-<h3 class="anchored" data-anchor-id="didinterference.jl"><a href="https://github.com/xiangao/DidInterference.jl">DidInterference.jl</a></h3>
-<p>Julia port of <code>didint</code>. Doubly robust difference-in-differences with spatial interference (Xu 2023, 2026). Same estimators, same trim and joint-IF aggregation behaviour as the R companion. <a href="https://xiangao.github.io/DidInterference.jl/">Docs site</a>.</p>
-</section>
-<section id="tvhte.jl" class="level3">
-<h3 class="anchored" data-anchor-id="tvhte.jl"><a href="https://github.com/xiangao/TVHTE.jl">TVHTE.jl</a></h3>
-<p>Julia port of <code>tvhte</code>. Time-varying heterogeneous treatment effects in event studies (Botosaru &amp; Liu 2025, 2026): dynamic panel with correlated random coefficients on <span class="math inline">\((\alpha_i, \delta_{i0})\)</span>, AR(1) event-time effects, QMLE + Gaussian-conjugate empirical Bayes, plus homogeneous covariate-feedback factorisation with direct/indirect counterfactual decomposition. <a href="https://xiangao.github.io/TVHTE.jl/">Docs site</a>.</p>
-</section>
-<section id="shiftshareiv.jl" class="level3">
-<h3 class="anchored" data-anchor-id="shiftshareiv.jl"><a href="https://github.com/xiangao/ShiftShareIV.jl">ShiftShareIV.jl</a></h3>
-<p>Julia toolkit for shift-share (Bartik) instrumental variables. Implements <code>bartik_iv</code> for constructing the instrument <span class="math inline">\(B_\ell = \sum_k s_{\ell k} g_k\)</span>, <code>rotemberg_weights</code> for the GPSS (2020) decomposition that expresses the 2SLS estimate as a weighted average of industry-specific IV estimates, and <code>bhj_collapse</code> for the BHJ (2022) shock-level data aggregation used for inference robust to cross-location correlation from shared shocks.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Focus</th>
+<th>GitHub</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TASC.jl</code></td>
+<td>Time-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands.</td>
+<td><a href="https://github.com/xiangao/TASC.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/TASC.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>MSC.jl</code></td>
+<td>Multivariate synthetic control for high-dimensional panels with diagnostics, placebo routines, and plotting.</td>
+<td><a href="https://github.com/xiangao/MSC.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/MSC.jl/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>SynthDiD.jl</code></td>
+<td>Julia implementation of synthetic difference-in-differences, synthetic control, and DiD estimators.</td>
+<td><a href="https://github.com/xiangao/SynthDiD.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/SynthDiD.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>Engression.jl</code></td>
+<td>Distributional regression via energy scores for full conditional-distribution estimation.</td>
+<td><a href="https://github.com/xiangao/Engression.jl">GitHub</a></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><code>Endid.jl</code></td>
+<td>Distributional difference-in-differences with engression for treatment-effect distributions.</td>
+<td><a href="https://github.com/xiangao/Endid.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/Endid.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>CausalEstimate.jl</code></td>
+<td>Unified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment.</td>
+<td><a href="https://github.com/xiangao/CausalEstimate.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/CausalEstimate.jl/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>Panelest.jl</code></td>
+<td>High-performance panel estimation with absorbed fixed effects and event-study treatment-effect tools.</td>
+<td><a href="https://github.com/xiangao/Panelest.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/Panelest.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>Lavaan.jl</code></td>
+<td>Julia port of <code>lavaan</code> for CFA, SEM, latent-growth, generalized SEM, and multilevel models.</td>
+<td><a href="https://github.com/xiangao/Lavaan.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/Lavaan.jl/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>Crumble.jl</code></td>
+<td>Causal mediation analysis with cross-fitted nuisance estimation and optimal-transport instruments.</td>
+<td><a href="https://github.com/xiangao/Crumble.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/Crumble.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>RDRobust.jl</code></td>
+<td>Regression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots.</td>
+<td><a href="https://github.com/xiangao/RDRobust.jl">GitHub</a></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><code>CausalGraphs.jl</code></td>
+<td>Graph-based causal identification and estimation for ADMGs, missingness DAGs, and common adjustment strategies.</td>
+<td><a href="https://github.com/xiangao/CausalGraphs.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/CausalGraphs.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>DidInterference.jl</code></td>
+<td>Julia port of <code>didint</code> for doubly robust DiD with spatial interference.</td>
+<td><a href="https://github.com/xiangao/DidInterference.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/DidInterference.jl/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>TVHTE.jl</code></td>
+<td>Julia port of <code>tvhte</code> for dynamic heterogeneous treatment effects in event studies.</td>
+<td><a href="https://github.com/xiangao/TVHTE.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/TVHTE.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>ShiftShareIV.jl</code></td>
+<td>Shift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation.</td>
+<td><a href="https://github.com/xiangao/ShiftShareIV.jl">GitHub</a></td>
+<td><a href="https://xiangao.github.io/ShiftShareIV.jl/">Docs</a></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -375,7 +448,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/xiangao\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

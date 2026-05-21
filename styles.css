@@ -1,1 +1,147 @@
-/* css styles */
+:root {
+  --site-accent: #2563eb;
+  --site-ink: #172033;
+  --site-muted: #5f6b7a;
+  --site-border: #dbe3ee;
+  --site-surface: #f7f9fc;
+}
+
+body {
+  color: var(--site-ink);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--site-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-title {
+  font-weight: 700;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+main.content {
+  max-width: 1040px;
+}
+
+.quarto-about-trestles {
+  max-width: 1060px;
+  margin-inline: auto;
+  gap: 3rem;
+}
+
+.about-entity .about-image {
+  border: 1px solid var(--site-border);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+}
+
+.about-links {
+  gap: 0.65rem;
+}
+
+.about-link {
+  border-color: var(--site-border);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.about-link:hover {
+  background: var(--site-surface);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--site-ink);
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--site-border);
+}
+
+h3 {
+  margin-top: 1.6rem;
+}
+
+p,
+li {
+  max-width: 78ch;
+}
+
+.quarto-listing .listing-title {
+  font-weight: 700;
+}
+
+.quarto-listing .listing-description,
+.quarto-listing .listing-date,
+.quarto-listing .listing-categories {
+  color: var(--site-muted);
+}
+
+.table {
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.table thead th {
+  color: var(--site-ink);
+  background: var(--site-surface);
+  border-bottom: 1px solid var(--site-border);
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+}
+
+.table td:nth-child(1) {
+  width: 9rem;
+  white-space: nowrap;
+}
+
+.table td:nth-child(3),
+.table td:nth-child(4) {
+  width: 5.5rem;
+  white-space: nowrap;
+}
+
+pre.sourceCode {
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+}
+
+p code,
+li code {
+  color: #9f1239;
+  background: #fff1f2;
+  border-radius: 4px;
+  padding: 0.1rem 0.25rem;
+}
+
+@media (max-width: 700px) {
+  .quarto-about-trestles {
+    gap: 1.5rem;
+  }
+
+  .about-entity .about-image {
+    height: 14rem !important;
+    width: 14rem !important;
+  }
+}

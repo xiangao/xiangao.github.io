@@ -137,6 +137,18 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="longitudinal modified treatment policy (LMTP) – Xiang Ao">
+<meta property="og:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta property="og:image" content="https://xiangao.github.io/posts/lmtp/index_files/figure-html/dag1-1.png">
+<meta property="og:site_name" content="Xiang Ao">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="longitudinal modified treatment policy (LMTP) – Xiang Ao">
+<meta name="twitter:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta name="twitter:image" content="https://xiangao.github.io/posts/lmtp/index_files/figure-html/dag1-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -591,11 +603,11 @@ $ A2          &lt;chr&gt; "MR", "MR", "CD", "CD", "CD", "MR", "MR", "CD", "MR", 
 <span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>fit_dtr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>::: {.cell-output .cell-output-stdout}</p>
+<div class="cell-output cell-output-stdout">
 <pre><code>      Estimate: 35.853
     Std. error: 0.362</code></pre>
 </div>
-<p>:::</p>
+</div>
 </section>
 <section id="shift-function-2" class="level2">
 <h2 class="anchored" data-anchor-id="shift-function-2">shift function 2</h2>
@@ -648,13 +660,13 @@ Std. error: 0.301</code></pre>
 <p>Finally, we can compare the three treatment regimes using the <code>lmtp_contrast</code> function.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lmtp_contrast</span>(fit_dtr, fit_MR, <span class="at">ref =</span> fit_CD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>::: {.cell-output .cell-output-stdout}</p>
+<div class="cell-output cell-output-stdout">
 <pre><code>
   shift  ref estimate std.error conf.low conf.high p.value
 1  35.9 35.1    0.801     0.335    0.144      1.46  0.0169
 2  35.8 35.1    0.778     0.335    0.122      1.43  0.0201</code></pre>
 </div>
-<p>:::</p>
+</div>
 
 
 </section>
@@ -734,7 +746,7 @@ Std. error: 0.301</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/xiangao\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

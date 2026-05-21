@@ -1,5 +1,6 @@
 ---
 title: "Blogs"
+description: "Posts and notes on causal inference, econometrics, machine learning, and statistical programming."
 listing:
   contents: posts
   sort: "date desc"
