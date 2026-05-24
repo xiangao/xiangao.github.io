@@ -9,16 +9,6 @@
 body {
   color: var(--site-ink);
   line-height: 1.65;
-  background: #1a1a1a url('chalkboard.jpg') center/cover fixed;
-}
-
-/* keep content readable against dark background */
-.page-layout-article .content,
-.quarto-about-trestles,
-#quarto-content {
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 8px;
-  padding: 2rem;
 }
 
 a {

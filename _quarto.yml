@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: docs
-  resources: chalkboard.jpg
 
 website:
   title: "Xiang Ao"
