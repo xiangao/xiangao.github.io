@@ -12,8 +12,8 @@ Collected notes and posts on applied econometrics and causal inference, compiled
 
 ### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
 
-A guide to modern causal inference methods for applied researchers, with R implementations. Companion to the blog book.
+A guide to modern causal inference methods for applied researchers, with R implementations. The causal discovery chapter now pairs the PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. Companion to the blog book.
 
 ### [Causal Econometrics in Julia](https://xiangao.github.io/causal_econometrics_julia/)
 
-A hands-on guide to causal inference and econometrics using Julia. Cross-linked with the R book.
+A hands-on guide to causal inference and econometrics using Julia. The causal discovery chapter now applies PC and RSL-D to real survey-weighted PISA 2022 data. Cross-linked with the R book.

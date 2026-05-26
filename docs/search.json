@@ -116,7 +116,7 @@
     "href": "books.html",
     "title": "Online Books",
     "section": "",
-    "text": "Econometrics Guide\nA practical guide to applied econometrics with examples in R and Stata.\n\n\nTopics on econometrics and causal inference\nCollected notes and posts on applied econometrics and causal inference, compiled into book format.\n\n\nCausal Econometrics Guide\nA guide to modern causal inference methods for applied researchers, with R implementations. Companion to the blog book.\n\n\nCausal Econometrics in Julia\nA hands-on guide to causal inference and econometrics using Julia. Cross-linked with the R book."
+    "text": "Econometrics Guide\nA practical guide to applied econometrics with examples in R and Stata.\n\n\nTopics on econometrics and causal inference\nCollected notes and posts on applied econometrics and causal inference, compiled into book format.\n\n\nCausal Econometrics Guide\nA guide to modern causal inference methods for applied researchers, with R implementations. The causal discovery chapter now pairs the PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. Companion to the blog book.\n\n\nCausal Econometrics in Julia\nA hands-on guide to causal inference and econometrics using Julia. The causal discovery chapter now applies PC and RSL-D to real survey-weighted PISA 2022 data. Cross-linked with the R book."
   },
   {
     "objectID": "other-blogs.html",
