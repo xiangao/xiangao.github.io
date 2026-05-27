@@ -71,9 +71,8 @@ h3 {
 }
 
 h2 {
-  margin-top: 2.2rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--site-border);
+  margin-top: 2.4rem;
+  padding-bottom: 0.2rem;
 }
 
 h3 {
@@ -112,13 +111,17 @@ li {
 }
 
 .table td:nth-child(1) {
-  width: 9rem;
+  width: 11rem;
   white-space: nowrap;
 }
 
-.table td:nth-child(3),
+.table td:nth-child(2) {
+  width: 4.5rem;
+  white-space: nowrap;
+}
+
 .table td:nth-child(4) {
-  width: 5.5rem;
+  width: 9.5rem;
   white-space: nowrap;
 }
 

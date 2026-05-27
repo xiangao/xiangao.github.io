@@ -1,3 +1,21 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Don't commit large data dumps at the repo root
+/*.csv
+/*.Rdata
+
+# Per-post data files (only needed if re-executing — posts are frozen)
+posts/**/*.Rdata
+posts/**/*.rda
+posts/**/*.csv
+
+# R / RStudio user-machine state
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+renv/
+renv.lock
+.Rprofile

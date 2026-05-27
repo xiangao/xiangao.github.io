@@ -6,6 +6,8 @@ website:
   title: "Xiang Ao"
   site-url: https://xiangao.github.io
   description: "Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software."
+  favicon: profile.jpg
+  image: profile.jpg
   open-graph: true
   twitter-card: true
   repo-url: https://github.com/xiangao/xiangao.github.io
@@ -28,8 +30,6 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: cosmo
+      dark: darkly
     css: styles.css
-
-editor: visual

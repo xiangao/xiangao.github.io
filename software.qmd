@@ -3,46 +3,61 @@ title: "Software"
 description: "Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing."
 ---
 
-Software packages for applied econometrics and data analysis.
+Open-source packages I maintain across **R**, **Python**, and **Julia**, grouped by research topic. Many are companion implementations across languages — the R version is usually the reference; the Julia/Python ports add performance, GPU support, or interoperability.
 
-## R Packages
+## Difference-in-Differences & Event Studies
 
-| Package | Focus | GitHub | Docs |
+| Package | Lang | Focus | Links |
 |---|---|---|---|
-| `lwdidR` | Panel difference-in-differences estimator using Lee-Wooldridge unit-specific pre-treatment transformations. | [GitHub](https://github.com/xiangao/lwdidR) | [Docs](https://xiangao.github.io/lwdidR/) |
-| `endid` | Distributional difference-in-differences with engression for ATT, QTE, and counterfactual distributions. | [GitHub](https://github.com/xiangao/endid) | [Docs](https://xiangao.github.io/endid/) |
-| `Rnetrics` | R port of Bryan Graham's dyadic regression tools with bias-corrected dyadic-robust standard errors. | [GitHub](https://github.com/xiangao/Rnetrics) | - |
-| `Rfrengression` | Causal data simulation with deep generative models and interventional sampling. | [GitHub](https://github.com/xiangao/Rfrengression) | [Docs](https://xiangao.github.io/Rfrengression/) |
-| `RCausalModel` | Causal estimators for experiments, observational studies, and network interference settings. | [GitHub](https://github.com/xiangao/RCausalModel) | [Docs](https://xiangao.github.io/RCausalModel/) |
-| `dma` | Distributional mediation analysis with energy regression and Riesz-representer weighting. | [GitHub](https://github.com/xiangao/dma) | [Docs](https://xiangao.github.io/dma/) |
-| `divR` | Distributional instrumental-variable regression for interventional distributions under unmeasured confounding. | [GitHub](https://github.com/xiangao/divR) | [Docs](https://xiangao.github.io/divR/) |
-| `dyadfast` | Fast dyadic-robust variance estimation using a single scatter-add pass. | [GitHub](https://github.com/xiangao/dyadfast) | - |
-| `didint` | Doubly robust difference-in-differences with spatial interference and Conley-style inference options. | [GitHub](https://github.com/xiangao/didint) | [Docs](https://xiangao.github.io/didint/) |
-| `tvhte` | Time-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories. | [GitHub](https://github.com/xiangao/tvhte) | [Docs](https://xiangao.github.io/tvhte/) |
+| `lwdidR` | R | Panel DiD with Lee–Wooldridge unit-specific pre-treatment transformations. | [GitHub](https://github.com/xiangao/lwdidR) · [Docs](https://xiangao.github.io/lwdidR/) |
+| `didint` | R | Doubly robust DiD with spatial interference and Conley-style inference. | [GitHub](https://github.com/xiangao/didint) · [Docs](https://xiangao.github.io/didint/) |
+| `tvhte` | R | Time-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories. | [GitHub](https://github.com/xiangao/tvhte) · [Docs](https://xiangao.github.io/tvhte/) |
+| `DidInterference.jl` | Julia | Julia port of `didint` for DR DiD under spatial interference. | [GitHub](https://github.com/xiangao/DidInterference.jl) · [Docs](https://xiangao.github.io/DidInterference.jl/) |
+| `TVHTE.jl` | Julia | Julia port of `tvhte` for dynamic HTE in event studies. | [GitHub](https://github.com/xiangao/TVHTE.jl) · [Docs](https://xiangao.github.io/TVHTE.jl/) |
 
-## Python Packages
+## Synthetic Control & Counterfactuals
 
-| Package | Focus | GitHub | Docs |
+| Package | Lang | Focus | Links |
 |---|---|---|---|
-| `torch-engression` | GPU-accelerated distributional regression with energy scores in PyTorch. | [GitHub](https://github.com/xiangao/torch-engression) | [Docs](https://xiangao.github.io/torch-engression/) |
-| `torch-endid` | GPU-accelerated distributional difference-in-differences built on `torch-engression`. | [GitHub](https://github.com/xiangao/torch-endid) | [Docs](https://xiangao.github.io/torch-endid/) |
-| `netrics-fast` | Memory-efficient dyadic regression with chunked Hajek-projection variance estimation. | [GitHub](https://github.com/xiangao/netrics-fast) | - |
+| `TASC.jl` | Julia | Time-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands. | [GitHub](https://github.com/xiangao/TASC.jl) · [Docs](https://xiangao.github.io/TASC.jl/) |
+| `MSC.jl` | Julia | Multivariate synthetic control for high-dimensional panels with diagnostics, placebos, and plotting. | [GitHub](https://github.com/xiangao/MSC.jl) · [Docs](https://xiangao.github.io/MSC.jl/) |
+| `SynthDiD.jl` | Julia | Synthetic difference-in-differences, synthetic control, and DiD estimators. | [GitHub](https://github.com/xiangao/SynthDiD.jl) · [Docs](https://xiangao.github.io/SynthDiD.jl/) |
 
-## Julia Packages
+## Distributional Methods (Engression family)
 
-| Package | Focus | GitHub | Docs |
+| Package | Lang | Focus | Links |
 |---|---|---|---|
-| `TASC.jl` | Time-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands. | [GitHub](https://github.com/xiangao/TASC.jl) | [Docs](https://xiangao.github.io/TASC.jl/) |
-| `MSC.jl` | Multivariate synthetic control for high-dimensional panels with diagnostics, placebo routines, and plotting. | [GitHub](https://github.com/xiangao/MSC.jl) | [Docs](https://xiangao.github.io/MSC.jl/) |
-| `SynthDiD.jl` | Julia implementation of synthetic difference-in-differences, synthetic control, and DiD estimators. | [GitHub](https://github.com/xiangao/SynthDiD.jl) | [Docs](https://xiangao.github.io/SynthDiD.jl/) |
-| `Engression.jl` | Distributional regression via energy scores for full conditional-distribution estimation. | [GitHub](https://github.com/xiangao/Engression.jl) | - |
-| `Endid.jl` | Distributional difference-in-differences with engression for treatment-effect distributions. | [GitHub](https://github.com/xiangao/Endid.jl) | [Docs](https://xiangao.github.io/Endid.jl/) |
-| `CausalEstimate.jl` | Unified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment. | [GitHub](https://github.com/xiangao/CausalEstimate.jl) | [Docs](https://xiangao.github.io/CausalEstimate.jl/) |
-| `Panelest.jl` | High-performance panel estimation with absorbed fixed effects and event-study treatment-effect tools. | [GitHub](https://github.com/xiangao/Panelest.jl) | [Docs](https://xiangao.github.io/Panelest.jl/) |
-| `Lavaan.jl` | Julia port of `lavaan` for CFA, SEM, latent-growth, generalized SEM, and multilevel models. | [GitHub](https://github.com/xiangao/Lavaan.jl) | [Docs](https://xiangao.github.io/Lavaan.jl/) |
-| `Crumble.jl` | Causal mediation analysis with cross-fitted nuisance estimation and optimal-transport instruments. | [GitHub](https://github.com/xiangao/Crumble.jl) | [Docs](https://xiangao.github.io/Crumble.jl/) |
-| `RDRobust.jl` | Regression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots. | [GitHub](https://github.com/xiangao/RDRobust.jl) | - |
-| `CausalGraphs.jl` | Graph-based causal identification and estimation for ADMGs, missingness DAGs, and common adjustment strategies. | [GitHub](https://github.com/xiangao/CausalGraphs.jl) | [Docs](https://xiangao.github.io/CausalGraphs.jl/) |
-| `DidInterference.jl` | Julia port of `didint` for doubly robust DiD with spatial interference. | [GitHub](https://github.com/xiangao/DidInterference.jl) | [Docs](https://xiangao.github.io/DidInterference.jl/) |
-| `TVHTE.jl` | Julia port of `tvhte` for dynamic heterogeneous treatment effects in event studies. | [GitHub](https://github.com/xiangao/TVHTE.jl) | [Docs](https://xiangao.github.io/TVHTE.jl/) |
-| `ShiftShareIV.jl` | Shift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation. | [GitHub](https://github.com/xiangao/ShiftShareIV.jl) | [Docs](https://xiangao.github.io/ShiftShareIV.jl/) |
+| `endid` | R | Distributional DiD with engression for ATT, QTE, and counterfactual distributions. | [GitHub](https://github.com/xiangao/endid) · [Docs](https://xiangao.github.io/endid/) |
+| `dma` | R | Distributional mediation analysis with energy regression and Riesz-representer weighting. | [GitHub](https://github.com/xiangao/dma) · [Docs](https://xiangao.github.io/dma/) |
+| `divR` | R | Distributional IV regression for interventional distributions under unmeasured confounding. | [GitHub](https://github.com/xiangao/divR) · [Docs](https://xiangao.github.io/divR/) |
+| `Rfrengression` | R | Causal data simulation with deep generative models and interventional sampling. | [GitHub](https://github.com/xiangao/Rfrengression) · [Docs](https://xiangao.github.io/Rfrengression/) |
+| `torch-engression` | Python | GPU-accelerated distributional regression with energy scores in PyTorch. | [GitHub](https://github.com/xiangao/torch-engression) · [Docs](https://xiangao.github.io/torch-engression/) |
+| `torch-endid` | Python | GPU-accelerated distributional DiD built on `torch-engression`. | [GitHub](https://github.com/xiangao/torch-endid) · [Docs](https://xiangao.github.io/torch-endid/) |
+| `Engression.jl` | Julia | Distributional regression via energy scores for conditional-distribution estimation. | [GitHub](https://github.com/xiangao/Engression.jl) |
+| `Endid.jl` | Julia | Distributional DiD with engression for treatment-effect distributions. | [GitHub](https://github.com/xiangao/Endid.jl) · [Docs](https://xiangao.github.io/Endid.jl/) |
+
+## Causal Estimation Frameworks
+
+| Package | Lang | Focus | Links |
+|---|---|---|---|
+| `RCausalModel` | R | Causal estimators for experiments, observational studies, and network interference. | [GitHub](https://github.com/xiangao/RCausalModel) · [Docs](https://xiangao.github.io/RCausalModel/) |
+| `CausalEstimate.jl` | Julia | Unified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment. | [GitHub](https://github.com/xiangao/CausalEstimate.jl) · [Docs](https://xiangao.github.io/CausalEstimate.jl/) |
+| `Crumble.jl` | Julia | Causal mediation with cross-fitted nuisance estimation and optimal-transport instruments. | [GitHub](https://github.com/xiangao/Crumble.jl) · [Docs](https://xiangao.github.io/Crumble.jl/) |
+| `CausalGraphs.jl` | Julia | Graph-based causal identification for ADMGs, missingness DAGs, and common adjustment strategies. | [GitHub](https://github.com/xiangao/CausalGraphs.jl) · [Docs](https://xiangao.github.io/CausalGraphs.jl/) |
+
+## Network & Dyadic Regression
+
+| Package | Lang | Focus | Links |
+|---|---|---|---|
+| `Rnetrics` | R | Port of Bryan Graham's dyadic regression tools with bias-corrected dyadic-robust standard errors. | [GitHub](https://github.com/xiangao/Rnetrics) |
+| `dyadfast` | R | Fast dyadic-robust variance estimation using a single scatter-add pass. | [GitHub](https://github.com/xiangao/dyadfast) |
+| `netrics-fast` | Python | Memory-efficient dyadic regression with chunked Hájek-projection variance estimation. | [GitHub](https://github.com/xiangao/netrics-fast) |
+
+## Other Econometric Tools
+
+| Package | Lang | Focus | Links |
+|---|---|---|---|
+| `Panelest.jl` | Julia | High-performance panel estimation with absorbed fixed effects and event-study tools. | [GitHub](https://github.com/xiangao/Panelest.jl) · [Docs](https://xiangao.github.io/Panelest.jl/) |
+| `RDRobust.jl` | Julia | Regression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots. | [GitHub](https://github.com/xiangao/RDRobust.jl) |
+| `ShiftShareIV.jl` | Julia | Shift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation. | [GitHub](https://github.com/xiangao/ShiftShareIV.jl) · [Docs](https://xiangao.github.io/ShiftShareIV.jl/) |
+| `Lavaan.jl` | Julia | Julia port of `lavaan` for CFA, SEM, latent-growth, generalized SEM, and multilevel models. | [GitHub](https://github.com/xiangao/Lavaan.jl) · [Docs](https://xiangao.github.io/Lavaan.jl/) |

@@ -81,28 +81,49 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "Software packages for applied econometrics and data analysis."
+    "text": "Open-source packages I maintain across R, Python, and Julia, grouped by research topic. Many are companion implementations across languages — the R version is usually the reference; the Julia/Python ports add performance, GPU support, or interoperability."
   },
   {
-    "objectID": "software.html#r-packages",
-    "href": "software.html#r-packages",
+    "objectID": "software.html#difference-in-differences-event-studies",
+    "href": "software.html#difference-in-differences-event-studies",
     "title": "Software",
-    "section": "R Packages",
-    "text": "R Packages\n\n\n\nPackage\nFocus\nGitHub\nDocs\n\n\n\n\nlwdidR\nPanel difference-in-differences estimator using Lee-Wooldridge unit-specific pre-treatment transformations.\nGitHub\nDocs\n\n\nendid\nDistributional difference-in-differences with engression for ATT, QTE, and counterfactual distributions.\nGitHub\nDocs\n\n\nRnetrics\nR port of Bryan Graham’s dyadic regression tools with bias-corrected dyadic-robust standard errors.\nGitHub\n-\n\n\nRfrengression\nCausal data simulation with deep generative models and interventional sampling.\nGitHub\nDocs\n\n\nRCausalModel\nCausal estimators for experiments, observational studies, and network interference settings.\nGitHub\nDocs\n\n\ndma\nDistributional mediation analysis with energy regression and Riesz-representer weighting.\nGitHub\nDocs\n\n\ndivR\nDistributional instrumental-variable regression for interventional distributions under unmeasured confounding.\nGitHub\nDocs\n\n\ndyadfast\nFast dyadic-robust variance estimation using a single scatter-add pass.\nGitHub\n-\n\n\ndidint\nDoubly robust difference-in-differences with spatial interference and Conley-style inference options.\nGitHub\nDocs\n\n\ntvhte\nTime-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories.\nGitHub\nDocs"
+    "section": "Difference-in-Differences & Event Studies",
+    "text": "Difference-in-Differences & Event Studies\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nlwdidR\nR\nPanel DiD with Lee–Wooldridge unit-specific pre-treatment transformations.\nGitHub · Docs\n\n\ndidint\nR\nDoubly robust DiD with spatial interference and Conley-style inference.\nGitHub · Docs\n\n\ntvhte\nR\nTime-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories.\nGitHub · Docs\n\n\nDidInterference.jl\nJulia\nJulia port of didint for DR DiD under spatial interference.\nGitHub · Docs\n\n\nTVHTE.jl\nJulia\nJulia port of tvhte for dynamic HTE in event studies.\nGitHub · Docs"
   },
   {
-    "objectID": "software.html#python-packages",
-    "href": "software.html#python-packages",
+    "objectID": "software.html#synthetic-control-counterfactuals",
+    "href": "software.html#synthetic-control-counterfactuals",
     "title": "Software",
-    "section": "Python Packages",
-    "text": "Python Packages\n\n\n\nPackage\nFocus\nGitHub\nDocs\n\n\n\n\ntorch-engression\nGPU-accelerated distributional regression with energy scores in PyTorch.\nGitHub\nDocs\n\n\ntorch-endid\nGPU-accelerated distributional difference-in-differences built on torch-engression.\nGitHub\nDocs\n\n\nnetrics-fast\nMemory-efficient dyadic regression with chunked Hajek-projection variance estimation.\nGitHub\n-"
+    "section": "Synthetic Control & Counterfactuals",
+    "text": "Synthetic Control & Counterfactuals\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nTASC.jl\nJulia\nTime-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands.\nGitHub · Docs\n\n\nMSC.jl\nJulia\nMultivariate synthetic control for high-dimensional panels with diagnostics, placebos, and plotting.\nGitHub · Docs\n\n\nSynthDiD.jl\nJulia\nSynthetic difference-in-differences, synthetic control, and DiD estimators.\nGitHub · Docs"
   },
   {
-    "objectID": "software.html#julia-packages",
-    "href": "software.html#julia-packages",
+    "objectID": "software.html#distributional-methods-engression-family",
+    "href": "software.html#distributional-methods-engression-family",
     "title": "Software",
-    "section": "Julia Packages",
-    "text": "Julia Packages\n\n\n\nPackage\nFocus\nGitHub\nDocs\n\n\n\n\nTASC.jl\nTime-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands.\nGitHub\nDocs\n\n\nMSC.jl\nMultivariate synthetic control for high-dimensional panels with diagnostics, placebo routines, and plotting.\nGitHub\nDocs\n\n\nSynthDiD.jl\nJulia implementation of synthetic difference-in-differences, synthetic control, and DiD estimators.\nGitHub\nDocs\n\n\nEngression.jl\nDistributional regression via energy scores for full conditional-distribution estimation.\nGitHub\n-\n\n\nEndid.jl\nDistributional difference-in-differences with engression for treatment-effect distributions.\nGitHub\nDocs\n\n\nCausalEstimate.jl\nUnified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment.\nGitHub\nDocs\n\n\nPanelest.jl\nHigh-performance panel estimation with absorbed fixed effects and event-study treatment-effect tools.\nGitHub\nDocs\n\n\nLavaan.jl\nJulia port of lavaan for CFA, SEM, latent-growth, generalized SEM, and multilevel models.\nGitHub\nDocs\n\n\nCrumble.jl\nCausal mediation analysis with cross-fitted nuisance estimation and optimal-transport instruments.\nGitHub\nDocs\n\n\nRDRobust.jl\nRegression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots.\nGitHub\n-\n\n\nCausalGraphs.jl\nGraph-based causal identification and estimation for ADMGs, missingness DAGs, and common adjustment strategies.\nGitHub\nDocs\n\n\nDidInterference.jl\nJulia port of didint for doubly robust DiD with spatial interference.\nGitHub\nDocs\n\n\nTVHTE.jl\nJulia port of tvhte for dynamic heterogeneous treatment effects in event studies.\nGitHub\nDocs\n\n\nShiftShareIV.jl\nShift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation.\nGitHub\nDocs"
+    "section": "Distributional Methods (Engression family)",
+    "text": "Distributional Methods (Engression family)\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nendid\nR\nDistributional DiD with engression for ATT, QTE, and counterfactual distributions.\nGitHub · Docs\n\n\ndma\nR\nDistributional mediation analysis with energy regression and Riesz-representer weighting.\nGitHub · Docs\n\n\ndivR\nR\nDistributional IV regression for interventional distributions under unmeasured confounding.\nGitHub · Docs\n\n\nRfrengression\nR\nCausal data simulation with deep generative models and interventional sampling.\nGitHub · Docs\n\n\ntorch-engression\nPython\nGPU-accelerated distributional regression with energy scores in PyTorch.\nGitHub · Docs\n\n\ntorch-endid\nPython\nGPU-accelerated distributional DiD built on torch-engression.\nGitHub · Docs\n\n\nEngression.jl\nJulia\nDistributional regression via energy scores for conditional-distribution estimation.\nGitHub\n\n\nEndid.jl\nJulia\nDistributional DiD with engression for treatment-effect distributions.\nGitHub · Docs"
+  },
+  {
+    "objectID": "software.html#causal-estimation-frameworks",
+    "href": "software.html#causal-estimation-frameworks",
+    "title": "Software",
+    "section": "Causal Estimation Frameworks",
+    "text": "Causal Estimation Frameworks\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nRCausalModel\nR\nCausal estimators for experiments, observational studies, and network interference.\nGitHub · Docs\n\n\nCausalEstimate.jl\nJulia\nUnified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment.\nGitHub · Docs\n\n\nCrumble.jl\nJulia\nCausal mediation with cross-fitted nuisance estimation and optimal-transport instruments.\nGitHub · Docs\n\n\nCausalGraphs.jl\nJulia\nGraph-based causal identification for ADMGs, missingness DAGs, and common adjustment strategies.\nGitHub · Docs"
+  },
+  {
+    "objectID": "software.html#network-dyadic-regression",
+    "href": "software.html#network-dyadic-regression",
+    "title": "Software",
+    "section": "Network & Dyadic Regression",
+    "text": "Network & Dyadic Regression\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nRnetrics\nR\nPort of Bryan Graham’s dyadic regression tools with bias-corrected dyadic-robust standard errors.\nGitHub\n\n\ndyadfast\nR\nFast dyadic-robust variance estimation using a single scatter-add pass.\nGitHub\n\n\nnetrics-fast\nPython\nMemory-efficient dyadic regression with chunked Hájek-projection variance estimation.\nGitHub"
+  },
+  {
+    "objectID": "software.html#other-econometric-tools",
+    "href": "software.html#other-econometric-tools",
+    "title": "Software",
+    "section": "Other Econometric Tools",
+    "text": "Other Econometric Tools\n\n\n\nPackage\nLang\nFocus\nLinks\n\n\n\n\nPanelest.jl\nJulia\nHigh-performance panel estimation with absorbed fixed effects and event-study tools.\nGitHub · Docs\n\n\nRDRobust.jl\nJulia\nRegression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots.\nGitHub\n\n\nShiftShareIV.jl\nJulia\nShift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation.\nGitHub · Docs\n\n\nLavaan.jl\nJulia\nJulia port of lavaan for CFA, SEM, latent-growth, generalized SEM, and multilevel models.\nGitHub · Docs"
   },
   {
     "objectID": "blogs.html",

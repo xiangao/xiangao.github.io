@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./profile.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -38,10 +39,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a16cc880f6b82704e1a2765f0396e44a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a16cc880f6b82704e1a2765f0396e44a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-47baaa40e92b7dede2f6609b3812b3cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a16cc880f6b82704e1a2765f0396e44a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,13 +79,177 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Software – Xiang Ao">
 <meta property="og:description" content="Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.">
+<meta property="og:image" content="https://xiangao.github.io/profile.jpg">
 <meta property="og:site_name" content="Xiang Ao">
 <meta name="twitter:title" content="Software – Xiang Ao">
 <meta name="twitter:description" content="Open-source R, Python, and Julia packages for causal inference, econometrics, and statistical computing.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiangao.github.io/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,6 +296,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -138,6 +308,7 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -163,210 +334,255 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Software packages for applied econometrics and data analysis.</p>
-<section id="r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="r-packages">R Packages</h2>
+<p>Open-source packages I maintain across <strong>R</strong>, <strong>Python</strong>, and <strong>Julia</strong>, grouped by research topic. Many are companion implementations across languages — the R version is usually the reference; the Julia/Python ports add performance, GPU support, or interoperability.</p>
+<section id="difference-in-differences-event-studies" class="level2">
+<h2 class="anchored" data-anchor-id="difference-in-differences-event-studies">Difference-in-Differences &amp; Event Studies</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Package</th>
+<th>Lang</th>
 <th>Focus</th>
-<th>GitHub</th>
-<th>Docs</th>
+<th>Links</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>lwdidR</code></td>
-<td>Panel difference-in-differences estimator using Lee-Wooldridge unit-specific pre-treatment transformations.</td>
-<td><a href="https://github.com/xiangao/lwdidR">GitHub</a></td>
-<td><a href="https://xiangao.github.io/lwdidR/">Docs</a></td>
+<td>R</td>
+<td>Panel DiD with Lee–Wooldridge unit-specific pre-treatment transformations.</td>
+<td><a href="https://github.com/xiangao/lwdidR">GitHub</a> · <a href="https://xiangao.github.io/lwdidR/">Docs</a></td>
 </tr>
 <tr class="even">
-<td><code>endid</code></td>
-<td>Distributional difference-in-differences with engression for ATT, QTE, and counterfactual distributions.</td>
-<td><a href="https://github.com/xiangao/endid">GitHub</a></td>
-<td><a href="https://xiangao.github.io/endid/">Docs</a></td>
-</tr>
-<tr class="odd">
-<td><code>Rnetrics</code></td>
-<td>R port of Bryan Graham’s dyadic regression tools with bias-corrected dyadic-robust standard errors.</td>
-<td><a href="https://github.com/xiangao/Rnetrics">GitHub</a></td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td><code>Rfrengression</code></td>
-<td>Causal data simulation with deep generative models and interventional sampling.</td>
-<td><a href="https://github.com/xiangao/Rfrengression">GitHub</a></td>
-<td><a href="https://xiangao.github.io/Rfrengression/">Docs</a></td>
-</tr>
-<tr class="odd">
-<td><code>RCausalModel</code></td>
-<td>Causal estimators for experiments, observational studies, and network interference settings.</td>
-<td><a href="https://github.com/xiangao/RCausalModel">GitHub</a></td>
-<td><a href="https://xiangao.github.io/RCausalModel/">Docs</a></td>
-</tr>
-<tr class="even">
-<td><code>dma</code></td>
-<td>Distributional mediation analysis with energy regression and Riesz-representer weighting.</td>
-<td><a href="https://github.com/xiangao/dma">GitHub</a></td>
-<td><a href="https://xiangao.github.io/dma/">Docs</a></td>
-</tr>
-<tr class="odd">
-<td><code>divR</code></td>
-<td>Distributional instrumental-variable regression for interventional distributions under unmeasured confounding.</td>
-<td><a href="https://github.com/xiangao/divR">GitHub</a></td>
-<td><a href="https://xiangao.github.io/divR/">Docs</a></td>
-</tr>
-<tr class="even">
-<td><code>dyadfast</code></td>
-<td>Fast dyadic-robust variance estimation using a single scatter-add pass.</td>
-<td><a href="https://github.com/xiangao/dyadfast">GitHub</a></td>
-<td>-</td>
-</tr>
-<tr class="odd">
 <td><code>didint</code></td>
-<td>Doubly robust difference-in-differences with spatial interference and Conley-style inference options.</td>
-<td><a href="https://github.com/xiangao/didint">GitHub</a></td>
-<td><a href="https://xiangao.github.io/didint/">Docs</a></td>
+<td>R</td>
+<td>Doubly robust DiD with spatial interference and Conley-style inference.</td>
+<td><a href="https://github.com/xiangao/didint">GitHub</a> · <a href="https://xiangao.github.io/didint/">Docs</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tvhte</code></td>
+<td>R</td>
 <td>Time-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories.</td>
-<td><a href="https://github.com/xiangao/tvhte">GitHub</a></td>
-<td><a href="https://xiangao.github.io/tvhte/">Docs</a></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="python-packages" class="level2">
-<h2 class="anchored" data-anchor-id="python-packages">Python Packages</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Package</th>
-<th>Focus</th>
-<th>GitHub</th>
-<th>Docs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>torch-engression</code></td>
-<td>GPU-accelerated distributional regression with energy scores in PyTorch.</td>
-<td><a href="https://github.com/xiangao/torch-engression">GitHub</a></td>
-<td><a href="https://xiangao.github.io/torch-engression/">Docs</a></td>
+<td><a href="https://github.com/xiangao/tvhte">GitHub</a> · <a href="https://xiangao.github.io/tvhte/">Docs</a></td>
 </tr>
 <tr class="even">
-<td><code>torch-endid</code></td>
-<td>GPU-accelerated distributional difference-in-differences built on <code>torch-engression</code>.</td>
-<td><a href="https://github.com/xiangao/torch-endid">GitHub</a></td>
-<td><a href="https://xiangao.github.io/torch-endid/">Docs</a></td>
+<td><code>DidInterference.jl</code></td>
+<td>Julia</td>
+<td>Julia port of <code>didint</code> for DR DiD under spatial interference.</td>
+<td><a href="https://github.com/xiangao/DidInterference.jl">GitHub</a> · <a href="https://xiangao.github.io/DidInterference.jl/">Docs</a></td>
 </tr>
 <tr class="odd">
-<td><code>netrics-fast</code></td>
-<td>Memory-efficient dyadic regression with chunked Hajek-projection variance estimation.</td>
-<td><a href="https://github.com/xiangao/netrics-fast">GitHub</a></td>
-<td>-</td>
+<td><code>TVHTE.jl</code></td>
+<td>Julia</td>
+<td>Julia port of <code>tvhte</code> for dynamic HTE in event studies.</td>
+<td><a href="https://github.com/xiangao/TVHTE.jl">GitHub</a> · <a href="https://xiangao.github.io/TVHTE.jl/">Docs</a></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="julia-packages" class="level2">
-<h2 class="anchored" data-anchor-id="julia-packages">Julia Packages</h2>
+<section id="synthetic-control-counterfactuals" class="level2">
+<h2 class="anchored" data-anchor-id="synthetic-control-counterfactuals">Synthetic Control &amp; Counterfactuals</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Package</th>
+<th>Lang</th>
 <th>Focus</th>
-<th>GitHub</th>
-<th>Docs</th>
+<th>Links</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>TASC.jl</code></td>
+<td>Julia</td>
 <td>Time-Aware Synthetic Control with low-rank state-space models, Kalman filtering, EM, and confidence bands.</td>
-<td><a href="https://github.com/xiangao/TASC.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/TASC.jl/">Docs</a></td>
+<td><a href="https://github.com/xiangao/TASC.jl">GitHub</a> · <a href="https://xiangao.github.io/TASC.jl/">Docs</a></td>
 </tr>
 <tr class="even">
 <td><code>MSC.jl</code></td>
-<td>Multivariate synthetic control for high-dimensional panels with diagnostics, placebo routines, and plotting.</td>
-<td><a href="https://github.com/xiangao/MSC.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/MSC.jl/">Docs</a></td>
+<td>Julia</td>
+<td>Multivariate synthetic control for high-dimensional panels with diagnostics, placebos, and plotting.</td>
+<td><a href="https://github.com/xiangao/MSC.jl">GitHub</a> · <a href="https://xiangao.github.io/MSC.jl/">Docs</a></td>
 </tr>
 <tr class="odd">
 <td><code>SynthDiD.jl</code></td>
-<td>Julia implementation of synthetic difference-in-differences, synthetic control, and DiD estimators.</td>
-<td><a href="https://github.com/xiangao/SynthDiD.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/SynthDiD.jl/">Docs</a></td>
+<td>Julia</td>
+<td>Synthetic difference-in-differences, synthetic control, and DiD estimators.</td>
+<td><a href="https://github.com/xiangao/SynthDiD.jl">GitHub</a> · <a href="https://xiangao.github.io/SynthDiD.jl/">Docs</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="distributional-methods-engression-family" class="level2">
+<h2 class="anchored" data-anchor-id="distributional-methods-engression-family">Distributional Methods (Engression family)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Lang</th>
+<th>Focus</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>endid</code></td>
+<td>R</td>
+<td>Distributional DiD with engression for ATT, QTE, and counterfactual distributions.</td>
+<td><a href="https://github.com/xiangao/endid">GitHub</a> · <a href="https://xiangao.github.io/endid/">Docs</a></td>
 </tr>
 <tr class="even">
-<td><code>Engression.jl</code></td>
-<td>Distributional regression via energy scores for full conditional-distribution estimation.</td>
-<td><a href="https://github.com/xiangao/Engression.jl">GitHub</a></td>
-<td>-</td>
+<td><code>dma</code></td>
+<td>R</td>
+<td>Distributional mediation analysis with energy regression and Riesz-representer weighting.</td>
+<td><a href="https://github.com/xiangao/dma">GitHub</a> · <a href="https://xiangao.github.io/dma/">Docs</a></td>
 </tr>
 <tr class="odd">
+<td><code>divR</code></td>
+<td>R</td>
+<td>Distributional IV regression for interventional distributions under unmeasured confounding.</td>
+<td><a href="https://github.com/xiangao/divR">GitHub</a> · <a href="https://xiangao.github.io/divR/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>Rfrengression</code></td>
+<td>R</td>
+<td>Causal data simulation with deep generative models and interventional sampling.</td>
+<td><a href="https://github.com/xiangao/Rfrengression">GitHub</a> · <a href="https://xiangao.github.io/Rfrengression/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>torch-engression</code></td>
+<td>Python</td>
+<td>GPU-accelerated distributional regression with energy scores in PyTorch.</td>
+<td><a href="https://github.com/xiangao/torch-engression">GitHub</a> · <a href="https://xiangao.github.io/torch-engression/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>torch-endid</code></td>
+<td>Python</td>
+<td>GPU-accelerated distributional DiD built on <code>torch-engression</code>.</td>
+<td><a href="https://github.com/xiangao/torch-endid">GitHub</a> · <a href="https://xiangao.github.io/torch-endid/">Docs</a></td>
+</tr>
+<tr class="odd">
+<td><code>Engression.jl</code></td>
+<td>Julia</td>
+<td>Distributional regression via energy scores for conditional-distribution estimation.</td>
+<td><a href="https://github.com/xiangao/Engression.jl">GitHub</a></td>
+</tr>
+<tr class="even">
 <td><code>Endid.jl</code></td>
-<td>Distributional difference-in-differences with engression for treatment-effect distributions.</td>
-<td><a href="https://github.com/xiangao/Endid.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/Endid.jl/">Docs</a></td>
+<td>Julia</td>
+<td>Distributional DiD with engression for treatment-effect distributions.</td>
+<td><a href="https://github.com/xiangao/Endid.jl">GitHub</a> · <a href="https://xiangao.github.io/Endid.jl/">Docs</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="causal-estimation-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="causal-estimation-frameworks">Causal Estimation Frameworks</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Lang</th>
+<th>Focus</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>RCausalModel</code></td>
+<td>R</td>
+<td>Causal estimators for experiments, observational studies, and network interference.</td>
+<td><a href="https://github.com/xiangao/RCausalModel">GitHub</a> · <a href="https://xiangao.github.io/RCausalModel/">Docs</a></td>
 </tr>
 <tr class="even">
 <td><code>CausalEstimate.jl</code></td>
+<td>Julia</td>
 <td>Unified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment.</td>
-<td><a href="https://github.com/xiangao/CausalEstimate.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/CausalEstimate.jl/">Docs</a></td>
-</tr>
-<tr class="odd">
-<td><code>Panelest.jl</code></td>
-<td>High-performance panel estimation with absorbed fixed effects and event-study treatment-effect tools.</td>
-<td><a href="https://github.com/xiangao/Panelest.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/Panelest.jl/">Docs</a></td>
-</tr>
-<tr class="even">
-<td><code>Lavaan.jl</code></td>
-<td>Julia port of <code>lavaan</code> for CFA, SEM, latent-growth, generalized SEM, and multilevel models.</td>
-<td><a href="https://github.com/xiangao/Lavaan.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/Lavaan.jl/">Docs</a></td>
+<td><a href="https://github.com/xiangao/CausalEstimate.jl">GitHub</a> · <a href="https://xiangao.github.io/CausalEstimate.jl/">Docs</a></td>
 </tr>
 <tr class="odd">
 <td><code>Crumble.jl</code></td>
-<td>Causal mediation analysis with cross-fitted nuisance estimation and optimal-transport instruments.</td>
-<td><a href="https://github.com/xiangao/Crumble.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/Crumble.jl/">Docs</a></td>
+<td>Julia</td>
+<td>Causal mediation with cross-fitted nuisance estimation and optimal-transport instruments.</td>
+<td><a href="https://github.com/xiangao/Crumble.jl">GitHub</a> · <a href="https://xiangao.github.io/Crumble.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>CausalGraphs.jl</code></td>
+<td>Julia</td>
+<td>Graph-based causal identification for ADMGs, missingness DAGs, and common adjustment strategies.</td>
+<td><a href="https://github.com/xiangao/CausalGraphs.jl">GitHub</a> · <a href="https://xiangao.github.io/CausalGraphs.jl/">Docs</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="network-dyadic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="network-dyadic-regression">Network &amp; Dyadic Regression</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Lang</th>
+<th>Focus</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Rnetrics</code></td>
+<td>R</td>
+<td>Port of Bryan Graham’s dyadic regression tools with bias-corrected dyadic-robust standard errors.</td>
+<td><a href="https://github.com/xiangao/Rnetrics">GitHub</a></td>
+</tr>
+<tr class="even">
+<td><code>dyadfast</code></td>
+<td>R</td>
+<td>Fast dyadic-robust variance estimation using a single scatter-add pass.</td>
+<td><a href="https://github.com/xiangao/dyadfast">GitHub</a></td>
+</tr>
+<tr class="odd">
+<td><code>netrics-fast</code></td>
+<td>Python</td>
+<td>Memory-efficient dyadic regression with chunked Hájek-projection variance estimation.</td>
+<td><a href="https://github.com/xiangao/netrics-fast">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="other-econometric-tools" class="level2">
+<h2 class="anchored" data-anchor-id="other-econometric-tools">Other Econometric Tools</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Lang</th>
+<th>Focus</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Panelest.jl</code></td>
+<td>Julia</td>
+<td>High-performance panel estimation with absorbed fixed effects and event-study tools.</td>
+<td><a href="https://github.com/xiangao/Panelest.jl">GitHub</a> · <a href="https://xiangao.github.io/Panelest.jl/">Docs</a></td>
 </tr>
 <tr class="even">
 <td><code>RDRobust.jl</code></td>
+<td>Julia</td>
 <td>Regression-discontinuity point estimation, robust bias-corrected intervals, bandwidths, and RD plots.</td>
 <td><a href="https://github.com/xiangao/RDRobust.jl">GitHub</a></td>
-<td>-</td>
 </tr>
 <tr class="odd">
-<td><code>CausalGraphs.jl</code></td>
-<td>Graph-based causal identification and estimation for ADMGs, missingness DAGs, and common adjustment strategies.</td>
-<td><a href="https://github.com/xiangao/CausalGraphs.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/CausalGraphs.jl/">Docs</a></td>
-</tr>
-<tr class="even">
-<td><code>DidInterference.jl</code></td>
-<td>Julia port of <code>didint</code> for doubly robust DiD with spatial interference.</td>
-<td><a href="https://github.com/xiangao/DidInterference.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/DidInterference.jl/">Docs</a></td>
-</tr>
-<tr class="odd">
-<td><code>TVHTE.jl</code></td>
-<td>Julia port of <code>tvhte</code> for dynamic heterogeneous treatment effects in event studies.</td>
-<td><a href="https://github.com/xiangao/TVHTE.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/TVHTE.jl/">Docs</a></td>
-</tr>
-<tr class="even">
 <td><code>ShiftShareIV.jl</code></td>
+<td>Julia</td>
 <td>Shift-share IV tools including Bartik instruments, Rotemberg weights, and shock-level aggregation.</td>
-<td><a href="https://github.com/xiangao/ShiftShareIV.jl">GitHub</a></td>
-<td><a href="https://xiangao.github.io/ShiftShareIV.jl/">Docs</a></td>
+<td><a href="https://github.com/xiangao/ShiftShareIV.jl">GitHub</a> · <a href="https://xiangao.github.io/ShiftShareIV.jl/">Docs</a></td>
+</tr>
+<tr class="even">
+<td><code>Lavaan.jl</code></td>
+<td>Julia</td>
+<td>Julia port of <code>lavaan</code> for CFA, SEM, latent-growth, generalized SEM, and multilevel models.</td>
+<td><a href="https://github.com/xiangao/Lavaan.jl">GitHub</a> · <a href="https://xiangao.github.io/Lavaan.jl/">Docs</a></td>
 </tr>
 </tbody>
 </table>
@@ -377,6 +593,19 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
