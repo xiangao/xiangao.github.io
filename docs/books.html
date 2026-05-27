@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Quarto books on econometrics, causal inference, and applied research methods.">
 
 <title>Online Books – Xiang Ao</title>
 <style>
@@ -77,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Online Books – Xiang Ao">
-<meta property="og:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta property="og:description" content="Quarto books on econometrics, causal inference, and applied research methods.">
 <meta property="og:image" content="https://xiangao.github.io/profile.jpg">
 <meta property="og:site_name" content="Xiang Ao">
 <meta name="twitter:title" content="Online Books – Xiang Ao">
-<meta name="twitter:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta name="twitter:description" content="Quarto books on econometrics, causal inference, and applied research methods.">
 <meta name="twitter:image" content="https://xiangao.github.io/profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -314,6 +315,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Online Books</h1>
 </div>
 
+<div>
+  <div class="description">
+    Quarto books on econometrics, causal inference, and applied research methods.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -328,23 +334,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="econometrics-guide" class="level3">
-<h3 class="anchored" data-anchor-id="econometrics-guide"><a href="https://xiangao.github.io/econometrics-guide/">Econometrics Guide</a></h3>
-<p>A practical guide to applied econometrics with examples in R and Stata.</p>
+<p>Four online books, written and revised as I work through methods. The two systematic causal books cover the same material in parallel — pick the language you actually use. The classical guide is foundations, and the notes book is the messier working companion.</p>
+<section id="foundations" class="level2">
+<h2 class="anchored" data-anchor-id="foundations">Foundations</h2>
+<section id="econometrics-guide-r-stata" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="econometrics-guide-r-stata"><a href="https://xiangao.github.io/econometrics-guide/">Econometrics Guide</a> <span class="lang-badge">R + Stata</span></h3>
+<p>A study guide to the workhorse estimators of applied econometrics — OLS, MLE, GLS, IV, GMM, and models for censored, discrete, count, panel, and survival data. 14 chapters, side-by-side R and Stata code. Best read before the causal volumes.</p>
 </section>
-<section id="topics-on-econometrics-and-causal-inference" class="level3">
-<h3 class="anchored" data-anchor-id="topics-on-econometrics-and-causal-inference"><a href="https://xiangao.github.io/blog_book/">Topics on econometrics and causal inference</a></h3>
-<p>Collected notes and posts on applied econometrics and causal inference, compiled into book format.</p>
 </section>
-<section id="causal-econometrics-guide" class="level3">
-<h3 class="anchored" data-anchor-id="causal-econometrics-guide"><a href="https://xiangao.github.io/causal_econometrics_guide/">Causal Econometrics Guide</a></h3>
-<p>A guide to modern causal inference methods for applied researchers, with R implementations. The causal discovery chapter now pairs the PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. Companion to the blog book.</p>
+<section id="systematic-treatment-of-causal-inference" class="level2">
+<h2 class="anchored" data-anchor-id="systematic-treatment-of-causal-inference">Systematic treatment of causal inference</h2>
+<section id="introduction-to-causal-econometrics-with-observational-data-r" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="introduction-to-causal-econometrics-with-observational-data-r"><a href="https://xiangao.github.io/causal_econometrics_guide/">Introduction to Causal Econometrics with Observational Data</a> <span class="lang-badge">R</span></h3>
+<p>A working guide to modern causal inference in R, organized in the order an applied project actually runs: identification, estimation, designs (DiD, IV, RDD, shift-share), longitudinal causal inference, survival, mediation, and causal discovery. The causal-discovery chapter now pairs PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. 24 chapters.</p>
 </section>
-<section id="causal-econometrics-in-julia" class="level3">
-<h3 class="anchored" data-anchor-id="causal-econometrics-in-julia"><a href="https://xiangao.github.io/causal_econometrics_julia/">Causal Econometrics in Julia</a></h3>
-<p>A hands-on guide to causal inference and econometrics using Julia. The causal discovery chapter now applies PC and RSL-D to real survey-weighted PISA 2022 data. Cross-linked with the R book.</p>
+<section id="causal-econometrics-with-julia-julia" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="causal-econometrics-with-julia-julia"><a href="https://xiangao.github.io/causal_econometrics_julia/">Causal Econometrics with Julia</a> <span class="lang-badge">Julia</span></h3>
+<p>The same ground in Julia, with several heavier estimators (TMLE on large samples, distributional DiD, Bayesian g-computation) where Julia is genuinely faster. Built alongside a stack of small Julia packages — <code>CausalEstimate.jl</code>, <code>CausalGraphs.jl</code>, <code>Lavaan.jl</code>, <code>Crumble.jl</code>, <code>TASC.jl</code>, and more — whose source is short enough to read. The causal-discovery chapter applies PC and RSL-D to survey-weighted PISA 2022. 27 chapters. Cross-linked with the R book.</p>
+</section>
+</section>
+<section id="working-notebook-companion" class="level2">
+<h2 class="anchored" data-anchor-id="working-notebook-companion">Working notebook companion</h2>
+<section id="topics-on-econometrics-and-causal-inference-r" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="topics-on-econometrics-and-causal-inference-r"><a href="https://xiangao.github.io/blog_book/">Topics on Econometrics and Causal Inference</a> <span class="lang-badge">R</span></h3>
+<p>A working notebook rather than a textbook: 48 chapters of posts written while reading, teaching, and consulting on applied econometrics. Each one stands alone. The same topic sometimes appears more than once as my thinking evolved. Useful when you want to see how a specific method behaves on a specific problem, rather than the systematic treatment.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -137,7 +137,28 @@
     "href": "books.html",
     "title": "Online Books",
     "section": "",
-    "text": "Econometrics Guide\nA practical guide to applied econometrics with examples in R and Stata.\n\n\nTopics on econometrics and causal inference\nCollected notes and posts on applied econometrics and causal inference, compiled into book format.\n\n\nCausal Econometrics Guide\nA guide to modern causal inference methods for applied researchers, with R implementations. The causal discovery chapter now pairs the PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. Companion to the blog book.\n\n\nCausal Econometrics in Julia\nA hands-on guide to causal inference and econometrics using Julia. The causal discovery chapter now applies PC and RSL-D to real survey-weighted PISA 2022 data. Cross-linked with the R book."
+    "text": "Four online books, written and revised as I work through methods. The two systematic causal books cover the same material in parallel — pick the language you actually use. The classical guide is foundations, and the notes book is the messier working companion."
+  },
+  {
+    "objectID": "books.html#foundations",
+    "href": "books.html#foundations",
+    "title": "Online Books",
+    "section": "Foundations",
+    "text": "Foundations\n\nEconometrics Guide R + Stata\nA study guide to the workhorse estimators of applied econometrics — OLS, MLE, GLS, IV, GMM, and models for censored, discrete, count, panel, and survival data. 14 chapters, side-by-side R and Stata code. Best read before the causal volumes."
+  },
+  {
+    "objectID": "books.html#systematic-treatment-of-causal-inference",
+    "href": "books.html#systematic-treatment-of-causal-inference",
+    "title": "Online Books",
+    "section": "Systematic treatment of causal inference",
+    "text": "Systematic treatment of causal inference\n\nIntroduction to Causal Econometrics with Observational Data R\nA working guide to modern causal inference in R, organized in the order an applied project actually runs: identification, estimation, designs (DiD, IV, RDD, shift-share), longitudinal causal inference, survival, mediation, and causal discovery. The causal-discovery chapter now pairs PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. 24 chapters.\n\n\nCausal Econometrics with Julia Julia\nThe same ground in Julia, with several heavier estimators (TMLE on large samples, distributional DiD, Bayesian g-computation) where Julia is genuinely faster. Built alongside a stack of small Julia packages — CausalEstimate.jl, CausalGraphs.jl, Lavaan.jl, Crumble.jl, TASC.jl, and more — whose source is short enough to read. The causal-discovery chapter applies PC and RSL-D to survey-weighted PISA 2022. 27 chapters. Cross-linked with the R book."
+  },
+  {
+    "objectID": "books.html#working-notebook-companion",
+    "href": "books.html#working-notebook-companion",
+    "title": "Online Books",
+    "section": "Working notebook companion",
+    "text": "Working notebook companion\n\nTopics on Econometrics and Causal Inference R\nA working notebook rather than a textbook: 48 chapters of posts written while reading, teaching, and consulting on applied econometrics. Each one stands alone. The same topic sometimes appears more than once as my thinking evolved. Useful when you want to see how a specific method behaves on a specific problem, rather than the systematic treatment."
   },
   {
     "objectID": "other-blogs.html",

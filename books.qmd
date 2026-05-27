@@ -1,19 +1,28 @@
 ---
 title: "Online Books"
+description: "Quarto books on econometrics, causal inference, and applied research methods."
 ---
 
-### [Econometrics Guide](https://xiangao.github.io/econometrics-guide/)
+Four online books, written and revised as I work through methods. The two systematic causal books cover the same material in parallel — pick the language you actually use. The classical guide is foundations, and the notes book is the messier working companion.
 
-A practical guide to applied econometrics with examples in R and Stata.
+## Foundations
 
-### [Topics on econometrics and causal inference](https://xiangao.github.io/blog_book/)
+### [Econometrics Guide](https://xiangao.github.io/econometrics-guide/) <span class="lang-badge">R + Stata</span> {.unnumbered}
 
-Collected notes and posts on applied econometrics and causal inference, compiled into book format.
+A study guide to the workhorse estimators of applied econometrics — OLS, MLE, GLS, IV, GMM, and models for censored, discrete, count, panel, and survival data. 14 chapters, side-by-side R and Stata code. Best read before the causal volumes.
 
-### [Causal Econometrics Guide](https://xiangao.github.io/causal_econometrics_guide/)
+## Systematic treatment of causal inference
 
-A guide to modern causal inference methods for applied researchers, with R implementations. The causal discovery chapter now pairs the PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. Companion to the blog book.
+### [Introduction to Causal Econometrics with Observational Data](https://xiangao.github.io/causal_econometrics_guide/) <span class="lang-badge">R</span> {.unnumbered}
 
-### [Causal Econometrics in Julia](https://xiangao.github.io/causal_econometrics_julia/)
+A working guide to modern causal inference in R, organized in the order an applied project actually runs: identification, estimation, designs (DiD, IV, RDD, shift-share), longitudinal causal inference, survival, mediation, and causal discovery. The causal-discovery chapter now pairs PC and GES algorithms with a real-data example on survey-weighted PISA 2022 data. 24 chapters.
 
-A hands-on guide to causal inference and econometrics using Julia. The causal discovery chapter now applies PC and RSL-D to real survey-weighted PISA 2022 data. Cross-linked with the R book.
+### [Causal Econometrics with Julia](https://xiangao.github.io/causal_econometrics_julia/) <span class="lang-badge">Julia</span> {.unnumbered}
+
+The same ground in Julia, with several heavier estimators (TMLE on large samples, distributional DiD, Bayesian g-computation) where Julia is genuinely faster. Built alongside a stack of small Julia packages — `CausalEstimate.jl`, `CausalGraphs.jl`, `Lavaan.jl`, `Crumble.jl`, `TASC.jl`, and more — whose source is short enough to read. The causal-discovery chapter applies PC and RSL-D to survey-weighted PISA 2022. 27 chapters. Cross-linked with the R book.
+
+## Working notebook companion
+
+### [Topics on Econometrics and Causal Inference](https://xiangao.github.io/blog_book/) <span class="lang-badge">R</span> {.unnumbered}
+
+A working notebook rather than a textbook: 48 chapters of posts written while reading, teaching, and consulting on applied econometrics. Each one stands alone. The same topic sometimes appears more than once as my thinking evolved. Useful when you want to see how a specific method behaves on a specific problem, rather than the systematic treatment.
