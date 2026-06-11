@@ -44,6 +44,7 @@ Open-source packages I maintain across **R**, **Python**, and **Julia**, grouped
 | `CausalEstimate.jl` | Julia | Unified front end for typed causal estimands with TMLE, AIPW, cross-fitting, and graph adjustment. | [GitHub](https://github.com/xiangao/CausalEstimate.jl) · [Docs](https://xiangao.github.io/CausalEstimate.jl/) |
 | `Crumble.jl` | Julia | Causal mediation with cross-fitted nuisance estimation and optimal-transport instruments. | [GitHub](https://github.com/xiangao/Crumble.jl) · [Docs](https://xiangao.github.io/Crumble.jl/) |
 | `CausalGraphs.jl` | Julia | Graph-based causal identification for ADMGs, missingness DAGs, and common adjustment strategies. | [GitHub](https://github.com/xiangao/CausalGraphs.jl) · [Docs](https://xiangao.github.io/CausalGraphs.jl/) |
+| `HCM.jl` | Julia | Hierarchical causal models (Weinstein & Blei 2024) estimated with Turing; a general collapse-to-ADMG identification engine on top of `CausalGraphs.jl`, plus confounder, interference, nested, and instrument motifs with hard and soft interventions. | [GitHub](https://github.com/xiangao/HCM.jl) |
 | `drlate` | R | Doubly robust LATE / LATT with a binary instrument (IPWRA, AIPW, IPW, RA) following Słoczyński, Uysal, and Wooldridge (2022). | [GitHub](https://github.com/xiangao/drlate) · [Docs](https://xiangao.github.io/drlate/) |
 | `DRLate.jl` | Julia | Julia port of `drlate`; doubly robust LATE / LATT validated to the Stata reference and to the R version to ~1e-12. | [GitHub](https://github.com/xiangao/DRLate.jl) · [Docs](https://xiangao.github.io/DRLate.jl/) |
 
