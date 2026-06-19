@@ -9,7 +9,7 @@ Open-source packages I maintain across **R**, **Python**, and **Julia**, grouped
 
 | Package | Lang | Focus | Links |
 |---|---|---|---|
-| `lwdidR` | R | Panel DiD with Lee–Wooldridge unit-specific pre-treatment transformations. | [GitHub](https://github.com/xiangao/lwdidR) · [Docs](https://xiangao.github.io/lwdidR/) |
+| `lwdidR` | R | Panel DiD via Lee–Wooldridge unit-specific transformations: small-N and large-N (RA/IPW/IPWRA) rolling estimators with WATT(r) event studies and wild-cluster-bootstrap sup-t bands; validated against the Stata `lwdid` command. | [GitHub](https://github.com/xiangao/lwdidR) · [Docs](https://xiangao.github.io/lwdidR/) |
 | `didint` | R | Doubly robust DiD with spatial interference and Conley-style inference. | [GitHub](https://github.com/xiangao/didint) · [Docs](https://xiangao.github.io/didint/) |
 | `tvhte` | R | Time-varying heterogeneous treatment effects in event studies with empirical-Bayes posterior trajectories. | [GitHub](https://github.com/xiangao/tvhte) · [Docs](https://xiangao.github.io/tvhte/) |
 | `DidInterference.jl` | Julia | Julia port of `didint` for DR DiD under spatial interference. | [GitHub](https://github.com/xiangao/DidInterference.jl) · [Docs](https://xiangao.github.io/DidInterference.jl/) |
