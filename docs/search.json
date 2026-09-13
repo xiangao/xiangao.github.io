@@ -151,7 +151,7 @@
     "href": "blogs.html#blogsold",
     "title": "Blogs",
     "section": "blogs(old)",
-    "text": "blogs(old)\n\nApplied Econometrics Blog — earlier posts, built with R blogdown and Hugo."
+    "text": "blogs(old)\nI made most of my blogs into my book Topics on Econometrics and Causal Inference. These are the older blogs.\n\nApplied Econometrics Blog — earlier posts, built with R blogdown and Hugo."
   },
   {
     "objectID": "index.html",
@@ -173,6 +173,20 @@
     "title": "Xiang Ao",
     "section": "Research Interests",
     "text": "Research Interests\n\nCausal inference\nMachine learning for causal estimation\nApplied microeconometrics"
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Xiang Ao",
+    "section": "Software",
+    "text": "Software\nI use AI coding agents to create software for econometrics. See Software."
+  },
+  {
+    "objectID": "index.html#online-books",
+    "href": "index.html#online-books",
+    "title": "Xiang Ao",
+    "section": "Online Books",
+    "text": "Online Books\nI have books for applied econometrics and causal inference. See Online Books."
   },
   {
     "objectID": "index.html#education",

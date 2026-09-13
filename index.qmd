@@ -28,6 +28,14 @@ I am an applied economist and statistician with research interests in causal inf
 - Machine learning for causal estimation
 - Applied microeconometrics
 
+## Software
+
+I use AI coding agents to create software for econometrics. See [Software](software.qmd).
+
+## Online Books
+
+I have books for applied econometrics and causal inference. See [Online Books](books.qmd).
+
 ## Education
 
 I earned my Ph.D. in Economics from the University of Nebraska-Lincoln and completed my undergraduate studies at Zhejiang University.
