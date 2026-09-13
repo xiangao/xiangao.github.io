@@ -1,8 +1,9 @@
 ---
-title: "Uplift model in python "
+title: "Uplift Modeling in Python"
 author: Xiang Ao
 date: '2025-10-10'
 categories: [python, code, analysis]
+description: "Uplift modeling with causalml, framed as conditional average treatment effect estimation."
 ---
 
 Uplift modeling is a technique used to estimate the incremental impact of a treatment or intervention on an outcome, often used in marketing. It helps identify which individuals are more likely to respond positively to a treatment, allowing for more targeted interventions.
@@ -12,6 +13,7 @@ To me this is basically conditional average treatment effect (CATE).
 I am copying this code from https://github.com/uber/causalml/blob/master/docs/examples/uplift_trees_with_synthetic_data.ipynb.  Just to see how it works and also test out python code in quarto.  
 
 ```{python}
+#| fig-alt: "Cumulative gain curves comparing uplift random forest variants against a random targeting baseline"
 
 import numpy as np
 import pandas as pd

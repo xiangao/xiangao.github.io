@@ -8,8 +8,9 @@
 
 <meta name="author" content="Xiang Ao">
 <meta name="dcterms.date" content="2025-11-11">
+<meta name="description" content="Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.">
 
-<title>More on Correlated Random Effect (CRE) – Xiang Ao</title>
+<title>More on Correlated Random Effects (CRE) – Xiang Ao</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,13 +143,15 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="More on Correlated Random Effect (CRE) – Xiang Ao">
-<meta property="og:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
-<meta property="og:image" content="https://xiangao.github.io/posts/more_cre/profile.jpg">
+<meta property="og:title" content="More on Correlated Random Effects (CRE) – Xiang Ao">
+<meta property="og:description" content="Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.">
+<meta property="og:image" content="https://xiangao.github.io/posts/more_cre/image.jpg">
 <meta property="og:site_name" content="Xiang Ao">
-<meta name="twitter:title" content="More on Correlated Random Effect (CRE) – Xiang Ao">
-<meta name="twitter:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
-<meta name="twitter:image" content="https://xiangao.github.io/posts/more_cre/profile.jpg">
+<meta property="og:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
+<meta name="twitter:title" content="More on Correlated Random Effects (CRE) – Xiang Ao">
+<meta name="twitter:description" content="Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.">
+<meta name="twitter:image" content="https://xiangao.github.io/posts/more_cre/image.jpg">
+<meta name="twitter:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -347,10 +350,6 @@ window.Quarto = {
     <a class="nav-link" href="../../blogs.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../other-blogs.html"> 
-<span class="menu-text">Other Blogs</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -370,8 +369,13 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">More on Correlated Random Effect (CRE)</h1>
-                                <div class="quarto-categories">
+      <h1 class="title">More on Correlated Random Effects (CRE)</h1>
+                  <div>
+        <div class="description">
+          Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">news</div>
                 <div class="quarto-category">code</div>
                 <div class="quarto-category">analysis</div>
@@ -413,16 +417,16 @@ window.Quarto = {
 
 
 <p>Jeff Wooldridge suggested using Correlated Random Effect (CRE) for binary outcomes in this twitter post: https://x.com/jmwooldridge/status/1986100627454206220</p>
-<p>Here I summerize what I learned so far:</p>
-<section id="linear-model" class="level1">
-<h1>linear model</h1>
+<p>Here I summarize what I learned so far:</p>
+<section id="linear-model" class="level2">
+<h2 class="anchored" data-anchor-id="linear-model">linear model</h2>
 <p>For panel data, the usual set up is:</p>
 <p><span class="math display">\[y_{it} = \alpha + X_{it} \beta + v_i + \epsilon_{it} \]</span></p>
 <p>Wooldridge (2021) paper on DiD shows that these models are the same: 1. Two way fixed effect OLS. Dummy variable approach is the same too. 2. Mundlak’s CRE approach. This includes a pooled OLS with Mundlak device (means of <span class="math inline">\(X\)</span>’s by group), and CRE with random effects.</p>
 <p>The idea of Chamberlain’s device is that since we don’t have <span class="math inline">\(v_i\)</span>, we can project <span class="math inline">\(X_i\)</span> onto <span class="math inline">\(v_i\)</span>. Basically, we can replace <span class="math inline">\(v_i\)</span> with projection of <span class="math inline">\(X_i\)</span> onto <span class="math inline">\(v_i\)</span>. Mundlak’s device is a special case, that we put all <span class="math inline">\(X_t\)</span>’s the same weight, thus the mean of <span class="math inline">\(X_{it}\)</span> for each <span class="math inline">\(i\)</span> is the projection of <span class="math inline">\(X_{it}\)</span> onto <span class="math inline">\(v_i\)</span>. Replace <span class="math inline">\(v_i\)</span> with that projection, and what is left then by definition is uncorrelated with <span class="math inline">\(X_{it}\)</span>.</p>
 <p>Here is an example:</p>
-<section id="example-1" class="level2">
-<h2 class="anchored" data-anchor-id="example-1">example 1</h2>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">example 1</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bacondecomp)</span>
@@ -555,13 +559,13 @@ factor(year)2010 -0.03429    0.04885  -0.702</code></pre>
 <p>As we know, RE model assumes <span class="math inline">\(v_i\)</span> is uncorrelated with <span class="math inline">\(X_{it}\)</span>, while CRE and FE allow for correlation between <span class="math inline">\(v_i\)</span> and <span class="math inline">\(X_{it}\)</span>.</p>
 </section>
 </section>
-<section id="nonlinear-model" class="level1">
-<h1>nonlinear model</h1>
+<section id="nonlinear-model" class="level2">
+<h2 class="anchored" data-anchor-id="nonlinear-model">nonlinear model</h2>
 <p>What I did not realize before is that this is only valid for linear case. For OLS to be consistent, we only need contemporaneous exogeneity, which means <span class="math inline">\(E[\epsilon_{it} | X_{it}, v_i] = 0\)</span>. This is not the case for nonlinear cases, such as logit or probit models.</p>
-<section id="binary-outcome" class="level2">
-<h2 class="anchored" data-anchor-id="binary-outcome">Binary outcome</h2>
+<section id="binary-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="binary-outcome">Binary outcome</h3>
 <p>For binary outcomes, the model is:</p>
-<p><span class="math display">\[y_{it} = \Phi(\alpha + X_{it} \beta + v_i + \epsilon_{it}) \]</span> I used to think it’s the best to use conditional logit. However, it needs “conditional indepencence” (serial independence could be a better name) to be consistent. That is, we have to assume the series of <span class="math inline">\(y_{it}\)</span> is conditionally independent of each other given <span class="math inline">\(X_{it}\)</span> and <span class="math inline">\(v_i\)</span>. This is a strong assumption. If we think we have serial correlation in the error term, then this would not hold. The other disadvantage of conditional logit (also called fixed effect logit) is that <span class="math inline">\(v_i\)</span>’s are not estimated, it is just a nuisance parameter. Any partial effects cannot be calculated, because any partial effects are functions of <span class="math inline">\(v_i\)</span>’s.</p>
+<p><span class="math display">\[y_{it} = \Phi(\alpha + X_{it} \beta + v_i + \epsilon_{it}) \]</span> I used to think it’s the best to use conditional logit. However, it needs “conditional independence” (serial independence could be a better name) to be consistent. That is, we have to assume the series of <span class="math inline">\(y_{it}\)</span> is conditionally independent of each other given <span class="math inline">\(X_{it}\)</span> and <span class="math inline">\(v_i\)</span>. This is a strong assumption. If we think we have serial correlation in the error term, then this would not hold. The other disadvantage of conditional logit (also called fixed effect logit) is that <span class="math inline">\(v_i\)</span>’s are not estimated, it is just a nuisance parameter. Any partial effects cannot be calculated, because any partial effects are functions of <span class="math inline">\(v_i\)</span>’s.</p>
 <p>Instead, Wooldridge suggests using CRE probit. Basically adding Mundlak device (group means of <span class="math inline">\(X\)</span>’s) to the model, and then use pooled probit. Note that we do not use RE probit or logit, since that would need conditional independence too.</p>
 <p>For nonlinear panel data with unobserved heterogeneity (meaning there is <span class="math inline">\(v_i\)</span> that we don’t observe), we have a few assumptions.</p>
 <p>First, strict exogeneity, <span class="math display">\[ D(y`_{it} | X_{i1}, ..., X_{iT}, v_i) = D(y_{it} | X_{it}, v_i) \]</span> This means that the distribution of <span class="math inline">\(y_{it}\)</span> only depends on <span class="math inline">\(X_{it}\)</span>, given <span class="math inline">\(v_i\)</span>.</p>
@@ -570,8 +574,8 @@ factor(year)2010 -0.03429    0.04885  -0.702</code></pre>
 <p>Then we need to specify <span class="math inline">\(D(v_i) | X_i\)</span>. The random effect assumption is saying <span class="math display">\[ D(v_i | X_i) = D(v_i) \]</span>, that is, <span class="math inline">\(v_i\)</span> is independent of <span class="math inline">\(X_i\)</span>. This is a strong assumption. We should try to avoid this assumption.</p>
 <p>Now, most nonlinear models make the second assumption, in the panel setting, when we have <span class="math inline">\(v_i\)</span>. That includes RE model, conditional logit. However, that does not include pooled probit/logit, or CRE with pooled logit/probit. That is why Wooldridge recommend using CRE with pooled probit.</p>
 </section>
-<section id="example-2" class="level2">
-<h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate a binary outcome, high_homocide</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>

@@ -8,8 +8,9 @@
 
 <meta name="author" content="Xiang Ao">
 <meta name="dcterms.date" content="2025-08-23">
+<meta name="description" content="Modified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.">
 
-<title>longitudinal modified treatment policy (LMTP) – Xiang Ao</title>
+<title>Longitudinal Modified Treatment Policies (LMTP) – Xiang Ao</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,15 +143,17 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="longitudinal modified treatment policy (LMTP) – Xiang Ao">
-<meta property="og:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta property="og:title" content="Longitudinal Modified Treatment Policies (LMTP) – Xiang Ao">
+<meta property="og:description" content="Modified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.">
 <meta property="og:image" content="https://xiangao.github.io/posts/lmtp/index_files/figure-html/dag1-1.png">
 <meta property="og:site_name" content="Xiang Ao">
+<meta property="og:image:alt" content="Directed acyclic graph for a two-period longitudinal setting with time-varying treatment and confounding">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1344">
-<meta name="twitter:title" content="longitudinal modified treatment policy (LMTP) – Xiang Ao">
-<meta name="twitter:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
+<meta name="twitter:title" content="Longitudinal Modified Treatment Policies (LMTP) – Xiang Ao">
+<meta name="twitter:description" content="Modified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.">
 <meta name="twitter:image" content="https://xiangao.github.io/posts/lmtp/index_files/figure-html/dag1-1.png">
+<meta name="twitter:image:alt" content="Directed acyclic graph for a two-period longitudinal setting with time-varying treatment and confounding">
 <meta name="twitter:image-height" content="960">
 <meta name="twitter:image-width" content="1344">
 <meta name="twitter:card" content="summary_large_image">
@@ -351,10 +354,6 @@ window.Quarto = {
     <a class="nav-link" href="../../blogs.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../other-blogs.html"> 
-<span class="menu-text">Other Blogs</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -374,8 +373,13 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">longitudinal modified treatment policy (LMTP)</h1>
-                                <div class="quarto-categories">
+      <h1 class="title">Longitudinal Modified Treatment Policies (LMTP)</h1>
+                  <div>
+        <div class="description">
+          Modified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">code</div>
                 <div class="quarto-category">analysis</div>
@@ -418,7 +422,7 @@ window.Quarto = {
 
 <p>I read a few papers with longitudinal modified treatment policy (LMTP), and found it interesting. It has been used in epidemiology and biostatistics, but I have not seen it in applied econometrics yet.</p>
 <p>Here I am mostly following Nicholas Williams: https://beyondtheate.com/</p>
-<p>We are usually interested in ATE, the average treatment effect. However, there could be more complicated situations that the treatment is continuous, or the treatment is multivalued, or the treatment is time-varying. The static interventions have problems. For example, the hyphothetical interventions that treatment applies to everyone might be inconceivable. Or such intervention could make positivity assumption fail.</p>
+<p>We are usually interested in ATE, the average treatment effect. However, there could be more complicated situations that the treatment is continuous, or the treatment is multivalued, or the treatment is time-varying. The static interventions have problems. For example, the hypothetical interventions that treatment applies to everyone might be inconceivable. Or such intervention could make positivity assumption fail.</p>
 <p>Suppose we have such a DAG:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -444,23 +448,23 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/dag1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/dag1-1.png" class="img-fluid figure-img" alt="Directed acyclic graph for a two-period longitudinal setting with time-varying treatment and confounding" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We have multiple time points, and the treatment <span class="math inline">\(A\)</span> is time-varying. We are interested in not only the ATE of <span class="math inline">\(A_2\)</span> on <span class="math inline">\(Y\)</span>, but also some other hypothetical interventions.</p>
-<section id="definitions-and-assumptions" class="level1">
-<h1>Definitions and assumptions</h1>
-<section id="assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<section id="definitions-and-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions-and-assumptions">Definitions and assumptions</h2>
+<section id="assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions">Assumptions</h3>
 <ol type="1">
 <li><p>Positivity. Basically if there is a unit with <span class="math inline">\(a_t\)</span> and <span class="math inline">\(h_t\)</span>, then there is a unit with <span class="math inline">\(d(a_t, h_t)\)</span> and <span class="math inline">\(h_t\)</span>.</p></li>
 <li><p>Sequential unconfoundedness. There is no unmeasured confounders.</p></li>
 </ol>
 </section>
-<section id="dynamic-treatment-regime" class="level2">
-<h2 class="anchored" data-anchor-id="dynamic-treatment-regime">dynamic treatment regime</h2>
+<section id="dynamic-treatment-regime" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-treatment-regime">dynamic treatment regime</h3>
 <p>Some notations commonly used in this literature: We observe <span class="math inline">\(Z = (L_0, A_0, L_1, A_1, Y)\)</span>, where <span class="math inline">\(L\)</span> is the observed confounder, <span class="math inline">\(A\)</span> is the treatment, and <span class="math inline">\(Y\)</span> is the outcome. The treatment <span class="math inline">\(A\)</span> can be time-varying. We can also have multiple treatments at different time points. For example, we can have <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, etc. In this graph, baseline <span class="math inline">\(L_0\)</span> affects <span class="math inline">\(A_0\)</span>, which in turn affects <span class="math inline">\(L_1\)</span>, which then affects <span class="math inline">\(A_1\)</span>, and finally <span class="math inline">\(A_1\)</span> affects the outcome <span class="math inline">\(Y\)</span>.</p>
 <p>History <span class="math inline">\(H_t\)</span> is the history of data up to time <span class="math inline">\(t\)</span>, right before <span class="math inline">\(A_t\)</span>. for example, <span class="math inline">\(H_1 = (L_0, A_0, L_1)\)</span>, and <span class="math inline">\(H_2 = (L_0, A_0, L_1, A_1)\)</span>. <span class="math inline">\(d\)</span> is the hypothetical intervention function, or shift function, which is a function of the history <span class="math inline">\(H_t\)</span> and the treatment <span class="math inline">\(A_t\)</span>. For example, <span class="math inline">\(d_0(a_0,h_0,\epsilon_0)\)</span> is a user-given function to map <span class="math inline">\(a_0\)</span>, <span class="math inline">\(h_0\)</span>, and <span class="math inline">\(\epsilon_0\)</span> to a potential treatment value. The function <span class="math inline">\(d\)</span> can be deterministic, or it can be stochastic. Then we can replace <span class="math inline">\(A_0\)</span> with <span class="math inline">\(A_0^d = d_0(A_0, H_0, \epsilon_0)\)</span>. Then after that <span class="math inline">\(A_1(A_0^d)\)</span> is called the natural value of treatment.</p>
 <p>This is very general, comparing to the static treatment regime.</p>
@@ -470,8 +474,8 @@ window.Quarto = {
 <p><span class="math display">\[ \theta = E[Y^{\bar A^d}] \]</span></p>
 <p><span class="math inline">\(Y^{\bar A^d}\)</span> is the potential outcome under the hypothetical intervention <span class="math inline">\(\bar A^d\)</span>. At time 1, <span class="math inline">\(A^d_1 = d(A_1,H_1)\)</span>.</p>
 </section>
-<section id="modified-treatment-policy" class="level2">
-<h2 class="anchored" data-anchor-id="modified-treatment-policy">modified treatment policy</h2>
+<section id="modified-treatment-policy" class="level3">
+<h3 class="anchored" data-anchor-id="modified-treatment-policy">modified treatment policy</h3>
 <p>Let’s look at a simulated data set to see how exactly we can estimate it.</p>
 <p>This simulation is from Susmann et al.&nbsp;(2024) “Longitudinal Generalizations of the Average Treatment Effect on the Treated for Multi-valued and Continuous Treatments”. I modified slightly to fit the DAG above.</p>
 <div class="cell">
@@ -655,13 +659,13 @@ Number of Fisher Scoring iterations: 2</code></pre>
 <p>Then <span class="math inline">\(\theta = E[m_1(A_1^d, L_1)]\)</span>.</p>
 <p>We start from the last period. Regress <span class="math inline">\(m_{\tau + 1}\)</span>, which is <span class="math inline">\(Y\)</span> on <span class="math inline">\(A_{\tau}\)</span> and <span class="math inline">\(H_{\tau}\)</span>. Then get the predicted value with <span class="math inline">\(A_{\tau}\)</span> changed based on the MTP. Then regress that predicted value on <span class="math inline">\(A_{\tau - 1}\)</span> and <span class="math inline">\(H_{\tau - 1}\)</span>. Repeat until the first time point. The average of the predicted value at time 1 is the expected value under this MTP.</p>
 </section>
-<section id="estimators" class="level2">
-<h2 class="anchored" data-anchor-id="estimators">Estimators</h2>
-<p>The authors advocate two estimators, TMLE and SDR (sequentially doubly robust estimatro). The procedures are the same, starting from the last time point, then apply TMLE or SDR, iterate to the first time point.</p>
+<section id="estimators" class="level3">
+<h3 class="anchored" data-anchor-id="estimators">Estimators</h3>
+<p>The authors advocate two estimators, TMLE and SDR (sequentially doubly robust estimator). The procedures are the same, starting from the last time point, then apply TMLE or SDR, iterate to the first time point.</p>
 </section>
 </section>
-<section id="using-lmtp-package" class="level1">
-<h1>Using lmtp package</h1>
+<section id="using-lmtp-package" class="level2">
+<h2 class="anchored" data-anchor-id="using-lmtp-package">Using lmtp package</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtp)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="cf">function</span>(data, trt) {</span>
@@ -729,11 +733,11 @@ Std. error: 0.009</code></pre>
 <pre><code>Null hypothesis: theta == 0</code></pre>
 <p>shift ref estimate std.error conf.low conf.high p.value 1 1.12 0.117 1 0.0102 0.98 1.02 &lt;0.001</p>
 </section>
-<section id="another-example" class="level1">
-<h1>another example</h1>
+<section id="another-example" class="level2">
+<h2 class="anchored" data-anchor-id="another-example">another example</h2>
 <p>The data set bmi, from the DynTxRegime package, are simulated to reflect a two-stage RCT {A1, A2} that studied the effect of meal replacement (MR) shakes versus a calorie deficit (CD) diet on adolescent</p>
-<section id="shift-function-1" class="level2">
-<h2 class="anchored" data-anchor-id="shift-function-1">shift function 1</h2>
+<section id="shift-function-1" class="level3">
+<h3 class="anchored" data-anchor-id="shift-function-1">shift function 1</h3>
 <p>Consider a shift function that assigns meal replacement to all observations at time 1, but only meal replacement at time 2 to those observations whose 4-month BMI is greater than 30.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DynTxRegime)</span>
@@ -778,8 +782,8 @@ $ A2          &lt;chr&gt; "MR", "MR", "CD", "CD", "CD", "MR", "MR", "CD", "MR", 
 </div>
 </div>
 </section>
-<section id="shift-function-2" class="level2">
-<h2 class="anchored" data-anchor-id="shift-function-2">shift function 2</h2>
+<section id="shift-function-2" class="level3">
+<h3 class="anchored" data-anchor-id="shift-function-2">shift function 2</h3>
 <p>Suppose we are interested in comparing the dynamic treatment regime to a static treatment regime where all patients receive meal replacement at both time points. Using the SDR estimator, estimate the effect of this static intervention.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fit_MR <span class="ot">&lt;-</span> <span class="fu">lmtp_sdr</span>(</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmi, </span>

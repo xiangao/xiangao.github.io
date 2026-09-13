@@ -1,6 +1,8 @@
 ---
 title: "Xiang Ao"
+description: "Applied economist and statistician working on causal inference, econometrics, and policy evaluation."
 image: profile.jpg
+image-alt: "Profile image of Xiang Ao"
 about:
   template: trestles
   image-shape: round
@@ -11,6 +13,9 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/xiang-ao-01778/
+    - icon: envelope
+      text: Email
+      href: mailto:xao@hbs.edu
 ---
 
 ## About

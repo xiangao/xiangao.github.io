@@ -8,8 +8,9 @@
 
 <meta name="author" content="Xiang Ao">
 <meta name="dcterms.date" content="2025-11-17">
+<meta name="description" content="Oaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).">
 
-<title>Gender wage gap analysis using US current population survey data – Xiang Ao</title>
+<title>Gender Wage Gap Analysis Using US Current Population Survey Data – Xiang Ao</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,13 +143,15 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Gender wage gap analysis using US current population survey data – Xiang Ao">
-<meta property="og:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
-<meta property="og:image" content="https://xiangao.github.io/posts/gwg/profile.jpg">
+<meta property="og:title" content="Gender Wage Gap Analysis Using US Current Population Survey Data – Xiang Ao">
+<meta property="og:description" content="Oaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).">
+<meta property="og:image" content="https://xiangao.github.io/posts/gwg/image.jpg">
 <meta property="og:site_name" content="Xiang Ao">
-<meta name="twitter:title" content="Gender wage gap analysis using US current population survey data – Xiang Ao">
-<meta name="twitter:description" content="Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software.">
-<meta name="twitter:image" content="https://xiangao.github.io/posts/gwg/profile.jpg">
+<meta property="og:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
+<meta name="twitter:title" content="Gender Wage Gap Analysis Using US Current Population Survey Data – Xiang Ao">
+<meta name="twitter:description" content="Oaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).">
+<meta name="twitter:image" content="https://xiangao.github.io/posts/gwg/image.jpg">
+<meta name="twitter:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -347,10 +350,6 @@ window.Quarto = {
     <a class="nav-link" href="../../blogs.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../other-blogs.html"> 
-<span class="menu-text">Other Blogs</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -370,8 +369,13 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Gender wage gap analysis using US current population survey data</h1>
-                                <div class="quarto-categories">
+      <h1 class="title">Gender Wage Gap Analysis Using US Current Population Survey Data</h1>
+                  <div>
+        <div class="description">
+          Oaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">code</div>
                 <div class="quarto-category">analysis</div>
@@ -415,8 +419,8 @@ window.Quarto = {
 <p>Traditionally Oaxaca-Blinder decomposition is used to decompose the wage gap into explained and unexplained parts. The explained part is due to differences in observable characteristics, such as education, experience, occupation, etc. The unexplained part is due to discrimination or other unobserved factors.</p>
 <p>It has a problem that when decomposing, using female as reference group or male as reference group will give different results.</p>
 <p>Słoczyński (2015) and Słoczyński (2013) have shown that a regression adjustment type of analysis is equivalent to Oaxaca-Blinder decomposition in a nonstandard way.</p>
-<section id="oaxaca-blinder-decomposition" class="level1">
-<h1>Oaxaca-Blinder decomposition</h1>
+<section id="oaxaca-blinder-decomposition" class="level2">
+<h2 class="anchored" data-anchor-id="oaxaca-blinder-decomposition">Oaxaca-Blinder decomposition</h2>
 <p>Assume the regression model is different for male and female: <span class="math display">\[ y_i = X_i \beta_a + \epsilon_a \]</span></p>
 <p>where <span class="math inline">\(a\)</span> is gender (female is 1), <span class="math inline">\(X\)</span>’s are person characteristics.</p>
 <p><span class="math display">\[ E[y_i | a_i = 1] - E[y_i | a_i = 0] = E[X_i | a_i=1]  (\beta_1 - \beta_0) + (E[X_i | a_i =1 ] - E[X_i | a_i = 0]) \beta_0 \]</span></p>
@@ -441,8 +445,8 @@ E[y_i | a_i =1] - E[y_i | a_i=0] &amp;= E[X_i | a_i=1]  (\beta_1 - \beta_0) + (E
 <p>The second advantage is that we also do not need to assume homogeneity of treatment effect, which is a strong assumption in the Oaxaca-Blinder decomposition.</p>
 <p>The third advantage is that we can use nonparametric methods to estimate the treatment effect. Traditional OB decomposition is based on linear regression, which assumes a linear relationship between the covariates and the outcome.</p>
 </section>
-<section id="example" class="level1">
-<h1>Example</h1>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
 <p>I am using the data from https://github.com/d2cml-ai/CausalAI-Course/tree/main/data.</p>
 <p>“The data set we consider is from the 2015 March Supplement of the U.S. Current Population Survey. We select white non-hispanic individuals, aged 25 to 64 years, and working more than 35 hours per week for at least 50 weeks of the year. We exclude self-employed workers; individuals living in group quarters; individuals in the military, agricultural or private household sectors; individuals with inconsistent reports on earnings and employment status; individuals with allocated or missing information in any of the variables used in the analysis; and individuals with hourly wage below 3.”</p>
 <p>I am using this data to study gender wage gap (GWP).</p>
@@ -450,8 +454,8 @@ E[y_i | a_i =1] - E[y_i | a_i=0] &amp;= E[X_i | a_i=1]  (\beta_1 - \beta_0) + (E
 <p>The ATE would be</p>
 <p><span class="math display">\[ \delta_{ATE} = E[Y(1) - Y(0)] \]</span></p>
 <p>where <span class="math inline">\(Y(1)\)</span> is the potential outcome if treated, and <span class="math inline">\(Y(0)\)</span> is the potential outcome if not treated.</p>
-<section id="regression-adjustment" class="level2">
-<h2 class="anchored" data-anchor-id="regression-adjustment">Regression adjustment</h2>
+<section id="regression-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="regression-adjustment">Regression adjustment</h3>
 <p>Since this is to estimate ATE, we can use regression adjustment to estimate the ATE. First let’s use de-meaned <span class="math inline">\(X\)</span>’s. Then the coefficient on gender is the ATE.</p>
 <p>We use These variables as <span class="math inline">\(X\)</span>’s:</p>
 <p>“shs”,“hsg”,“scl”,“clg”,“ad”,“ne”,“mw”,“so”,“we”,“exp1”, “occ”, “occ2”, “ind”, and “ind2”.</p>
@@ -606,8 +610,8 @@ Comparison: 1 - 0</code></pre>
 <p>So in the model with full interaction, we have a gap of 7.5%.</p>
 <p>Now let’s try nonparametric estimation.</p>
 </section>
-<section id="nonparametric-estimation" class="level2">
-<h2 class="anchored" data-anchor-id="nonparametric-estimation">Nonparametric estimation</h2>
+<section id="nonparametric-estimation" class="level3">
+<h3 class="anchored" data-anchor-id="nonparametric-estimation">Nonparametric estimation</h3>
 <p>If we’d like to go for nonparametric, relaxing linearity assumption, then we can use “npcausal”. Note this may take a while, depending on which machine learning packages you decide to include. We can also use other nonparametric estimators, such as TMLE or doubleML.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(npcausal)</span>

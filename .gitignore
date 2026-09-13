@@ -6,10 +6,18 @@
 /*.csv
 /*.Rdata
 
+# knitr chunk caches. These are local build accelerators, distinct from _freeze/
+# (which stores rendered output and IS tracked). They stay on disk so re-renders
+# stay fast and reproduce the same chunk results; they just are not tracked.
+posts/**/*_cache/
+
 # Per-post data files (only needed if re-executing — posts are frozen)
 posts/**/*.Rdata
 posts/**/*.rda
 posts/**/*.csv
+
+# Python venv (only needed to re-execute the one Python post)
+.venv/
 
 # R / RStudio user-machine state
 .Rproj.user/

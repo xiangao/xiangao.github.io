@@ -1,16 +1,19 @@
 ---
-title: "More on Correlated Random Effect (CRE)"
+title: "More on Correlated Random Effects (CRE)"
 author: "Xiang Ao"
 date: "2025-11-11"
 categories: [news, code, analysis]
+description: "Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit."
+image: image.jpg
+image-alt: "Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents"
 ---
 
 Jeff Wooldridge suggested using Correlated Random Effect (CRE) for binary outcomes in this twitter post:  https://x.com/jmwooldridge/status/1986100627454206220
 
 
-Here I summerize what I learned so far:
+Here I summarize what I learned so far:
 
-# linear model
+## linear model
 
 For panel data, the usual set up is:
 
@@ -26,7 +29,7 @@ The idea of Chamberlain's device is that since we don't have $v_i$, we can proje
 Here is an example:
 
 
-## example 1
+### example 1
 
 
 ```{r fix1, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
@@ -60,16 +63,16 @@ In this example, fixed effect model, CRE1 and CRE2 all give the same coefficient
 
 As we know, RE model assumes $v_i$ is uncorrelated with $X_{it}$, while CRE and FE allow for correlation between $v_i$ and $X_{it}$.
 
-# nonlinear model
+## nonlinear model
 
 What I did not realize before is that this is only valid for linear case.   For OLS to be consistent, we only need contemporaneous exogeneity, which means $E[\epsilon_{it} | X_{it}, v_i] = 0$.  This is not the case for nonlinear cases, such as logit or probit models.
 
-## Binary outcome
+### Binary outcome
 
 For binary outcomes, the model is:
 
 $$y_{it} = \Phi(\alpha + X_{it} \beta + v_i + \epsilon_{it}) $$
-I used to think it's the best to use conditional logit.  However, it needs "conditional indepencence" (serial independence could be a better name) to be consistent.  That is, we have to assume the series of $y_{it}$ is conditionally independent of each other given $X_{it}$ and $v_i$.  This is a strong assumption.  If we think we have serial correlation in the error term, then this would not hold.  The other disadvantage of conditional logit (also called fixed effect logit) is that $v_i$'s are not estimated, it is just a nuisance parameter.  Any partial effects cannot be calculated, because any partial effects are functions of $v_i$'s.
+I used to think it's the best to use conditional logit.  However, it needs "conditional independence" (serial independence could be a better name) to be consistent.  That is, we have to assume the series of $y_{it}$ is conditionally independent of each other given $X_{it}$ and $v_i$.  This is a strong assumption.  If we think we have serial correlation in the error term, then this would not hold.  The other disadvantage of conditional logit (also called fixed effect logit) is that $v_i$'s are not estimated, it is just a nuisance parameter.  Any partial effects cannot be calculated, because any partial effects are functions of $v_i$'s.
 
 Instead, Wooldridge suggests using CRE probit.  Basically adding Mundlak device (group means of $X$'s) to the model, and then use pooled probit.  Note that we do not use RE probit or logit, since that would need conditional independence too.
 
@@ -90,7 +93,7 @@ Now, most nonlinear models make the second assumption, in the panel setting, whe
 
 
 
-## Example 2
+### Example 2
 
 ```{r fix2, include=TRUE, warning=FALSE,  cache=TRUE, message=FALSE, echo=TRUE}
 # generate a binary outcome, high_homocide

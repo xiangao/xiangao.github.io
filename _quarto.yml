@@ -1,13 +1,19 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
 
 website:
   title: "Xiang Ao"
   site-url: https://xiangao.github.io
   description: "Applied economist and statistician working on causal inference, econometrics, policy evaluation, and open-source statistical software."
   favicon: profile.jpg
-  image: profile.jpg
+  # Root-relative: a bare "profile.jpg" is re-resolved against each page's own
+  # URL, which made posts request e.g. /posts/gwg/profile.jpg and 404.
+  image: /profile.jpg
+  image-alt: "Xiang Ao"
   open-graph: true
   twitter-card: true
   repo-url: https://github.com/xiangao/xiangao.github.io
@@ -21,8 +27,6 @@ website:
         text: Online Books
       - href: blogs.qmd
         text: Blogs
-      - href: other-blogs.qmd
-        text: Other Blogs
     right:
       - icon: github
         href: https://github.com/xiangao

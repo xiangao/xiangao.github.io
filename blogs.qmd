@@ -1,12 +1,23 @@
 ---
 title: "Blogs"
 description: "Posts and notes on causal inference, econometrics, machine learning, and statistical programming."
+aliases:
+  - /other-blogs.html
 listing:
+  id: post-listing
   contents: posts
   sort: "date desc"
   type: default
   categories: true
   sort-ui: false
   filter-ui: false
+  feed: true
 page-layout: full
 ---
+
+::: {#post-listing}
+:::
+
+## blogs(old)
+
+- [Applied Econometrics Blog](https://xiangao.netlify.app) — earlier posts, built with R blogdown and Hugo.

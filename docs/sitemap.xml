@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiangao.github.io/index.html</loc>
-    <lastmod>2026-05-23T21:32:38.153Z</lastmod>
+    <loc>https://xiangao.github.io/software.html</loc>
+    <lastmod>2026-09-13T13:43:39.119Z</lastmod>
   </url>
   <url>
     <loc>https://xiangao.github.io/posts/numpyro/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.401Z</lastmod>
+    <lastmod>2026-09-13T13:45:44.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://xiangao.github.io/posts/lmtp/index.html</loc>
+    <lastmod>2026-09-13T13:45:44.898Z</lastmod>
   </url>
   <url>
     <loc>https://xiangao.github.io/posts/causal_simulation/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.398Z</lastmod>
-  </url>
-  <url>
-    <loc>https://xiangao.github.io/posts/uplift/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.402Z</lastmod>
-  </url>
-  <url>
-    <loc>https://xiangao.github.io/software.html</loc>
-    <lastmod>2026-06-19T01:48:38.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://xiangao.github.io/blogs.html</loc>
-    <lastmod>2026-05-27T18:30:10.398Z</lastmod>
+    <lastmod>2026-09-13T13:46:01.013Z</lastmod>
   </url>
   <url>
     <loc>https://xiangao.github.io/books.html</loc>
     <lastmod>2026-05-27T18:45:26.740Z</lastmod>
   </url>
   <url>
-    <loc>https://xiangao.github.io/other-blogs.html</loc>
-    <lastmod>2026-05-23T21:32:38.153Z</lastmod>
+    <loc>https://xiangao.github.io/blogs.html</loc>
+    <lastmod>2026-09-13T13:43:53.009Z</lastmod>
   </url>
   <url>
-    <loc>https://xiangao.github.io/posts/lmtp/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.399Z</lastmod>
-  </url>
-  <url>
-    <loc>https://xiangao.github.io/posts/more_cre/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.400Z</lastmod>
+    <loc>https://xiangao.github.io/index.html</loc>
+    <lastmod>2026-09-13T13:44:03.517Z</lastmod>
   </url>
   <url>
     <loc>https://xiangao.github.io/posts/gwg/index.html</loc>
-    <lastmod>2026-05-27T18:30:10.399Z</lastmod>
+    <lastmod>2026-09-13T13:45:52.759Z</lastmod>
+  </url>
+  <url>
+    <loc>https://xiangao.github.io/posts/more_cre/index.html</loc>
+    <lastmod>2026-09-13T13:45:44.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://xiangao.github.io/posts/uplift/index.html</loc>
+    <lastmod>2026-09-13T13:47:52.866Z</lastmod>
   </url>
 </urlset>

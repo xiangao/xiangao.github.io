@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-post-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-post-listing'] = new List('listing-post-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -137,13 +137,15 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Blogs – Xiang Ao">
+<link rel="alternate" type="application/rss+xml" title="Xiang Ao" href="blogs.xml" data-external="1"><meta property="og:title" content="Blogs – Xiang Ao">
 <meta property="og:description" content="Posts and notes on causal inference, econometrics, machine learning, and statistical programming.">
-<meta property="og:image" content="https://xiangao.github.io/profile.jpg">
+<meta property="og:image" content="https://xiangao.github.io/posts/gwg/image.jpg">
 <meta property="og:site_name" content="Xiang Ao">
+<meta property="og:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 <meta name="twitter:title" content="Blogs – Xiang Ao">
 <meta name="twitter:description" content="Posts and notes on causal inference, econometrics, machine learning, and statistical programming.">
-<meta name="twitter:image" content="https://xiangao.github.io/profile.jpg">
+<meta name="twitter:image" content="https://xiangao.github.io/posts/gwg/image.jpg">
+<meta name="twitter:image:alt" content="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -342,10 +344,6 @@ window.Quarto = {
     <a class="nav-link active" href="./blogs.html" aria-current="page"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./other-blogs.html"> 
-<span class="menu-text">Other Blogs</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -396,21 +394,17 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div id="listing-post-listing" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1763355600000" data-listing-file-modified-sort="1779906610399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1390">
+<div class="quarto-post image-right" data-index="0" data-categories="UiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1763355600000" data-listing-file-modified-sort="1789307152759" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1390">
 <div class="thumbnail"><a href="./posts/gwg/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<img loading="lazy" src="./posts/gwg/image.jpg" class="thumbnail-image" alt="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/gwg/index.html" class="no-external">Gender wage gap analysis using US current population survey data</a>
+<a href="./posts/gwg/index.html" class="no-external">Gender Wage Gap Analysis Using US Current Population Survey Data</a>
 </h3>
 <div class="listing-categories">
 
@@ -422,7 +416,7 @@ window.Quarto = {
 
 </div>
 <div class="delink listing-description"><a href="./posts/gwg/index.html" class="no-external">
-Traditionally Oaxaca-Blinder decomposition is used to decompose the wage gap into explained and unexplained parts. The explained part is due to differences in observable…
+<p>Oaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -436,15 +430,15 @@ Xiang Ao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1762837200000" data-listing-file-modified-sort="1779906610400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="848">
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1762837200000" data-listing-file-modified-sort="1789307144899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="848">
 <div class="thumbnail"><a href="./posts/more_cre/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<img loading="lazy" src="./posts/more_cre/image.jpg" class="thumbnail-image" alt="Decorative header image: the Earth at night seen from orbit, city lights scattered across the continents">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/more_cre/index.html" class="no-external">More on Correlated Random Effect (CRE)</a>
+<a href="./posts/more_cre/index.html" class="no-external">More on Correlated Random Effects (CRE)</a>
 </h3>
 <div class="listing-categories">
 
@@ -456,7 +450,7 @@ Xiang Ao
 
 </div>
 <div class="delink listing-description"><a href="./posts/more_cre/index.html" class="no-external">
-Jeff Wooldridge suggested using Correlated Random Effect (CRE) for binary outcomes in this twitter post: https://x.com/jmwooldridge/status/1986100627454206220
+<p>Correlated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -470,15 +464,15 @@ Xiang Ao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ3B5dGhvbiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1760673600000" data-listing-file-modified-sort="1779906610401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="239">
+<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ3B5dGhvbiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1760673600000" data-listing-file-modified-sort="1789307144899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="239">
 <div class="thumbnail"><a href="./posts/numpyro/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts/numpyro/index_files/figure-html/numpyro1-1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/numpyro/index_files/figure-html/numpyro1-1.png" alt="Posterior predictive FVC trajectories for a sample of patients, with credible bands"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/numpyro/index.html" class="no-external">Using numpyro</a>
+<a href="./posts/numpyro/index.html" class="no-external">Using NumPyro</a>
 </h3>
 <div class="listing-categories">
 
@@ -492,7 +486,7 @@ Xiang Ao
 
 </div>
 <div class="delink listing-description"><a href="./posts/numpyro/index.html" class="no-external">
-I just discovered numpyro, which is a probabilistic programming library in Python. It can be coupled with Jax and is very powerful.
+<p>A Bayesian hierarchical linear regression fitted with NumPyro, compared against a frequentist random-effects model estimated with lme4.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -506,15 +500,15 @@ Xiang Ao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="cHl0aG9uJTJDY29kZSUyQ2FuYWx5c2lz" data-listing-date-sort="1760068800000" data-listing-file-modified-sort="1779906610402" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="546">
+<div class="quarto-post image-right" data-index="3" data-categories="cHl0aG9uJTJDY29kZSUyQ2FuYWx5c2lz" data-listing-date-sort="1760068800000" data-listing-file-modified-sort="1789307272866" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="560">
 <div class="thumbnail"><a href="./posts/uplift/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts/uplift/index_files/figure-html/cell-2-output-2.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/uplift/index_files/figure-html/cell-2-output-2.png" alt="Cumulative gain curves comparing uplift random forest variants against a random targeting baseline"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/uplift/index.html" class="no-external">Uplift model in python</a>
+<a href="./posts/uplift/index.html" class="no-external">Uplift Modeling in Python</a>
 </h3>
 <div class="listing-categories">
 
@@ -526,7 +520,7 @@ Xiang Ao
 
 </div>
 <div class="delink listing-description"><a href="./posts/uplift/index.html" class="no-external">
-Uplift modeling is a technique used to estimate the incremental impact of a treatment or intervention on an outcome, often used in marketing. It helps identify which…
+<p>Uplift modeling with causalml, framed as conditional average treatment effect estimation.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -540,15 +534,15 @@ Xiang Ao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1759291200000" data-listing-file-modified-sort="1779906610398" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1624">
+<div class="quarto-post image-right" data-index="4" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1759291200000" data-listing-file-modified-sort="1789307161013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1647">
 <div class="thumbnail"><a href="./posts/causal_simulation/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts/causal_simulation/index_files/figure-html/dag1-1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/causal_simulation/index_files/figure-html/dag1-1.png" alt="Directed acyclic graph with covariates X, treatment A, and outcome Y"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/causal_simulation/index.html" class="no-external">Causal simulation</a>
+<a href="./posts/causal_simulation/index.html" class="no-external">Causal Simulation</a>
 </h3>
 <div class="listing-categories">
 
@@ -560,7 +554,7 @@ Xiang Ao
 
 </div>
 <div class="delink listing-description"><a href="./posts/causal_simulation/index.html" class="no-external">
-Evans, R. J., &amp; Didelez, V. (2024). “Parameterizing and simulating from causal models” is about simulating from a causal model. I found that interesting.
+<p>Simulating data from a specified causal model using the frugal parameterization of Evans and Didelez (2024), with worked examples in the causl package.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -574,15 +568,15 @@ Xiang Ao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="UiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1755921600000" data-listing-file-modified-sort="1779906610399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2057">
+<div class="quarto-post image-right" data-index="5" data-categories="UiUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1755921600000" data-listing-file-modified-sort="1789307144898" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2070">
 <div class="thumbnail"><a href="./posts/lmtp/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts/lmtp/index_files/figure-html/dag1-1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/lmtp/index_files/figure-html/dag1-1.png" alt="Directed acyclic graph for a two-period longitudinal setting with time-varying treatment and confounding"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/lmtp/index.html" class="no-external">longitudinal modified treatment policy (LMTP)</a>
+<a href="./posts/lmtp/index.html" class="no-external">Longitudinal Modified Treatment Policies (LMTP)</a>
 </h3>
 <div class="listing-categories">
 
@@ -594,7 +588,7 @@ Xiang Ao
 
 </div>
 <div class="delink listing-description"><a href="./posts/lmtp/index.html" class="no-external">
-I read a few papers with longitudinal modified treatment policy (LMTP), and found it interesting. It has been used in epidemiology and biostatistics, but I have not seen it…
+<p>Modified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -610,7 +604,18 @@ Xiang Ao
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+<section id="blogsold" class="level2">
+<h2 class="anchored" data-anchor-id="blogsold">blogs(old)</h2>
+<ul>
+<li><a href="https://xiangao.netlify.app">Applied Econometrics Blog</a> — earlier posts, built with R blogdown and Hugo.</li>
+</ul>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
