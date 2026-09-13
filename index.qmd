@@ -34,7 +34,7 @@ I use AI coding agents to create software for econometrics. See [Software](softw
 
 ## Online Books
 
-I have books for applied econometrics and causal inference. See [Online Books](books.qmd).
+I have books on applied econometrics and causal inference. See [Online Books](books.qmd).
 
 ## Education
 
