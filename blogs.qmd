@@ -15,11 +15,11 @@ listing:
 page-layout: full
 ---
 
+I made most of my blogs into my book [Topics on Econometrics and Causal Inference](https://xiangao.github.io/blog_book/). These are the older blogs.
+
 ::: {#post-listing}
 :::
 
 ## blogs(old)
-
-I made most of my blogs into my book [Topics on Econometrics and Causal Inference](https://xiangao.github.io/blog_book/). These are the older blogs.
 
 - [Applied Econometrics Blog](https://xiangao.netlify.app) — earlier posts, built with R blogdown and Hugo.

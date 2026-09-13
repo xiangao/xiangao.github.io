@@ -144,14 +144,14 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "R\n\ncode\n\nanalysis\n\n\n\nOaxaca-Blinder decomposition of the US gender wage gap, and its equivalence to a regression adjustment estimator following Słoczyński (2015).\n\n\n\n\n\nNov 17, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nCorrelated random effects for linear and binary-outcome panel models, comparing the Mundlak and Chamberlain devices with fixed effects and conditional logit.\n\n\n\n\n\nNov 11, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\npython\n\ncode\n\nanalysis\n\n\n\nA Bayesian hierarchical linear regression fitted with NumPyro, compared against a frequentist random-effects model estimated with lme4.\n\n\n\n\n\nOct 17, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npython\n\ncode\n\nanalysis\n\n\n\nUplift modeling with causalml, framed as conditional average treatment effect estimation.\n\n\n\n\n\nOct 10, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nSimulating data from a specified causal model using the frugal parameterization of Evans and Didelez (2024), with worked examples in the causl package.\n\n\n\n\n\nOct 1, 2025\n\n\nXiang Ao\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\ncode\n\nanalysis\n\n\n\nModified treatment policies for continuous and time-varying treatments, with TMLE and sequentially doubly robust estimation using the lmtp package.\n\n\n\n\n\nAug 23, 2025\n\n\nXiang Ao\n\n\n\n\n\nNo matching items"
+    "text": "I made most of my blogs into my book Topics on Econometrics and Causal Inference. These are the older blogs."
   },
   {
     "objectID": "blogs.html#blogsold",
     "href": "blogs.html#blogsold",
     "title": "Blogs",
     "section": "blogs(old)",
-    "text": "blogs(old)\nI made most of my blogs into my book Topics on Econometrics and Causal Inference. These are the older blogs.\n\nApplied Econometrics Blog — earlier posts, built with R blogdown and Hugo."
+    "text": "blogs(old)\n\nApplied Econometrics Blog — earlier posts, built with R blogdown and Hugo."
   },
   {
     "objectID": "index.html",
